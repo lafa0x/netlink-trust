@@ -1,0 +1,674 @@
+// Main.scss
+// Option A: Include all of Bootstrap
+
+// Optional Bootstrap components here
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// etc
+
+
+// Include any default variable overrides here (though functions won't be available)
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+
+
+// Default variable overrides
+$body-bg: #fff;
+$body-color: #000;
+
+// Typography
+$font-size-base: 16px; // this changes the font-size throughout bootstrap
+$font-family-sans-serif: "Raleway", sans-serif;
+$line-height-base: 1.6;
+
+$theme-colors: (
+  "primary": #1697D9,
+  "danger": #ff4136
+);
+
+$btn-bg: #1697D9;
+$btn-bg-hover: #032853;
+$btn-border: #56a1c5;
+$btn-color: #fff;
+
+@mixin button-variant($bg, $border, $color, $bg-hover) {
+    background-color: $bg;
+    color: $color;   
+    border: none;
+
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+
+        width: 365px;
+
+    }
+
+    
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    line-height: 20px;
+    text-transform: uppercase; 
+
+    &:hover {
+        background-color: $bg-hover;
+    }
+}
+
+.btn-primary {
+
+    @include button-variant($btn-bg, $btn-border, $btn-color, $btn-bg-hover);
+
+}
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here (though functions won't be available)
+// ...
+
+// 3. Include remainder of required Bootstrap stylesheets
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed
+// @import "../node_modules/bootstrap/scss/utilities";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/containers";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "../node_modules/bootstrap/scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @import "../node_modules/bootstrap/scss/utilities/api";
+
+// Then add additional custom code here
+
+body {
+    overflow-x: hidden;
+}
+
+//header
+header {
+
+    //header nav menu wrapper
+    .navbar {
+
+        // Humberger - Bento Menu
+        .menu__item--bento {
+            width: 35px;
+            height: 30px;
+            // padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu__item--bento .box {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #000000;
+            margin: 1px 3px;
+            display: inline-block;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+
+            li a {
+                margin-left: 10px;
+                text-transform: uppercase;
+            }
+
+        }
+
+        #mdb-5-search-container {
+
+            .input-group-text {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+
+        }
+    
+    }
+
+}
+
+//footer
+footer {
+    background-color: #032853;
+
+    h5 {
+        margin-bottom: 25px;
+        color: #fff;
+        a.nav-link {
+            color: #fff;
+        }
+    }
+
+    ul li a.nav-link {
+        color: #fff;
+    }
+
+    .list-unstyled {
+
+        a {
+            font-size: 24px;
+        }
+
+        @include media-breakpoint-up(md) {
+
+            a {
+                font-size: 28px;
+            }
+
+        }
+
+    }
+
+    p {
+        color: #fff;
+    }
+
+}
+
+//section
+section {
+    
+    h2 {
+        text-transform: uppercase;
+    }
+
+}
+
+//timeline type 1
+.timeline {
+
+    background-color: rgba(3, 40, 83, 0.05);
+
+    .section-content {
+
+        p {
+            margin: 0 auto;
+        } 
+
+        @include media-breakpoint-up(xs) {
+
+            p {
+                width: 300px;
+            }    
+
+        }
+
+        @include media-breakpoint-up(md) {
+
+            p {
+                width: 600px;
+            }    
+
+        }    
+
+        @include media-breakpoint-up(lg) {
+
+            p {
+                width: 800px;
+            }    
+
+        }  
+
+        @include media-breakpoint-up(xxl) {
+
+            p {
+                width: 1100px;
+            }    
+
+        } 
+    }
+
+
+    .timeline-bar-box {
+        position: relative;
+        top: -40px;
+    }
+
+    .timeline-bar-box:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(rgba(3, 40, 83, 0.58) 0%, #032853 100%);
+        opacity: 0.15;
+
+        h6, p {
+            color: #000;
+        }
+        
+    
+
+    }
+
+
+}
+
+//timeline type 2 - Vision & Mission 
+.timeline-vision-mission {
+
+    background-color: #F1F3F5;
+
+    @include media-breakpoint-up(sm) {
+        
+        .section-content {
+
+            background-image: url("../assets/vision-mission-banner@2x.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-y: 8rem;
+            padding-bottom: 24rem !important;
+        }
+    }
+
+}
+
+//text content 3cols Type 1
+.text-content-3-cols {
+
+    @include media-breakpoint-up(xs) {
+
+        .section-content {
+            width: 300px;
+        }    
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+        .section-content {
+            width: 600px;
+        }    
+
+    }    
+
+    @include media-breakpoint-up(lg) {
+
+        .section-content {
+            width: 800px;
+        }    
+
+    }  
+
+    @include media-breakpoint-up(xxl) {
+
+        .section-content {
+            width: 1100px;
+        }    
+
+    } 
+    
+    .section-content {
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    .content-box {
+
+        h6 {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+    }
+
+}
+
+//text content 3cols Type 2
+.text-contents-3-cols {
+    
+    @include media-breakpoint-up(xs) {
+
+        .content-box {
+
+            p {         
+                width: 300px;
+            }
+            
+        }  
+
+        .section-content {
+            width: 300px;
+        }   
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+        .content-box {
+
+            p {         
+                width: 600px;
+            }
+            
+        } 
+
+        .section-content {
+            width: 1100px;
+        }   
+
+    }    
+
+    @include media-breakpoint-up(lg) {
+
+        .content-box {
+
+            p {         
+                width: 800px;
+            }
+            
+        }   
+
+        .section-content {
+            width: 800px;
+        }   
+
+    }  
+
+    @include media-breakpoint-up(xxl) {
+
+        .content-box {
+
+            p {         
+                width: 1100px;
+            }
+            
+        }      
+        
+        .section-content {
+            width: 1100px;
+        }   
+
+    } 
+    
+    .content-box {
+
+        p {         
+            margin: 0 auto;
+        }
+
+    }
+
+    .section-content {
+        margin: 0 auto;
+    }
+}
+
+//Coverage Box Type 1
+.coverage-box {
+
+    background-image: url("../assets/coverage-banner@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h2, p {
+        color: #fff;
+    }
+
+
+}
+
+//Coverage Simple Box Type 2
+.coverage-simple-box {
+
+    background-image: url("../assets/coverage-simple-banner@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-up(xs) {
+
+        .content-box {
+            width: 300px;
+        }    
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+        .content-box {
+            width: 600px;
+        }    
+
+    }    
+
+    @include media-breakpoint-up(lg) {
+
+        .content-box {
+            width: 800px;
+        }    
+
+    }  
+
+    @include media-breakpoint-up(xxl) {
+
+        .content-box {
+            width: 1100px;
+        }    
+
+    } 
+    
+    .content-box {
+        margin: 0 auto;
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        h2, p {
+            color: #fff;
+        }
+
+    }
+
+
+}
+
+//Article Slider Type 1
+.article-slider {
+
+    @include media-breakpoint-down(sm) {
+
+        margin: 0 30px;
+
+
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    .slide-item {
+        margin-right: 20px;
+        // margin-left: 10px;
+    }
+
+    .slide-item {
+        padding-top: 15px;
+
+        @include media-breakpoint-up(sm) {
+
+            border-top: 2px solid #1697D9;        
+            
+    
+        }
+    }
+
+    .slick-prev:before, .slick-next:before {
+        color: #1697D9;
+    }
+    
+    
+}
+
+//Hero Type 1 - Investors
+.hero-investors {
+
+    background-image: url("../assets/investors-banner@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h2, p {
+        color: #fff;
+    }
+}
+
+//Hero Type 2 - About
+.hero-about {
+
+    background-image: url("../assets/about-banner@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .content {
+
+        h2 {
+            color: #fff;
+        }
+        
+        ul li {
+            margin: 10px 0;
+        }
+
+    }
+
+}
+
+//Hero Pages Type 3 
+.hero-pages {
+
+
+    .content {
+
+        h2 {
+            color: #fff;
+        }
+        
+
+    }
+
+}
+
+//Hero Pages Type 3 - Management
+.hero-pages.management {
+
+    background-image: url("../assets/management-banner@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+//Text Content with image col - Pages
+.text-content-image {
+
+    background-color: #F2F4F6;
+
+    h2 {
+        text-transform: uppercase;
+    }
+}
+
+//Full Home Slider
+.full-slider{
+      
+    margin: 0 -10px !important;
+
+    .slide-item{
+        padding: 0 10px;
+        
+        &.slick-center{
+          h2{
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            color: #e67e22;
+            opacity: 1;
+            transform: scale(1.08);
+          }
+        }
+        
+        
+    }
+
+    @include media-breakpoint-down(sm) {
+
+    ul.slick-dots {
+        bottom: 20px;
+        left: 20px;
+        text-align: left;
+    }
+    
+    .slick-dots li {
+        margin: 0;
+    }
+    
+    .slick-dots li button:before {
+        font-size: 12px;
+    }
+
+    }
+
+
+    @include media-breakpoint-up(sm) {
+        
+    h2{
+        display: none;
+    }
+    
+    .slick-dots {
+      list-style-type: none;
+      bottom: 0;
+      li {
+        width: auto;
+        height: auto;
+        display: inline-block;
+        padding: 0 5px;
+        button{
+          width: auto;
+          height: auto;
+          padding: 15px 90px 90px 0px !important;
+          background: transparent !important;          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+          border-top: 2px  solid rgba(255, 255, 255, 0.5);
+          border-radius: 2px;
+          font-weight: bold;          
+          &:before{
+            content: none;
+          }
+        }
+        &.slick-active{
+          button{
+            border-top: 5px solid rgba(255, 255, 255, 1);
+            color: #fff;
+            transition: linear 0.1s;          
+          }
+        }
+      }
+    }
+        
+    }
+
+}
