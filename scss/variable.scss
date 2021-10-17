@@ -1,0 +1,159 @@
+$body-font :  Arial,Helvetica,sans-serif; 
+$heading-font : 'Be Vietnam Pro', sans-serif;
+
+body {
+    font-family: $body-font;
+}
+
+/* colors */
+$gray : #707070;
+$black: #000000;
+$white: #ffffff;
+$primary: purple;
+
+$text-colors: (
+  "dark": $black,
+  "light": $white,
+  "gray": $gray,
+);
+@function text-color($key: "light") {
+    @return map-get($text-colors, $key);
+}
+
+
+/* let's define variable according to the style guide */
+
+h1, h2, h3 {
+    font-family: $heading-font;
+}
+
+h1, .h1{
+    font-size: 60px;
+    line-height: 1.17;
+    font-weight: 800;
+    color: text-color("dark");
+}
+
+h2, .h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 0.27px;
+    color: text-color("dark");
+}
+
+h3, .h3 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: text-color("dark");
+}
+
+.big-body {
+    font-size: 24px;
+    font-family: $body-font;
+    line-height: 1.33;
+}
+
+.body-bold{
+    font-weight: bold;
+    line-height: 1.17;
+    font-family: $body-font;
+}
+
+.small-body-bold {
+    font-weight: bold;
+    line-height: 1.27;
+}
+
+.small-body {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.27;
+}
+
+p {
+    font-size: 16px;
+    color: $gray;
+    line-height: 1.5;
+}
+
+.btn {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    padding: 20px;
+    font-family: $body-font;
+    font-weight: bold;
+    width: 366px;
+}
+
+.btn-outline {
+    border: 1px solid $gray;
+    color: $black;
+
+    &:hover {
+        background-color: rgba($color: $gray, $alpha: 0.1);
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1536px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+}
+.text-light {
+    h1, h2, h3, p, ul, li {
+        color: text-color("light");
+    }
+}
+
+.read-more-btn {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    line-height: 1.125;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    svg {
+        position: relative;
+        top: -2px;
+    }
+
+    &:hover {
+        color: $black;
+        svg path{
+            fill:$black;
+        }
+    }
+}
+
+
+/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
+.page-banner {
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.media-notices {
+    .media-notice {
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+
+        >*:not(a:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 1.43;
+            letter-spacing: 0.5px;
+        }
+    }
+}

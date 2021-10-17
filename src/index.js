@@ -7,6 +7,96 @@ import * as bootstrap from 'bootstrap';
 // Or import just one
 // import Alert as Alert from '../node_modules/bootstrap/js/dist/alert';
 
+/* loadMoreResult */
+/**
+	*	Load More Results v1.0.0
+	* Author: Cenk Çalgan
+	* 
+	* Options:
+	* - tag (object):
+	*		- name (string)
+	*		- class (string)
+	* - displayedItems (int)
+	*	- showItems (int)
+	* - button (object):
+	*		- class (string)
+	*		- text (string)
+*/
+
+(function ($) {
+	'use strict';
+
+	$.fn.loadMoreResults = function (options) {
+
+		var defaults = {
+			tag: {
+				name: 'div',
+				'class': 'item'
+			},
+			displayedItems: 6,
+			showItems: 6,
+			button: {
+				'class': 'btn btn-outline mb-5',
+				text: 'Load More'
+			}
+		};
+
+		var opts = $.extend(true, {}, defaults, options);
+
+		var alphaNumRE = /^[A-Za-z][-_A-Za-z0-9]+$/;
+		var numRE = /^[0-9]+$/;
+
+		$.each(opts, function validateOptions(key, val) {
+			if (key === 'tag') {
+				formatCheck(key, val, 'name', 'string');
+				formatCheck(key, val, 'class', 'string');
+			}
+			if (key === 'displayedItems') {
+				formatCheck(key, val, null, 'number');
+			}
+			if (key === 'showItems') {
+				formatCheck(key, val, null, 'number');
+			}
+			if (key === 'button') {
+				formatCheck(key, val, 'class', 'string');
+			}
+		});
+
+		function formatCheck(key, val, prop, typ) {
+			if (prop !== null && typeof prop !== 'object') {
+				if (typeof val[prop] !== typ || String(val[prop]).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+					opts[key][prop] = defaults[key][prop];
+				}
+			} else {
+				if (typeof val !== typ || String(val).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+					opts[key] = defaults[key];
+				}
+			}
+		};
+
+		return this.each(function (index, element) {
+			var $list = $(element),
+					lc = $list.find(' > ' + opts.tag.name + '.' + opts.tag.class).length,
+					dc = parseInt(opts.displayedItems),
+					sc = parseInt(opts.showItems);
+			
+			$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').css("display", "inline-block");
+			$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':gt(' + (dc - 1) + ')').css("display", "none");
+
+			$list.parent().append('<div class="col-md-12 mb-5 text-center"><button class="btn-view ' + opts.button.class + '">' + opts.button.text + '</button></div>');
+			$list.parent().on("click", ".btn-view", function (e) {
+				e.preventDefault();
+				dc = (dc + sc <= lc) ? dc + sc : lc;
+				
+				$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').fadeIn();
+				if (dc == lc) {
+					$(this).hide();
+				}
+			});
+		});
+
+	};
+})(jQuery);
 
 
 
@@ -112,5 +202,20 @@ $(function() {
         nextArrow: '<i class="bi bi-arrow-right-short slick-next slick-arrow"></i>',
         prevArrow: '<i class="bi bi-arrow-left-short slick-prev slick-arrow"></i>'       
     });
+
+
+    $('.media-lists').loadMoreResults({
+        displayedItems: 6,
+        tag: {
+            name: 'div',
+            'class': 'col-md-4'
+        },
+        button: {
+            'class':'btn btn-outline',
+            'text':'Load More'
+        }
+            
+    });
+        
 
 });
