@@ -188,6 +188,7 @@ $(function () {
 
     }
 
+    /* Home Slider with Adaptive height */
     $('.full-slider').slick({
         dots: true,
         infinite: true,
@@ -216,6 +217,13 @@ $(function () {
         }
             
     });
-        
+
+    //changeToogle - Bento Menu
+    // $('#bentoToggle').click(function() {
+
+    //     $('#navbarBento').toggleClass('d-none');
+    //     $('#navbarClose').toggleClass('d-none');  
+      
+    // });
 
 });
