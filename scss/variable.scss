@@ -16,9 +16,19 @@ $text-colors: (
   "light": $white,
   "gray": $gray,
 );
+
 @function text-color($key: "light") {
     @return map-get($text-colors, $key);
 }
+
+// @@mixin text-mlevel {
+//     margin: 0;
+//     font-size: 22px;
+//     color: #000 !important;
+//     font-weight: bold;
+//     font-family: "Arial";
+//     letter-spacing: 0.15em;
+// }
 
 
 /* let's define variable according to the style guide */
