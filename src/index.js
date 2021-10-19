@@ -14,15 +14,15 @@ import * as bootstrap from 'bootstrap';
 
 // Then add additional custom code here
 
-$(function() {
+$(function () {
 
     // Using '$' instead of 'jQuery' in WordPress
     // jQuery( function($) {
-        
+
     feather.replace();
 
     /* Client Logo slider with Adaptive height */
-	$('.client-logo-slider').slick({
+    $('.client-logo-slider').slick({
         dots: false,
         infinite: true,
         centerPadding: '60px',
@@ -34,7 +34,7 @@ $(function() {
         autoplaySpeed: 5000,
         nextArrow: '<i class="bi bi-arrow-right-short slick-next slick-arrow"></i>',
         prevArrow: '<i class="bi bi-arrow-left-short slick-prev slick-arrow"></i>'
-    });    
+    });
 
     /* Article slider with Adaptive height */
     $('.article-slider').slick({
@@ -64,38 +64,38 @@ $(function() {
                     slidesToScroll: 1
                 }
             }
-    
+
         ]
     });
 
-    if ( $(window).width() >= 590 ) { dotCustomSlider();  }
+    if ($(window).width() >= 590) { dotCustomSlider(); }
 
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
 
         console.log("resized");
 
-        if ( $(window).width() >= 590 ) { dotCustomSlider(); }
+        if ($(window).width() >= 590) { dotCustomSlider(); }
 
     });
 
     function dotCustomSlider() {
 
-            /* Homepage slider with Adaptive height */
-            $('.full-slider').on('init', function(event, slick){
-                var dots = $( '.slick-dots li' );
-                console.log( 'SRANZAN VEE' );
-                dots.each( function( k, v){
-                $(this).find( 'button' ).addClass( 'heading'+ k );
-                });
-                var items = slick.$slides;
-                items.each( function( k, v){
-                    var text = $(this).find( 'h2' ).text();
-                    $( '.heading' + k ).text(text);
-                });
-            
+        /* Homepage slider with Adaptive height */
+        $('.full-slider').on('init', function (event, slick) {
+            var dots = $('.slick-dots li');
+            console.log('SRANZAN VEE');
+            dots.each(function (k, v) {
+                $(this).find('button').addClass('heading' + k);
+            });
+            var items = slick.$slides;
+            items.each(function (k, v) {
+                var text = $(this).find('h2').text();
+                $('.heading' + k).text(text);
             });
 
-        
+        });
+
+
     }
 
     $('.full-slider').slick({
@@ -110,7 +110,7 @@ $(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: '<i class="bi bi-arrow-right-short slick-next slick-arrow"></i>',
-        prevArrow: '<i class="bi bi-arrow-left-short slick-prev slick-arrow"></i>'       
+        prevArrow: '<i class="bi bi-arrow-left-short slick-prev slick-arrow"></i>'
     });
 
 });
