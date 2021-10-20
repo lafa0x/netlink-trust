@@ -52,7 +52,23 @@
 
     <!-- Header -->
     <include src="src/components/header.html"></include>
-
+  
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" class="modal-dialog-centered" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog mx-auto">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="margin:0px;padding:0px;overflow:hidden">
+                        <iframe height="600" class="w-100" src="https://www.youtube.com/embed/vQAvjof1oe4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Main Content -->
     <main class="site-main">
 
@@ -64,10 +80,10 @@
 
             <div class="container">
 
-                <div class="section-content py-5">
+                <div class="section-content col-lg-8 col-xxl-10 mx-auto py-5">
                     <h2>WHO WE ARE</h2>
                     <div class="mb-3 "></div>
-                    <p>NetLink Trust designs, builds, owns and operates the passive fibre network infrastructure of
+                    <p class="small-body-bold">NetLink Trust designs, builds, owns and operates the passive fibre network infrastructure of
                         Singapore’s Next Generation Nationwide Broadband Network (Next Gen NBN).  An initiative led by
                         the Singapore government, the Next Gen NBN aims to enhance the competitiveness of the economy
                         through nationwide ultra-high-speed broadband access.</p>
@@ -77,7 +93,7 @@
             </div>
 
 
-            <img src="../assets/timeline-img@2x.png" alt="timeline-img" class="img-fluid">
+            <img src="../assets/timeline-img@2x.png" alt="timeline-img" class="img-fluid w-100">
 
             <div class="timeline-bar-box py-4">
 
@@ -86,24 +102,24 @@
                     <div class="row py-5 my-2 justify-content-center">
 
                         <div class="col-6 col-lg-3">
-                            <h6> 01 </h6>
+                            <h4 class="big-bold"> 01 </h4>
                             <p>We connect consumers and businesses anywhere in Singapore to the nationwide fibre
                                 broadband network</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h6> 02 </h6>
+                            <h4 class="big-bold"> 02 </h4>
                             <p>We build strong and trusted partnerships with our industry operators to deliver reliable
                                 fibre connectivity to their customers</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h6> 03 </h6>
+                            <h4 class="big-bold"> 03 </h4>
                             <p>We provide open and equal access to all industry operators</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h6> 04 </h6>
+                            <h4 class="big-bold"> 04 </h4>
                             <p>We are committed to helping Singapore achieve its vision as a Smart Nation</p>
                         </div>
                     </div>
@@ -120,20 +136,20 @@
         </section>
 
         <!-- Text Content With 3 Columns Type 1 -->
-        <section class="text-content-3-cols py-5 text-center">
+        <section class="text-content-3-cols text-center">
 
             <div class="container">
 
-                <div class="section-content py-5">
+                <div class="section-content col-lg-8 col-xxl-10 mx-auto">
                     <h2>We connect people, business and communities across Singapore to the world.</h2>
-                    <div class="mb-3 "></div>
-                    <p>The future of fibre is unlimited.  With its capability to transmit close to infinite amount of
+                    <div class="my-4"> </div>
+                    <p class="small-body">The future of fibre is unlimited.  With its capability to transmit close to infinite amount of
                         data
                         at scalable speeds , it is an ideal medium to support the unabated growth of the Internet of
                         Things
                         (IoT), 5G, cloud computing, autonomous driving, smart manufacturing, remote surgery and other
                         digital applications.</p>
-                    <div class="mb-3 "></div>
+                     <div class="my-4"> </div>
                 </div>
             </div>
 
@@ -141,29 +157,31 @@
 
             <div class="container-fluid">
 
-                <div class="content-box">
+                <div class="content-box mx-lg-3 mx-xxl-5">
 
                     <div class="row py-5 my-2 justify-content-center">
 
-                        <div class="col-md-4">
+                        <div class="col-lg-4">
                             <img src="../assets/young-woman-is-engaged-fitness-home@2x.jpg" alt="timeline-img"
-                                class="img-fluid">
-                            <h6> Residential </h6>
+                                class="img-fluid w-100">
+                            <h4 class="big-body"> Residential </h4>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-lg-4">
                             <img src="../assets/happy-smiling-asian-business-team-discussing-brainstorming-together-office@2x.jpg"
-                                alt="timeline-img" class="img-fluid">
-                            <h6> Non-residential </h6>
+                                alt="timeline-img" class="img-fluid w-100">
+                            <h4 class="big-body"> Non-residential </h4>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-lg-4">
                             <img src="../assets/attractive-asian-girl-holding-smartphone-reading-text-message-park@2x.jpg"
-                                alt="timeline-img" class="img-fluid">
-                            <h6> Non-Building Address Point (NBAP) </h6>
+                                alt="timeline-img" class="img-fluid w-100">
+                            <h4 class="big-body"> Non-Building Address Point (NBAP) </h4>
                         </div>
 
                     </div>
+
+                    <div class="my-lg-5 py-4"> </div>
 
                     <a class="btn btn-primary" href="#" role="button">Learn more About Us</a>
 
@@ -176,15 +194,15 @@
         </section>
 
         <!-- Coverage Check Type 1 -->
-        <section class="coverage-box py-5">
+        <section class="coverage-box">
 
             <div class="container">
-                <div class="row py-5 my-2">
+                <div class="row">
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
 
                         <h2> Coverage check </h2>
-                        <p>Our coverage check portal is a free tool which allows you to check if your address is
+                        <p class="small-body">Our coverage check portal is a free tool which allows you to check if your address is
                             connected
                             to the Next Generation Nationwide Broadband Network.</p>
 
@@ -192,9 +210,9 @@
 
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-lg-8 d-none d-lg-block ">
 
-                        <form class="d-none d-sm-block mt-5">
+                        <form class="mt-5">
 
                             <div class="row g-3 align-items-center">
                                 <div class="col-6">
@@ -232,10 +250,10 @@
         </section>
 
         <!-- Article Slider Type 1 -->
-        <section class="article-news-slider py-5">
+        <section class="article-news-slider">
 
             <div class="container">
-                <div class="py-5 my-2">
+                <div class="latest-articles">
 
                     <h2> Latest news </h2>
                     <div class="mb-4"></div>
@@ -299,7 +317,6 @@
 
                     </div>
 
-                    <div class="py-4"></div>
 
                     <a class="btn btn-primary" href="#" role="button">Read More</a>
 
@@ -308,13 +325,13 @@
         </section>
 
         <!-- Hero Type 1 - Investors -->
-        <section class="hero-investors py-5">
+        <section class="hero-investors">
 
             <div class="container">
-                <div class="content py-5">
+                <div class="content">
                     <h2>Investors</h2>
 
-                    <p class="mb-4">
+                    <p class="small-body mb-4">
                         NetLink NBN Trust (the Trust) was established in 2017 primarily for the purpose of owning all of
                         the units of NetLink Trust (NLT), through which NetLink NBN Trust owns the only nationwide fibre
                         network supporting Singapore’s Next Generation Nationwide Broadband Network (Next Gen NBN).
@@ -327,49 +344,60 @@
         </section>
 
         <!-- Client Logos -->
-        <section class="client-logos py-5">
+        <section class="client-logos">
 
             <div class="container">
-                <div class="content text-center py-5">
+                <div class="content text-center pb-5 col-lg-8 col-xxl-10 mx-auto">
                     <h2>Our Customers</h2>
-
-                    <p class="mb-4">
+                    <div class="my-4"> </div>
+                    <p class="small-body mb-4">
                         NetLink Trust remains committed to working with the Info-communications Media Development
                         Authority (IMDA) and telecommunications operators to strengthen our operations and network. As
                         the owner and operator of Singapore’s fibre network, NetLink Trust is committed to providing
                         open and equal access to all our customers.
                     </p>
 
-                    <ul class="client-logo-slider">
-                        <li><img src="../assets/Starhublogo@2x.png" alt="Starhub" class="img-fluid"></li>
-                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid"></li>
-                        <li><img src="../assets/singtel-logo@2x.png" alt="Sing Tel" class="img-fluid"></li>
-                        <li><img src="../assets/sptel-logo@2x.png" alt="SP Tel" class="img-fluid"></li>
-                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid"></li>
-                    </ul>
 
+
+                </div>
+
+
+                                    
+                <ul class="client-logo-slider mx-4">
+                        <li><img src="../assets/Starhublogo@2x.png" alt="Starhub" class="img-fluid w-100"></li>
+                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid w-100"></li>
+                        <li><img src="../assets/singtel-logo@2x.png" alt="Sing Tel" class="img-fluid w-100"></li>
+                        <li><img src="../assets/sptel-logo@2x.png" alt="SP Tel" class="img-fluid w-100"></li>
+                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid w-100"></li>
+                    
+                    </ul>
+                    
+                <div class="my-lg-5 py-4"> </div>
+
+                <div class="col-12 text-center">
                     <a class="btn btn-primary" href="#" role="button">Read More</a>
                 </div>
+
             </div>
 
         </section>
 
         <!-- Text Content with image col - Pages -->
-        <section class="text-content-image py-5">
+        <section class="text-content-image">
             <div class="container">
 
-                <div class="mt-3"> </div>
+                
                 <h2> Careers </h2>
 
                 <!-- flex-lg-row-reverse -->
                 <div class="row align-items-center g-5 py-3">
                     <div class="col-lg-6">
-                        <img src="../assets/young-asia-lady@2x.jpg" class="d-block mx-lg-auto img-fluid"
+                        <img src="../assets/young-asia-lady@2x.jpg" class="d-block mx-lg-auto img-fluid w-100"
                             alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="fw-bold lh-1 mb-3">We are looking for talents to join us!</h4>
-                        <p>If you are looking to explore new career opportunities or seeking for a temporary position,
+                    <div class="col-lg-4 mx-auto">
+                        <h3 class="mb-3">We are looking for talents to join us!</h3>
+                        <p class="small-body">If you are looking to explore new career opportunities or seeking for a temporary position,
                             please feel free to email your resume/CV directly to us at recruitment@netlinknbn.com</p>
 
                         <a class="btn btn-primary" href="#" role="button">See job opportunities</a>
