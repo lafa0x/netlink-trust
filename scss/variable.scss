@@ -38,30 +38,31 @@ h1, h2, h3 {
 }
 
 h1, .h1{
-    font-size: 60px;
-    line-height: 1.17;
-    font-weight: 800;
+    font-size: 35px;
+    line-height: 1.05;
+    font-weight: 300;
     color: text-color("dark");
 }
 
 h2, .h2 {
-    font-size: 40px;
-    line-height: 1.1;
+    font-size: 24px;
+    line-height: 1.25;
     letter-spacing: 0.27px;
-    color: text-color("dark");
+    color: text-color("dark");  
+    font-weight: 200;
 }
 
 h3, .h3 {
-    font-size: 32px;
-    line-height: 1.25;
-    font-weight: 700;
-    color: text-color("dark");
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: bold;
+    color: text-color("dark"); 
 }
 
 .big-body {
     font-size: 24px;
     font-family: $body-font;
-    line-height: 1.33;
+    line-height: 1.2;
 }
 
 .body-bold{
@@ -71,13 +72,14 @@ h3, .h3 {
 }
 
 .small-body-bold {
+    font-size: 16px;
     font-weight: bold;
     line-height: 1.27;
 }
 
 .small-body {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     line-height: 1.27;
 }
 
@@ -153,7 +155,7 @@ p {
 .media-notices {
     .media-notice {
         margin-bottom: 5rem;
-        margin-top: 2rem;
+        // margin-top: 2rem;
 
         >*:not(a:last-child) {
             margin-bottom: 1.5rem;
