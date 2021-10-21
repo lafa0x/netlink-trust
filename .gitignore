@@ -4,3 +4,5 @@ build
 .cache
 dist
 _package.json
+assets/old
+public
