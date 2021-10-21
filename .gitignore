@@ -1,10 +1,8 @@
 node_modules
 dist
-/build
 .parcel-cache
 assets
 public
 src
 .cache
-index.md
 _package.json
