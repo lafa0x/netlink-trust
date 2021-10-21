@@ -52,7 +52,7 @@
 
     <!-- Header -->
     <include src="src/components/header.html"></include>
-  
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" class="modal-dialog-centered" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog mx-auto">
@@ -75,58 +75,57 @@
         <!-- NetLinkTrust Slider -->
         <include src="src/components/slider.html"></include>
 
-        <!-- Timeline -->
-        <section class="timeline pt-5 text-center">
+        <!-- Timeline --> 
+        <section class="timeline text-center">
 
             <div class="container">
 
-                <div class="section-content col-lg-8 col-xxl-10 mx-auto py-5">
+                <div class="section-content col-lg-8 col-xxl-10 mx-auto text-dark">
                     <h2>WHO WE ARE</h2>
-                    <div class="mb-3 "></div>
-                    <p class="small-body-bold">NetLink Trust designs, builds, owns and operates the passive fibre network infrastructure of
+                    
+                    <p class="body-bold mb-4">NetLink Trust designs, builds, owns and operates the passive fibre network infrastructure of
                         Singapore’s Next Generation Nationwide Broadband Network (Next Gen NBN).  An initiative led by
                         the Singapore government, the Next Gen NBN aims to enhance the competitiveness of the economy
                         through nationwide ultra-high-speed broadband access.</p>
-                    <div class="mb-3 "></div>
+                    
                 </div>
 
             </div>
 
 
-            <img src="../assets/timeline-img@2x.png" alt="timeline-img" class="img-fluid w-100">
-
-            <div class="timeline-bar-box py-4">
+            <img src="../assets/timeline-banner.svg" alt="timeline-img" class="d-none d-lg-block img-fluid w-100">
+            <img src="../assets/timeline-mobile.svg" alt="timeline-img" class="d-block d-lg-none img-fluid w-100">
+            
+            <div class="timeline-bar-box">
 
                 <div class="container">
 
-                    <div class="row py-5 my-2 justify-content-center">
+                    <div class="row gx-5 my-2 justify-content-center text-dark">
 
                         <div class="col-6 col-lg-3">
-                            <h4 class="big-bold"> 01 </h4>
-                            <p>We connect consumers and businesses anywhere in Singapore to the nationwide fibre
+                            <h4 class="body-bold mb-3"> 01 </h4>
+                            <p class="small-body">We connect consumers and businesses anywhere in Singapore to the nationwide fibre
                                 broadband network</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h4 class="big-bold"> 02 </h4>
-                            <p>We build strong and trusted partnerships with our industry operators to deliver reliable
+                            <h4 class="body-bold mb-3"> 02 </h4>
+                            <p class="small-body">We build strong and trusted partnerships with our industry operators to deliver reliable
                                 fibre connectivity to their customers</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h4 class="big-bold"> 03 </h4>
-                            <p>We provide open and equal access to all industry operators</p>
+                            <h4 class="body-bold mb-3"> 03 </h4>
+                            <p class="small-body">We provide open and equal access to all industry operators</p>
                         </div>
 
                         <div class="col-6 col-lg-3">
-                            <h4 class="big-bold"> 04 </h4>
-                            <p>We are committed to helping Singapore achieve its vision as a Smart Nation</p>
+                            <h4 class="body-bold mb-3"> 04 </h4>
+                            <p class="small-body">We are committed to helping Singapore achieve its vision as a Smart Nation</p>
                         </div>
                     </div>
 
                     <a class="btn btn-primary" href="#" role="button"> <i class="bi bi-play-circle"></i> Play Video</a>
-
-                    <div class="py-5"></div>
 
                 </div>
 
@@ -140,16 +139,16 @@
 
             <div class="container">
 
-                <div class="section-content col-lg-8 col-xxl-10 mx-auto">
+                <div class="section-content col-lg-8 col-xxl-10 mx-auto text-dark">
                     <h2>We connect people, business and communities across Singapore to the world.</h2>
-                    <div class="my-4"> </div>
-                    <p class="small-body">The future of fibre is unlimited.  With its capability to transmit close to infinite amount of
+                
+                    <p class="small-body">The future of fibre is unlimited.&nbsp; With its capability to transmit close to infinite amount of
                         data
                         at scalable speeds , it is an ideal medium to support the unabated growth of the Internet of
                         Things
                         (IoT), 5G, cloud computing, autonomous driving, smart manufacturing, remote surgery and other
                         digital applications.</p>
-                     <div class="my-4"> </div>
+                     
                 </div>
             </div>
 
@@ -159,7 +158,7 @@
 
                 <div class="content-box mx-lg-3 mx-xxl-5">
 
-                    <div class="row py-5 my-2 justify-content-center">
+                    <div class="row justify-content-center">
 
                         <div class="col-lg-4">
                             <img src="../assets/young-woman-is-engaged-fitness-home@2x.jpg" alt="timeline-img"
@@ -181,8 +180,6 @@
 
                     </div>
 
-                    <div class="my-lg-5 py-4"> </div>
-
                     <a class="btn btn-primary" href="#" role="button">Learn more About Us</a>
 
                 </div>
@@ -197,7 +194,7 @@
         <section class="coverage-box">
 
             <div class="container">
-                <div class="row">
+                <div class="row gx-5">
 
                     <div class="col-lg-4">
 
@@ -214,31 +211,30 @@
 
                         <form class="mt-5">
 
-                            <div class="row g-3 align-items-center">
+                            <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
-                                    <select class="form-control form-control-lg" aria-label="Default select example">
-                                        <option selected>*Select premises type</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                        <option selected>Select Premises Type *</option>
+                                        <option value="r">Residential</option>
+                                        <option value="n">Non-Residential</option>
                                     </select>
                                 </div>
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="*Enter postal code" aria-label=".form-control-lg example">
+                                        placeholder="Enter Postal Code *" aria-label=".form-control-lg example">
                                 </div>
                             </div>
 
                             <br> <br>
 
-                            <div class="row g-3 align-items-center">
+                            <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="*Enter house/block no." aria-label=".form-control-lg example">
+                                        placeholder="Enter House/Block No. *" aria-label=".form-control-lg example">
                                 </div>
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="*Enter unit no." aria-label=".form-control-lg example">
+                                        placeholder="Enter Unit No. *" aria-label=".form-control-lg example">
                                 </div>
                             </div>
 
@@ -255,8 +251,8 @@
             <div class="container">
                 <div class="latest-articles">
 
-                    <h2> Latest news </h2>
-                    <div class="mb-4"></div>
+                    <h2 class="mb-5"> Latest news </h2>
+                    
 
                     <div class="article-slider">
 
@@ -318,7 +314,7 @@
                     </div>
 
 
-                    <a class="btn btn-primary" href="#" role="button">Read More</a>
+                    <div class="pt-5"><a class="btn btn-primary" href="#" role="button">Read More</a></div>
 
                 </div>
             </div>
@@ -347,10 +343,10 @@
         <section class="client-logos">
 
             <div class="container">
-                <div class="content text-center pb-5 col-lg-8 col-xxl-10 mx-auto">
-                    <h2>Our Customers</h2>
-                    <div class="my-4"> </div>
-                    <p class="small-body mb-4">
+                <div class="content text-center pb-5 col-lg-8 col-xxl-10 mx-auto text-dark">
+                    <h2 class="mb-4">Our Customers</h2>
+                    
+                    <p class="small-body mb-4 pt-3">
                         NetLink Trust remains committed to working with the Info-communications Media Development
                         Authority (IMDA) and telecommunications operators to strengthen our operations and network. As
                         the owner and operator of Singapore’s fibre network, NetLink Trust is committed to providing
@@ -364,17 +360,17 @@
 
                                     
                 <ul class="client-logo-slider mx-4">
-                        <li><img src="../assets/Starhublogo@2x.png" alt="Starhub" class="img-fluid w-100"></li>
-                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid w-100"></li>
-                        <li><img src="../assets/singtel-logo@2x.png" alt="Sing Tel" class="img-fluid w-100"></li>
-                        <li><img src="../assets/sptel-logo@2x.png" alt="SP Tel" class="img-fluid w-100"></li>
-                        <li><img src="../assets/nc-logo@2x.png" alt="NC" class="img-fluid w-100"></li>
+                        <li><img src="../assets/Starhublogo.svg" alt="Starhub" class="img-fluid w-100"></li>
+                        <li><img src="../assets/nc-logo.svg" alt="NC" class="img-fluid w-100"></li>
+                        <li><img src="../assets/singtel-logo.svg" alt="Sing Tel" class="img-fluid w-100"></li>
+                        <li><img src="../assets/sptel-logo.svg" alt="SP Tel" class="img-fluid w-100"></li>
+                        <li><img src="../assets/nc-logo.svg" alt="NC" class="img-fluid w-100"></li>
                     
                     </ul>
                     
-                <div class="my-lg-5 py-4"> </div>
+                <div class="d-none d-lg-block my-lg-5 py-4"> </div>
 
-                <div class="col-12 text-center">
+                <div class="d-none d-lg-block col-12 text-center">
                     <a class="btn btn-primary" href="#" role="button">Read More</a>
                 </div>
 
@@ -387,18 +383,17 @@
             <div class="container">
 
                 
-                <h2> Careers </h2>
+                <h2 class="mb-4"> Careers </h2>
 
                 <!-- flex-lg-row-reverse -->
                 <div class="row align-items-center g-5 py-3">
                     <div class="col-lg-6">
-                        <img src="../assets/young-asia-lady@2x.jpg" class="d-block mx-lg-auto img-fluid w-100"
-                            alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                        <img src="../assets/young-asia-lady@2x.jpg" class="d-block mx-lg-auto img-fluid w-100" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                     </div>
-                    <div class="col-lg-4 mx-auto">
-                        <h3 class="mb-3">We are looking for talents to join us!</h3>
+                    <div class="col-lg-4 col-xxl-3 mx-sm-auto mx-xxl-0">
+                        <h3>We are looking for talents to join us!</h3>
                         <p class="small-body">If you are looking to explore new career opportunities or seeking for a temporary position,
-                            please feel free to email your resume/CV directly to us at recruitment@netlinknbn.com</p>
+                            please feel free to email your resume/CV directly to us at&nbsp;recruitment@netlinknbn.com</p>
 
                         <a class="btn btn-primary" href="#" role="button">See job opportunities</a>
 
@@ -414,20 +409,16 @@
     <!-- Footer Section -->
     <include src="src/components/footer.html"></include>
 
+    <link href="./fixes.css" rel="stylesheet">
+    <script src="./index.js" type="module"></script>
+    <script src="./mlpushmenu.js"></script>
 
-<script src="./index.js"></script>
-<script src="./mlpushmenu.js"></script>
-
-<script src="./parcel.js"></script>
-
-
-
-<script>
-    
-    new mlPushMenu( document.getElementById( 'mpMenu' ), document.getElementById( 'trigger' ), {
-        type : 'cover'
-    } );
-</script>
+    <script>
+        
+        new mlPushMenu( document.getElementById( 'mpMenu' ), document.getElementById( 'trigger' ), {
+            type : 'cover'
+        } );
+    </script>
 
 </body>
 

@@ -140,11 +140,11 @@ $(function () {
                 }
             },
             {
-                rows: 2,
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
+                    // rows: 2,
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 1
                 }
             },
             {
