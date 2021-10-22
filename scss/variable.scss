@@ -17,6 +17,23 @@ $text-colors: (
   "gray": $gray,
 );
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1506px
+);
+
 @function text-color($key: "light") {
     @return map-get($text-colors, $key);
 }

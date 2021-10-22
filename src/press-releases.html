@@ -54,8 +54,8 @@
 
         <div class="media-notices">
             <div class="container">
-                <div class="row media-lists col-10 col-md-12 mx-auto">
-                    <div class="col-md-4">
+                <div class="row gx-5 media-lists col-11 col-lg-12 mx-auto">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">30 jul 2021</div>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">30 jul 2021</div>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">1 jul 2021</div>
@@ -213,7 +213,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -239,7 +239,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -266,7 +266,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">30 jul 2021</div>
@@ -292,7 +292,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">30 jul 2021</div>
@@ -319,7 +319,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">4 aug 2021</div>
@@ -345,7 +345,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="media-notice">
 
                             <div class="date mb-3">1 jul 2021</div>
@@ -383,7 +383,26 @@
     <!-- Footer Section -->
     <include src="src/components/footer.html"></include>
 
+    <link href="./fixes.css" rel="stylesheet">
     <script src="./index.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.css" integrity="sha512-gIn3+aW4xrkqoIvXsJ7F3woKfU+KTvEzXm0IXKmWqXZ8oyD9TfzFEdGDMF0egqto86E91yZVPzoa82a/dgSMig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js" integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js" integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+    <script>
+        
+        $(function () {
+
+            new Mmenu("#navbarSupportedContent", {
+                
+                wrappers: ['bootstrap']
+            }, {});
+
+        });
+
+    </script>
 </body>
 </html>

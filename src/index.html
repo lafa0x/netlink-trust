@@ -33,15 +33,14 @@
 
     <!-- <script src="./modernizr.custom.js"></script> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-
+    
     <style>
 
         /* fixing gaps */
         .text-content-3-cols {
             position: relative;
-            top: -40px;
+            top: -55px;
             background: #fff;
         }
     </style>
@@ -410,14 +409,25 @@
     <include src="src/components/footer.html"></include>
 
     <link href="./fixes.css" rel="stylesheet">
-    <script src="./index.js" type="module"></script>
-    <script src="./mlpushmenu.js"></script>
+    <script src="./index.js" type="module"></script> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.css" integrity="sha512-gIn3+aW4xrkqoIvXsJ7F3woKfU+KTvEzXm0IXKmWqXZ8oyD9TfzFEdGDMF0egqto86E91yZVPzoa82a/dgSMig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js" integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js" integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 
     <script>
         
-        new mlPushMenu( document.getElementById( 'mpMenu' ), document.getElementById( 'trigger' ), {
-            type : 'cover'
-        } );
+        $(function () {
+
+            new Mmenu("#navbarSupportedContent", {
+                
+                wrappers: ['bootstrap']
+            }, {});
+
+        });
+
     </script>
 
 </body>

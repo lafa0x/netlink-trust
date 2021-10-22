@@ -7,6 +7,7 @@
 // @import "../node_modules/bootstrap/scss/type";
 // etc
 
+
 $primary: #1697D9;
 $secondary: #032853;
 
@@ -22,6 +23,8 @@ $secondary: #032853;
 }
 
 
+$body-bg: #fff;
+$body-color: #000;
 
 
 // Default variable overrides
@@ -176,12 +179,25 @@ p {
     font-size: 16px;
     line-height: 24px;
     color: #707070;
+
+    @include media-breakpoint-up(lg) {
+        padding: 22px 32px;
+    }
 }
 
 
+.modal-content {
+    background: transparent;
+    border: none;
+}
 
-$body-bg: #fff;
-$body-color: #000;
+.modal-header {
+    border: none;
+}
+
+.modal-header .btn-close {
+    filter: invert(97%) sepia(97%) saturate(0%) hue-rotate(296deg) brightness(107%) contrast(101%);
+}
 
 // Typography
 $font-size-base: 16px; // this changes the font-size throughout bootstrap
@@ -227,7 +243,29 @@ $btn-color: #fff;
 
 .btn-primary {
 
+
     @include button-variant($btn-bg, $btn-border, $btn-color, $btn-bg-hover);
+
+
+    i {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 10px;
+
+
+        @include media-breakpoint-up(sm) {
+            font-size: 33px;
+            margin-right: 19.8px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 23px;
+            margin-right: 11px;
+        
+        }   
+
+    }
+    
 
 }
 
@@ -286,9 +324,87 @@ html, body {
 
 }
 
+//dropdown
+.dropdown {
+    position: static;
+}
+
+//MMmenu UI
+.mm-menu {
+    z-index: 9 !important;
+    width: 100% !important;
+    margin-top: 75px !important;
+    background: #fff !important;
+
+    .mm-navbar, .mm-panels, .mm-panel {
+        background: #fff;
+        border: none;    
+    }
+
+    // .mm-panel_opened {
+
+    //     .mm-navbar.mm-navbar_sticky {
+    //         display: none;
+    //     }
+
+    // }
+
+    // .mm-panel_opened-parent {
+    //     .mm-navbar.mm-navbar_sticky {
+    //         display: block;
+    //     }
+    // }
+
+    .mm-listview {
+
+        &:after { display: none; }
+
+        li {
+            padding: 5px 0;
+
+            @include media-breakpoint-up(sm) {
+                padding: 56px 0;
+            }
+
+            &:after { display: none; }
+
+            .mm-btn_next:after {
+                border-color: #000;
+            }
+
+            .mm-listitem__btn {
+                background: transparent;
+                border: none !important;
+            }
+
+            a {
+                    
+                background: transparent !important;
+                border: none;
+                box-shadow: none;
+                color: #000 !important;
+                font-weight: bold;
+                font-family: "Arial";
+                letter-spacing: 0.15em;
+                font-size: 16px;
+
+                @include media-breakpoint-up(sm) {
+                    font-size: 22px;
+                }
+
+            }
+
+
+        }
+
+    }
+
+
+
+}
+
 //header
 header {
-
 
     //header nav menu wrapper
     .navbar {
@@ -300,18 +416,18 @@ header {
         }
 
         @include media-breakpoint-up(lg) {
-            padding: 20px 5px;
+            padding: 15px 5px;
         }
 
-        @include media-breakpoint-up(lg) {
-            padding: 20px 25px;
+        @include media-breakpoint-up(xl) {
+            padding: 22px 25px;
         }
 
 
         /* hide close when bento menu shown */
-        .navbar-toggler.collapsed .close-icon {
-            display: none;
-        }
+        // .navbar-toggler.collapsed .close-icon {
+        //     display: none;
+        // }
 
         // Nav Toggle - Bento Menu
         .navbar-toggler {
@@ -351,9 +467,9 @@ header {
 
         }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-custom-icon {
-            display: none;
-        }
+        // .navbar-toggler:not(.collapsed) .navbar-toggler-custom-icon {
+        //     display: none;
+        // }
 
         .menu__item--bento .box {
             width: 5px;
@@ -367,21 +483,9 @@ header {
         .navbar-collapse {
 
             @include media-breakpoint-down(sm) {
-                padding: 45px 0;
-                height: 100vh;
+                display: none !important;
             }
 
-            @include media-breakpoint-up(md) {
-
-                div#mpMenu {
-                    flex: 1;
-
-                    ul.navbar-nav {
-                        justify-content: center;
-                    }
-
-                }
-            }
 
         }
 
@@ -413,6 +517,10 @@ header {
                 width: 100%;
             }
 
+            .dropdown-toggle::after {
+                display: none;
+            }
+
             li {
 
                 @include media-breakpoint-down(sm) {
@@ -422,6 +530,10 @@ header {
                 a {
 
                     text-transform: uppercase;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
 
                     @include media-breakpoint-up(lg) {
                         font-size: 13px;
@@ -438,6 +550,12 @@ header {
 
                     }
 
+                    span {
+                        color: #000;
+                        margin-right: 7px;
+                    }
+
+                    i { color: #000;  }
 
                     .arrow-left-icon {
                         float: left;
@@ -474,8 +592,13 @@ header {
                 }
 
                 .dropdown-menu {
-                    background-color: transparent;
+                    background-color: rgba(255,255,255,0.75);    
+                    margin-top: 0;                ;
                     border: none;
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 25px 0 !important;
+                    }
 
                     .submenu-title {
 
@@ -495,13 +618,37 @@ header {
                         margin: 0;
                         list-style: none;
 
-                        li a {
+                        li {
+                            margin-left: 32px;
+                            margin-right: 32px;
 
-                            font-size: 22px;
-                            color: #000 !important;
-                            font-weight: bold;
-                            font-family: "Arial";
-                            letter-spacing: 0.15em;                     
+                            a {
+
+                                font-size: 22px;
+                                color: #000 !important;
+                                font-weight: bold;
+                                font-family: "Arial";
+                                letter-spacing: 0.15em; 
+
+                                span {
+                                    margin-right: 6px;
+                                }
+
+                                i {
+                                    color: #032853 !important;
+                                }
+                                
+                                @include media-breakpoint-up(lg) {
+                                    font-size: 16px;
+                                    text-transform: capitalize;
+                                    letter-spacing: 0;
+                                    color: #032853 !important;
+
+                                    &:hover {
+                                        color: #1697D9 !important;  
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -516,11 +663,20 @@ header {
 
         #mdb-5-search-container {
 
+            .dropdown-toggle::after{ display: none;  }
+
             .input-group-text {
                 background-color: transparent;
                 border: none;
                 cursor: pointer;
             }
+
+            .dropdown-menu {
+                background-color: rgba(255,255,255,0.75);  
+                margin: 0;
+                border: none;
+            }
+
 
         }
 
@@ -687,7 +843,7 @@ section {
 
     .timeline-bar-box {
         position: relative;
-        top: -40px;
+        top: -55px;
         padding-bottom: 100px;
 
         @include media-breakpoint-up(sm) {
@@ -696,7 +852,7 @@ section {
 
 
         @include media-breakpoint-up(lg) {
-            padding-bottom: 100px;
+            padding-bottom: 115px;
         }
 
         .row {
@@ -1207,6 +1363,18 @@ section {
 
     margin: 0 -10px !important;
 
+    .slick-prev {
+        left: 35px;
+    }
+
+    .slick-next {
+        right: 35px;
+    }
+
+    .slick-prev, .slick-next {
+        z-index: 9;
+    }
+
     @include media-breakpoint-down(lg) {
         height: 100vh;
     }
@@ -1301,23 +1469,26 @@ section {
                 bottom: 50px;
                 left: 40px;
                 text-align: left;            
-            }
             
-            li {
-                margin-right: 10px;
+                li {
+                    margin-right: 10px;
 
-                &.slick-active button:before {
-                    background-color: #032853;
-                    opacity: 1;
-                }
-                button:before {
-                    content: "";
-                    background-color: #707070;
-                    opacity: 50%;
-                    border-radius: 5px;
-                              
+                    &.slick-active button:before {
+                        background-color: #032853;
+                        opacity: 1;
+                    }
+
+
+                    button:before {
+                        content: "";
+                        background-color: #707070;
+                        opacity: 50%;
+                        border-radius: 5px;
+                                
+                    }
                 }
             }
+
 
         }
 
@@ -1343,8 +1514,12 @@ section {
                         padding: 15px 40px 40px 0px !important
                     }
 
+                    @include media-breakpoint-up(xl) {
+                        padding: 15px 140px 60px 0px !important;                    
+                    }
+
                     @include media-breakpoint-up(xxl) {
-                        padding: 15px 170px 30px 0px !important;                    
+                        padding: 15px 260px 75px 0px !important
                     }
                     
                     background: transparent !important;

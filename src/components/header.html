@@ -1,7 +1,3 @@
-<!--
-        TODO: fixing Multiple Level UI 
-    -->
-
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -13,12 +9,12 @@
       </a>
 
       <!-- Navbar - Bento Menu -->
-      <button id="bentoToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
 
         <!-- <span class="navbar-toggler-icon"></span> -->
-        <div id="navbarBento" class="navbar-toggler-custom-icon">
+        <div class="navbar-toggler-custom-icon">
           <div class="menu__item--bento">
             <div class="box"></div>
             <div class="box"></div>
@@ -32,192 +28,104 @@
           </div>
         </div>
 
-        <div class="close-icon">
+        <!-- <div class="close-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="36.071" height="36.071" viewBox="0 0 36.071 36.071">
             <line id="Line_18926" data-name="Line 18926" y1="29" x2="29" transform="translate(3.536 3.536)" fill="none"
               stroke="#000" stroke-linecap="round" stroke-width="5" />
             <line id="Line_18927" data-name="Line 18927" x1="29" y1="29" transform="translate(3.536 3.536)" fill="none"
               stroke="#000" stroke-linecap="round" stroke-width="5" />
           </svg>
-        </div>
+        </div> -->
 
       </button>
 
       <!-- Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <div id="mpMenu" class="mp-menu">
+        <!-- <div id="mpMenu" class="mp-menu"> -->
 
           <ul class="navbar-nav m-sm-auto mb-2 mb-lg-0 mp-level" data-level="1">
             <!-- <li class="nav-item">
                   <a class="nav-link" href="demo.html"><span>Demo</span></a>
                   </li> -->
-            <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="about.html"><span>About Us</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>About Us</span></a>
               <!-- <a class="nav-link active" aria-current="page" href="#">About Us</a> -->
-            </li>
-            <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="#"><span>Fibre broadband</span></a>
-            </li>
-            <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="#"><span>Media</span></a>
-            </li>
-            <li class="nav-item dropdown d-md-none">
-              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <span>About Us</span>
-                <span class="arrow-right-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15.093" height="30" viewBox="0 0 15.093 30">
-                    <path id="arrow-ios-forward-fill"
-                      d="M15.639,37.452a2.138,2.138,0,0,1-1.646-3.507l9.579-11.46L14.335,11A2.186,2.186,0,1,1,17.777,8.31L28.1,21.138a2.138,2.138,0,0,1,0,2.715L17.414,36.683a2.138,2.138,0,0,1-1.775.77Z"
-                      transform="translate(-13.497 -7.456)" />
-                  </svg>
-                </span>
-              </a>
 
-              <!-- Off-screen navigation with multiple levels - Multi-Level Push Menu -->
-              <div class="mp-level dropdown-menu" aria-labelledby="navbarDropdown" data-level="2">
-                <div class="submenu-title p-3">
-                  <span class="arrow-left-icon mp-back">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12.578" height="25" viewBox="0 0 12.578 25">
-                      <path id="arrow-ios-forward-fill"
-                        d="M24.29,32.453a1.782,1.782,0,0,0,1.372-2.922l-7.982-9.55,7.7-9.568a1.821,1.821,0,1,0-2.869-2.245L13.9,18.858a1.782,1.782,0,0,0,0,2.263l8.909,10.691a1.782,1.782,0,0,0,1.479.641Z"
-                        transform="translate(-13.497 -7.456)" fill="#fff" />
-                    </svg>
-                  </span>
-                  <span class="mx-3">About Us</span>
-                </div>
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">NetLinkTrust</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Management</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Corporate Governance
-                      <i class="text-dark bi bi-box-arrow-up-right"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">HSSE Policy</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Careers</a>
-                  </li>
-                </ul>
+              <!-- dropdown menu -->
+              <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                <ul class="d-flex justify-content-center col-md-10 mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/about.html">NetLinkTrust</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Management</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Corporate Governance
+                    <i class="text-dark bi bi-box-arrow-up-right"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">HSSE Policy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Careers</a>
+                </li>       
+              </ul>
               </div>
 
             </li>
-            <li class="nav-item dropdown d-md-none">
-              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <span>Fibre broadband</span>
-                <span class="arrow-right-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15.093" height="30" viewBox="0 0 15.093 30">
-                    <path id="arrow-ios-forward-fill"
-                      d="M15.639,37.452a2.138,2.138,0,0,1-1.646-3.507l9.579-11.46L14.335,11A2.186,2.186,0,1,1,17.777,8.31L28.1,21.138a2.138,2.138,0,0,1,0,2.715L17.414,36.683a2.138,2.138,0,0,1-1.775.77Z"
-                      transform="translate(-13.497 -7.456)" />
-                  </svg>
-                </span>
-              </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Fibre broadband</span></a>
 
-              <!-- Off-screen navigation with multiple levels - Multi-Level Push Menu -->
-              <div class="mp-level dropdown-menu" aria-labelledby="navbarDropdown" data-level="2">
-                <div class="submenu-title p-3">
-                  <span class="arrow-left-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12.578" height="25" viewBox="0 0 12.578 25">
-                      <path id="arrow-ios-forward-fill"
-                        d="M24.29,32.453a1.782,1.782,0,0,0,1.372-2.922l-7.982-9.55,7.7-9.568a1.821,1.821,0,1,0-2.869-2.245L13.9,18.858a1.782,1.782,0,0,0,0,2.263l8.909,10.691a1.782,1.782,0,0,0,1.479.641Z"
-                        transform="translate(-13.497 -7.456)" fill="#fff" />
-                    </svg>
-                  </span>
-                  <span class="mx-3">Fibre broadband</span>
-                </div>
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Enterprise</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Telcos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Earthworks Contractors</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Building Developers</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">For Building Management</a>
-                  </li>
-                </ul>
+              <!-- dropdown menu -->
+              <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                <ul class="d-flex justify-content-center col-md-10 mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Enterprise</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Telcos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Earthworks Contractors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Building Developers</a>
+                </li>       
+                <li class="nav-item">
+                  <a class="nav-link" href="#">For Building Management</a>
+                </li>  
+              </ul>
               </div>
 
             </li>
-            <li class="nav-item dropdown d-md-none">
-              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <span>Media</span>
-                <span class="arrow-right-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15.093" height="30" viewBox="0 0 15.093 30">
-                    <path id="arrow-ios-forward-fill"
-                      d="M15.639,37.452a2.138,2.138,0,0,1-1.646-3.507l9.579-11.46L14.335,11A2.186,2.186,0,1,1,17.777,8.31L28.1,21.138a2.138,2.138,0,0,1,0,2.715L17.414,36.683a2.138,2.138,0,0,1-1.775.77Z"
-                      transform="translate(-13.497 -7.456)" />
-                  </svg>
-                </span>
-              </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Media</span></a>
 
-              <div class="dropdown-menu d-none d-md-flex" aria-labelledby="navbarDropdown">
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Press Releases</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Media Statements</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="media-notices.html">Notices
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Media Library</a>
-                  </li>
-                </ul>
-              </div>
-
-
-              <!-- Off-screen navigation with multiple levels - Multi-Level Push Menu -->
-              <div class="mp-level dropdown-menu" aria-labelledby="navbarDropdown" data-level="2">
-                <div class="submenu-title p-3">
-                  <span class="arrow-left-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12.578" height="25" viewBox="0 0 12.578 25">
-                      <path id="arrow-ios-forward-fill"
-                        d="M24.29,32.453a1.782,1.782,0,0,0,1.372-2.922l-7.982-9.55,7.7-9.568a1.821,1.821,0,1,0-2.869-2.245L13.9,18.858a1.782,1.782,0,0,0,0,2.263l8.909,10.691a1.782,1.782,0,0,0,1.479.641Z"
-                        transform="translate(-13.497 -7.456)" fill="#fff" />
-                    </svg>
-                  </span>
-                  <span class="mx-3">Media</span>
-                </div>
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Press Releases</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Media Statements</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Notices
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Media Library</a>
-                  </li>
-                </ul>
-              </div>
+              <!-- dropdown menu -->
+              <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                <ul class="d-flex justify-content-center col-md-10 mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Press Releases</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Media Statements</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Notices
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Media Library</a>
+                </li> 
+              </ul> 
+              </div>    
 
             </li>
             <li class="nav-item">
@@ -236,7 +144,7 @@
             </li>
           </ul>
 
-        </div>
+        <!-- </div> -->
 
         <ul class="list-unstyled d-flex d-sm-none">
           <li>
@@ -253,20 +161,22 @@
 
         <!-- Search Icon/Bar -->
         <div id="mdb-5-search-container">
-          <form class="d-none d-md-flex input-group w-auto my-auto">
-            <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded d-none"
-              placeholder="Search (ctrl + &quot;/&quot; to focus)">
-            <span class="input-group-text">
+
+          <div class="nav-item dropdown">
+            <span class="input-group-text dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i data-feather="search"></i>
             </span>
-          </form>
 
-          <!--               
-                  <div id="mdb-5-search-dropdown" class="rounded shadow-5 d-none">
-                  <ul id="mdb-5-search-list" class="list-unstyled mb-0 perfect-scrollbar ps"><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
-                  <hr class="my-0">
-                  <p class="small text-end pe-3 mt-3">search results: <strong id="mdb-5-search-count"></strong></p>
-                  </div> -->
+            <!-- dropdown menu -->
+            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+              <form class=" col-8 d-md-flex mx-auto">
+                <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded"
+                  placeholder="Search (ctrl + &quot;/&quot; to focus)">
+              </form>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
@@ -278,5 +188,3 @@
   <a href="#" id="trigger" class="menu-trigger d-none">Open/Close Menu</a>
 
 </header>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.js" integrity="sha512-/eAYGmMVRmV/y/BIaoner9FeGwgoyLP2HiNGUpGfJrVBbDSLH/LH0uRQUHzsQFuPz4LGX8HErB1j+bXIqsjEgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
