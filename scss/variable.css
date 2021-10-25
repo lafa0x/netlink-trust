@@ -114,16 +114,6 @@ p {
 }
 
 /* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
-.page-banner {
-  height: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .media-notices .media-notice {
   margin-bottom: 5rem;
 }

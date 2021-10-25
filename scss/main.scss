@@ -1,4 +1,22 @@
 // Main.scss
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1506px
+);
+
 // Option A: Include all of Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -29,6 +47,7 @@ $body-color: #000;
 
 // Default variable overrides
 h1, .h1{
+    margin-bottom: 0;
 
     @include media-breakpoint-up (sm) {
         font-size: 70px;
@@ -181,23 +200,42 @@ p {
     color: #707070;
 
     @include media-breakpoint-up(lg) {
-        padding: 22px 32px;
+        padding: 17px 32px;
     }
 }
-
 
 .modal-content {
     background: transparent;
     border: none;
+
+    iframe {
+
+        @include media-breakpoint-down(lg) {
+            height: 100%;
+        }
+
+    }
 }
 
 .modal-header {
+    justify-content: right;
     border: none;
+
+    @include media-breakpoint-up(lg) {
+        top: 10px;
+        left: 50px;
+        position: relative;
+        border: none;
+    }
+
+
 }
 
 .modal-header .btn-close {
+    background-size: contain;
     filter: invert(97%) sepia(97%) saturate(0%) hue-rotate(296deg) brightness(107%) contrast(101%);
 }
+
 
 // Typography
 $font-size-base: 16px; // this changes the font-size throughout bootstrap
@@ -217,24 +255,31 @@ $btn-color: #fff;
     background-color: $bg;
     color: $color;
     border: none;
-
-    @include media-breakpoint-down(md) {
-        width: 100%;
-    }
-
-    @include media-breakpoint-up(md) {
-
-        width: 365px;
-
-    }
-
-
     padding: 20px 0;
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 0.15em;
     line-height: 20px;
     text-transform: uppercase;
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+    }
+
+    @include media-breakpoint-between(sm, lg) { 
+        padding: 32.1px 0;
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        width: 365px;
+
+    }
+
+
+
 
     &:hover {
         background-color: $bg-hover;
@@ -296,30 +341,31 @@ $btn-color: #fff;
 
 html, body {
     overflow-x: hidden;
+    background: white;
 }
 
 .modal-dialog {
 
-    max-width: 300px;
+    min-width: 300px;
 
     @include media-breakpoint-up(sm) {
-        max-width: 400px;
+        min-width: 400px;
     }
 
     @include media-breakpoint-up(md) {
-        max-width: 600px;
+        min-width: 600px;
     }
 
     @include media-breakpoint-up(lg) {
-        max-width: 800px;
+        min-width: 800px;
     }
 
     @include media-breakpoint-up(xl) {
-        max-width: 1025px;
+        min-width: 1025px;
     }
 
     @include media-breakpoint-up(xl) {
-        max-width: 1200px;
+        min-width: 1200px;
     }  
 
 }
@@ -335,6 +381,10 @@ html, body {
     width: 100% !important;
     margin-top: 75px !important;
     background: #fff !important;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 130px !important;
+    }
 
     .mm-navbar, .mm-panels, .mm-panel {
         background: #fff;
@@ -399,20 +449,20 @@ html, body {
 
     }
 
-
-
 }
+
+
 
 //header
 header {
 
     //header nav menu wrapper
     .navbar {
-
+        background: #fff !important;
         padding: 20px 15px;
 
         @include media-breakpoint-up(sm) {
-            padding: 20px 50px;
+            padding: 47.5px 50px;
         }
 
         @include media-breakpoint-up(lg) {
@@ -422,12 +472,6 @@ header {
         @include media-breakpoint-up(xl) {
             padding: 22px 25px;
         }
-
-
-        /* hide close when bento menu shown */
-        // .navbar-toggler.collapsed .close-icon {
-        //     display: none;
-        // }
 
         // Nav Toggle - Bento Menu
         .navbar-toggler {
@@ -467,8 +511,16 @@ header {
 
         }
 
-        // .navbar-toggler:not(.collapsed) .navbar-toggler-custom-icon {
+                
+        /* hide close when bento menu shown */
+        // .navbar-toggler.collapsed .close-icon {
         //     display: none;
+        // }
+        // .navbar-toggler .navbar-toggler-custom-icon 
+        // .navbar-toggler:not(.collapsed) .close-icon { display: block;}
+
+        // .navbar-toggler:not(.collapsed) .navbar-toggler-custom-icon {
+        //     display: block;
         // }
 
         .menu__item--bento .box {
@@ -482,7 +534,7 @@ header {
 
         .navbar-collapse {
 
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(lg) {
                 display: none !important;
             }
 
@@ -491,7 +543,7 @@ header {
 
         .navbar-collapse.show {
 
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(lg) {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -513,7 +565,7 @@ header {
 
         .navbar-nav {
 
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(lg) {
                 width: 100%;
             }
 
@@ -523,7 +575,7 @@ header {
 
             li {
 
-                @include media-breakpoint-down(sm) {
+                @include media-breakpoint-down(lg) {
                     padding: 10px 0;
                 }
 
@@ -544,7 +596,7 @@ header {
                         font-size: 14px;
                     }
 
-                    @include media-breakpoint-down(sm) {
+                    @include media-breakpoint-down(lg) {
 
                         margin: 0;
 
@@ -577,9 +629,7 @@ header {
                     }
                 }
 
-
-
-                @include media-breakpoint-down(sm) {
+                @include media-breakpoint-down(lg) {
 
                     span {
                         font-size: 22px;
@@ -797,6 +847,11 @@ footer {
 
     p {
         color: #fff;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 5px !important;
+        }
+
     }
 
 }
@@ -842,17 +897,29 @@ section {
 
 
     .timeline-bar-box {
-        position: relative;
-        top: -55px;
+
         padding-bottom: 100px;
 
         @include media-breakpoint-up(sm) {
             padding-bottom: 200px;
         }
 
-
         @include media-breakpoint-up(lg) {
-            padding-bottom: 115px;
+            position: relative;
+            top: -55px;
+            padding-bottom: 139px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(rgba(3, 40, 83, 0.58) 0%, #032853 100%);
+            opacity: 0.15;
+            z-index: -1;
         }
 
         .row {
@@ -871,46 +938,155 @@ section {
             }
 
         }
+
+        h4 {
+
+            margin-bottom: 9px;
+
+            @include media-breakpoint-up(lg){
+                margin-bottom: 30px;
+            }
+
+        }
+
+
     }
 
-    .timeline-bar-box:after {
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//timeline type 2 - Vision & Mission 
+.timeline-vision-mission {
+    padding-top: 60px;
+    padding-bottom: 0;
+    background-color:rgba(3, 40, 83, 0.05);
+
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 120px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 150px;
+    }
+
+    .section-content {
+
+        .content p {
+            margin-bottom: 100px;
+        }
+
+        .content + h4 {
+            margin-bottom: 50px !important;
+        }
+
+        @include media-breakpoint-up(lg) {
+            background-image: url("../assets/vision-mission-banner@2x.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-y: 8rem;
+            padding-bottom: 24rem !important;    
+            background-position: center bottom;    
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding-bottom: 38rem!important;
+        }
+
+
+    }
+
+    >img + .container-fluid {
+        position: relative;
+    }
+    
+    
+    >img + .container-fluid:before {
         content: "";
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
+        display: block;
         background: linear-gradient(rgba(3, 40, 83, 0.58) 0%, #032853 100%);
-        opacity: 0.15;
-        z-index: -1;
-        h6,
+        opacity: .15;
+    }
+    
+    > img + .container-fluid > div {
+        padding-bottom: 65px;
+        @include media-breakpoint-up(sm) {
+            padding-bottom: 130px;
+        }
+    }
+    
+    
+    
+    h2 {
+        margin-bottom: 65px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 128px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 84px;
+        }
+
+    }
+    
+   h4 {
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom:30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 17px;
+        }
+
+    }
+    
+    > img + .container-fluid  {
+
+        .section-content { position: relative; z-index: 9; }
+
+        h2 {
+            margin-top: 40px !important;
+
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 80px !important;
+            }
+
+        }
+
         p {
-            color: #000;
-        }
+            margin-bottom: 40px !important;
 
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 80px !important;
+            }
 
-
-    }
-
-
-}
-
-//timeline type 2 - Vision & Mission 
-.timeline-vision-mission {
-
-    background-color: #F1F3F5;
-
-    @include media-breakpoint-up(sm) {
-
-        .section-content {
-
-            background-image: url("../assets/vision-mission-banner@2x.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position-y: 8rem;
-            padding-bottom: 24rem !important;
         }
     }
+    
+
+
 
 }
 
@@ -925,7 +1101,7 @@ section {
         padding-top: 30px;
         padding-bottom: 112px;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(sm) {
             padding-top: 60px;
             padding-bottom: 224px;
         }
@@ -940,7 +1116,7 @@ section {
     .content-box .row {
         padding-bottom: 55px;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(sm) {
             padding-bottom: 107px;
         }
 
@@ -1000,6 +1176,15 @@ section {
 
     .content-box {
 
+        content-box > div {
+            padding-top: 40px !important;
+
+            @include media-breakpoint-down(sm) {
+                padding-top: 80px !important;
+            }
+
+        }
+
         h4 {
             margin-top: 20px;
             margin-bottom: 30px;
@@ -1043,6 +1228,14 @@ section {
         color: #fff;
     }
 
+    h2 { 
+        
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+
+    }
+
     p {
         padding-bottom: 45px;
 
@@ -1052,11 +1245,19 @@ section {
         }
 
         @include media-breakpoint-up(lg) {
-            margin-top: 55px;
+            margin-top: 28px;
             padding-bottom: 70px;
+            margin-bottom: 22px;
         }
     }
 
+    .form-control {
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 40px;
+        }
+    }
+    
 
 }
 
@@ -1151,7 +1352,7 @@ section {
 
     .article-slider {
     
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(lg) {
             margin: 0 30px;
         }
 
@@ -1298,10 +1499,87 @@ section {
     padding-top: 75px;
     padding-bottom: 75px;
 
+
+    ul.slick-dots {
+
+        li {
+
+            @include media-breakpoint-down(sm) {
+                margin-right: 0 !important;
+            }
+
+
+            button {
+
+                @include media-breakpoint-down(sm) {
+                    padding-left: 0 !important;
+
+                    &:before {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 3px !important;
+                    }
+
+                }
+
+                span {
+                    padding-top: 5px;
+                    display: block;
+                }
+            }
+
+
+        }
+
+
+
+
+        @include media-breakpoint-down(lg) {
+            bottom: 50px;
+            left: 40px;
+            text-align: left;
+
+            li {
+                margin-right: 10px;
+
+                &.slick-active button:before {
+                    background-color: #032853;
+                    opacity: 1;
+                }
+
+
+                button:before {
+                    content: "";
+                    background-color: #707070;
+                    opacity: 50%;
+                    border-radius: 5px;
+
+                }
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            position: static;
+            text-align: left;
+            padding: 0 40px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 0 30px;
+        }
+
+    }
+
+
     @include media-breakpoint-up(sm) {
         padding-top: 150px;
         padding-bottom: 150px;
     }
+
+
 
 }
 
@@ -1359,117 +1637,208 @@ section {
 }
 
 //Full Home Slider
-.full-slider {
+.nlt-slider {
 
-    margin: 0 -10px !important;
-
-    .slick-prev {
-        left: 35px;
-    }
-
-    .slick-next {
-        right: 35px;
-    }
-
-    .slick-prev, .slick-next {
-        z-index: 9;
+    @include media-breakpoint-down(lg) {
+        // padding-bottom: 105px;
     }
 
     @include media-breakpoint-down(lg) {
-        height: 100vh;
+        padding-bottom: 105px;
     }
 
-    @include media-breakpoint-down(sm) {
-        height: 90vh;
-    }
+    .full-slider {
 
-    .slide-item {
-        padding: 0 10px;
+        margin: 0 -10px !important;
 
-        button {
-            background: transparent;
-            border: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            i {
-                font-size: 30px;
-            }
-            
-
-            @include media-breakpoint-up(lg) {
-                top: 50%;
-                left: 50%;
-                i {
-                    font-size: 90px;
-                }            
-            }
+        .slick-prev {
+            left: 52px;
         }
 
-        &.slick-center {
-            h2 {
-                -moz-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                -o-transform: scale(1.1);
-                -webkit-transform: scale(1.1);
-                color: #e67e22;
-                opacity: 1;
-                transform: scale(1.08);
-            }
+        .slick-next {
+            right: 52px;
         }
 
-        .content-box{
+                
+        svg {
 
-
-
-            h1, p {
-                color: #032853;
-            }
+            display: none !important; 
 
             @include media-breakpoint-up(lg) {
-                position: absolute;
-                width: 45%;
-                top: 45%;
-                transform: translateY(-50%);
-                padding-left: 90px;
+                display: block !important; 
 
-                h1, p {
-                    color: #fff;
+                path {
+                    fill: #fff;
                 }
 
             }
 
-            @include media-breakpoint-up(xxl) {
-                width: 35%;
-                top: 35%;
-            }
-
         }
 
 
-    }
+        .slick-prev, .slick-next {
+            z-index: 9;
+        }
+        
 
+        @include media-breakpoint-down(lg) {
+            // height: 100vh;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 90vh;
+        }
+
+        .slide-item {
+
+            @include media-breakpoint-down (lg) {
+                .mobile-banner {
+                    position: relative;
+
+                    
+                }
+            }
+
+
+            &:before {
+
+                @include media-breakpoint-up(lg) {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    display: block;
+                    background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
+
+                }
+
+            }
+
+
+            padding: 0 10px;
+
+            button {
+                background: transparent;
+                border: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+
+                i {
+                    font-size: 60px;
+
+                    @include media-breakpoint-up(lg) {
+                        font-size: 90px;
+                    }
+
+                }
+                
+
+                @include media-breakpoint-up(lg) {
+                    top: 50%;
+                    left: 50%;        
+                }
+            }
+
+            &.slick-center {
+                h2 {
+                    -moz-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    color: #e67e22;
+                    opacity: 1;
+                    transform: scale(1.08);
+                }
+            }
+
+            .content-box{
+
+                h1, p {
+                    color: #032853;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    padding-bottom: 70px !important;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    position: absolute;
+                    width: 45%;
+                    top: 45%;
+                    transform: translateY(-50%);
+                    padding-left: 95px;
+                    
+                    @include media-breakpoint-up(xxl) {
+                        margin-left: 110px;
+                    }
+
+                    h1, p {
+                        color: #fff;
+                    }
+
+                    p {
+                        padding-top: 40px !important;
+                        padding-bottom: 46px !important;
+                    }
+
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    width: 35%;
+                    top: 35%;
+                    padding-top: 30px !important;
+                }
+
+            }
+
+        }
 
 
 
         ul.slick-dots {
 
+            li {
+
+                @include media-breakpoint-down(sm) {
+                    margin-right: 0 !important;
+                }
 
 
-            @include media-breakpoint-down(sm) {
-                bottom: 50px;
-                left: 20px;
-                text-align: left;            
+                button {
+
+                    @include media-breakpoint-down(sm) {
+                        padding-left: 0 !important;
+
+                        &:before {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 3px !important;
+                        }
+
+                    }
+
+                    span {
+                        padding-top: 5px;
+                        display: block;
+                    }
+                }
+
+
             }
+
+
+
 
             @include media-breakpoint-down(lg) {
                 bottom: 50px;
                 left: 40px;
-                text-align: left;            
-            
+                text-align: left;
+
                 li {
                     margin-right: 10px;
 
@@ -1484,70 +1853,80 @@ section {
                         background-color: #707070;
                         opacity: 50%;
                         border-radius: 5px;
-                                
+
                     }
                 }
             }
 
+            @include media-breakpoint-down(lg) {
+                position: static;
+                text-align: left;
+                padding: 0 40px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                padding: 0 30px;
+            }
 
         }
 
+        @include media-breakpoint-up(lg) {
 
-    @include media-breakpoint-up(lg) {
 
+            .slick-dots {
+                list-style-type: none;
+                bottom: 0;
 
-        .slick-dots {
-            list-style-type: none;
-            bottom: 0;
-
-            li {
-                width: auto;
-                height: auto;
-                display: inline-block;
-                padding: 0 5px;
-
-                button {
+                li {
                     width: auto;
                     height: auto;
+                    display: inline-block;
+                    padding: 0 5px;
 
-                    @include media-breakpoint-up(lg) {
-                        padding: 15px 40px 40px 0px !important
-                    }
-
-                    @include media-breakpoint-up(xl) {
-                        padding: 15px 140px 60px 0px !important;                    
-                    }
-
-                    @include media-breakpoint-up(xxl) {
-                        padding: 15px 260px 75px 0px !important
-                    }
-                    
-                    background: transparent !important;
-                    font-size: 12px;
-                    color: rgba(255, 255, 255, 0.5);
-                    border-top: 2px solid rgba(255, 255, 255, 0.5);
-                    border-radius: 2px;
-                    font-weight: bold;
-
-                    &:before {
-                        content: none;
-                    }
-                }
-
-                &.slick-active {
                     button {
-                        border-top: 5px solid rgba(255, 255, 255, 1);
-                        color: #fff;
-                        transition: linear 0.1s;
+                        width: auto;
+                        height: auto;
+
+                        @include media-breakpoint-up(lg) {
+                            padding: 15px 40px 40px 0px !important
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            padding: 15px 140px 60px 0px !important;                    
+                        }
+
+                        @include media-breakpoint-up(xxl) {
+                            padding: 15px 260px 75px 0px !important
+                        }
+                        
+                        background: transparent !important;
+                        font-size: 12px;
+                        color: rgba(255, 255, 255, 0.5);
+                        border-top: 2px solid rgba(255, 255, 255, 0.5);
+                        border-radius: 2px;
+                        font-weight: bold;
+
+                        &:before {
+                            content: none;
+                        }
+                    }
+
+                    &.slick-active {
+                        button {
+                            border-top: 5px solid rgba(255, 255, 255, 1);
+                            color: #fff;
+                            transition: linear 0.1s;
+                        }
                     }
                 }
             }
+
         }
 
+
+    
+
     }
-
-
- 
 
 }
 
@@ -1567,7 +1946,7 @@ section {
         padding-bottom: 150px;
     }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(lg) {
             button {
                 width: 100%;
             }
@@ -1622,6 +2001,302 @@ section {
     @include media-breakpoint-up(lg) {
         padding-top: 110px;
         padding-bottom: 200px;
+    }
+
+}
+
+//hero-about
+.about-netlink {
+
+    .hero-about {
+
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
+        }
+
+        .container {
+            position: relative;
+            z-index: 9;
+        }
+
+    }
+
+
+}
+
+//page banner 
+.page-banner {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
+    }
+
+    .container {
+        position: relative;
+        z-index: 9;
+    }   
+}
+
+//icon with content
+.icon-with-content {
+    padding-top: 65px;
+    padding-bottom: 30px;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 133px;
+        padding-bottom: 60px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    h2 {
+        padding-bottom: 75px !important;
+
+        @include media-breakpoint-up(sm) {
+
+            padding-bottom: 150px !important;
+
+        }
+
+        @include media-breakpoint-up(lg) {
+
+            padding-bottom: 50px !important;  
+
+        }
+    }
+    
+    
+    h4 {
+        margin-top: 30px;
+        margin-bottom: 5px;
+
+        @include media-breakpoint-up(lg) {
+
+            margin-top: 62px;
+            margin-bottom: 9px; 
+
+        }
+
+    }
+    
+    
+    p {
+        margin-bottom: 50px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 100px;
+        }
+    }
+            
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mm-wrapper_opened .mm-panels .mm-navbar > .mm-navbar__title {
+    display: none;
+}
+
+.mm-wrapper_opened .mm-panels .mm-navbar > a + .mm-navbar__title {
+    display: flex;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    justify-content: left;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 43px;
+        padding-bottom: 43px;
+    }
+}
+
+div + .mm-panel_opened .mm-navbar.mm-navbar_sticky {
+    background: #3C83BB;
+
+    @include media-breakpoint-up(md) { 
+        padding: 0 30px;
+    }
+}
+
+div + .mm-panel_opened .mm-btn_next:after, div + .mm-panel_opened .mm-btn_prev:before {
+    border-color: #fff;
+}
+
+div + .mm-panel_opened .mm-navbar__title>span {
+    color: #fff;
+}
+
+div + .mm-panel_opened ul li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.mm-btn_next:after, .mm-btn_prev:before {
+
+    @include media-breakpoint-up(md) {
+
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+}
+
+.mm-navbar__title>span {
+    font-size: 16px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 30px;
+        line-height: 34px;
+    }
+}
+
+.mm-menu .mm-listview li > a:first-child {
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+}
+
+.mm-menu .mm-listview li {
+
+    padding: 10px 0 !important;
+    @include media-breakpoint-up(md) {
+        padding: 25px 30px !important;
+    }
+
+}
+
+.mm-menu_offcanvas {
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+.mm-navbar.mm-navbar_sticky {
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-content.section-content-about { 
+    margin-bottom: 21px;
+}
+
+.content-box .container > div {
+    padding-top: 22px !important;
+    padding-bottom: 0 !important;
+}
+
+
+.content-box .container > div > p:last-child {
+    margin: 0;
+}
+
+
+span.meta-data {
+    font-size: 12px;
+    line-height: 18px;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+
+
+
+
+@media (min-with: 590px) {
+    span.meta-data {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+}
+
+@media (min-with: 992px) {
+    span.meta-data {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+}
+
+
+@media (min-width:992px) {
+    
+    .section-content.section-content-about {
+        margin-bottom: 33px;
+    }    
+
+   .content-box .container > div {
+        padding-top: 37px !important;
+        padding-bottom: 0 !important;
     }
 
 }
