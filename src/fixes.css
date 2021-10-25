@@ -65,10 +65,10 @@ a {
 }
 
 @media (min-width: 576px) {
-.timeline-vision-mission .section-content {
+/* .timeline-vision-mission .section-content {
     padding-bottom: 38rem !important;
     background-position: center bottom;
-}
+} */
 }
 @media (min-width: 768px) {
     .container-fluid {

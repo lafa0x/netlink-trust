@@ -33,28 +33,41 @@
 
     <!-- <script src="./modernizr.custom.js"></script> -->
 
-
     
     <style>
 
         /* fixing gaps */
-        .text-content-3-cols {
-            position: relative;
-            top: -55px;
-            background: #fff;
+
+        @media (min-width: 1024px) {
+
+            .text-content-3-cols {
+                position: relative;
+                top: -55px;
+                background: #fff;
+            }
+
         }
+
+
+        body > .modal.show {
+            display: block !important;
+            position: fixed !important;
+            z-index: 9999 !important;
+        }
+
     </style>
 
 </head>
 
 <body>
 
+    
     <!-- Header -->
     <include src="src/components/header.html"></include>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" class="modal-dialog-centered" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog mx-auto">
+    <!-- Play Button Popup Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mx-sm-auto">
             <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -67,7 +80,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Main Content -->
     <main class="site-main">
 
@@ -99,32 +112,32 @@
 
                 <div class="container">
 
-                    <div class="row gx-5 my-2 justify-content-center text-dark">
+                    <div class="row gx-5 mt-2 justify-content-center text-dark">
 
-                        <div class="col-6 col-lg-3">
-                            <h4 class="body-bold mb-3"> 01 </h4>
+                        <div class="col-6 col-lg-3 mt-2 mt-lg-4">
+                            <h4 class="body-bold"> 01 </h4>
                             <p class="small-body">We connect consumers and businesses anywhere in Singapore to the nationwide fibre
                                 broadband network</p>
                         </div>
 
-                        <div class="col-6 col-lg-3">
-                            <h4 class="body-bold mb-3"> 02 </h4>
+                        <div class="col-6 col-lg-3 mt-2 mt-lg-4">
+                            <h4 class="body-bold"> 02 </h4>
                             <p class="small-body">We build strong and trusted partnerships with our industry operators to deliver reliable
                                 fibre connectivity to their customers</p>
                         </div>
 
-                        <div class="col-6 col-lg-3">
-                            <h4 class="body-bold mb-3"> 03 </h4>
+                        <div class="col-6 col-lg-3 mt-2 mt-lg-4">
+                            <h4 class="body-bold"> 03 </h4>
                             <p class="small-body">We provide open and equal access to all industry operators</p>
                         </div>
 
-                        <div class="col-6 col-lg-3">
-                            <h4 class="body-bold mb-3"> 04 </h4>
+                        <div class="col-6 col-lg-3 mt-2 mt-lg-4">
+                            <h4 class="body-bold"> 04 </h4>
                             <p class="small-body">We are committed to helping Singapore achieve its vision as a Smart Nation</p>
                         </div>
                     </div>
 
-                    <a class="btn btn-primary" href="#" role="button"> <i class="bi bi-play-circle"></i> Play Video</a>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" role="button"> <i class="bi bi-play-circle"></i> Play Video</button>
 
                 </div>
 
@@ -208,7 +221,7 @@
 
                     <div class="col-lg-8 d-none d-lg-block ">
 
-                        <form class="mt-5">
+                        <form class="mt-5 pt-xxl-5">
 
                             <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
@@ -223,8 +236,6 @@
                                         placeholder="Enter Postal Code *" aria-label=".form-control-lg example">
                                 </div>
                             </div>
-
-                            <br> <br>
 
                             <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
