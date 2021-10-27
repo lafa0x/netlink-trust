@@ -1,21 +1,5 @@
-    .hero-about {
-        padding: 5.25% 0;
-        background-position: center;
-    }
+
     
-.banner-menu li {
-    font-size: 22px;
-    padding: 15px 0;
-    line-height: 28px;
-}
-
-.banner-menu li a {
-    text-decoration: none;
-}
-
-.banner-menu li a span {
-    border-bottom: 2px solid white;
-}
 
 .text-dark .small-body {
     color: black;
@@ -43,19 +27,7 @@
     line-height: 1.33;
 }
 
-.mobile-banner-nav li{
-    white-space: nowrap;
-}
-.mobile-banner-nav {
-    overflow-y: auto;
-    margin-top: 10px;
-}
-.mobile-banner-nav li a {
-    text-decoration:none;
-}
-.mobile-banner-nav li a span{
-    border-bottom: 2px solid #032853;
-}
+
 
 .media-notices .media-notice {
     max-width: 414px;

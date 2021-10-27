@@ -1,5 +1,18 @@
 // Main.scss
 
+// Include any default variable overrides here (though functions won't be available)
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+
+/* import only the necessary Bootstrap files */
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+
+
+/* -------begin customization-------- */
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -17,6 +30,40 @@ $container-max-widths: (
   xxl: 1506px
 );
 
+$spacer: 1rem !default;
+$spacers: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+    (         
+        0: 0,
+        1: ($spacer * .3125),     //5px
+        2: ($spacer * .625),      //10px
+        3: ($spacer * 9375),      //15px
+        4: ($spacer * 1.5625),    //25px
+        5: ($spacer * 1.875),     //30px
+        6: ($spacer * 2.1875),    //35px
+        7: ($spacer * 2.5),       //40px
+        8: ($spacer * 2.8125),    //45px
+        9: ($spacer * 3.125),     //50px
+        10: ($spacer * 3.4375),   //55px
+        11: ($spacer * 3.75),     //60px
+        12: ($spacer * 5),        //80px
+        13: ($spacer * 6.25),     //100px
+        14: ($spacer * 7.5),      //120px
+        15: ($spacer * 9.375),    //150px
+        16: ($spacer * 10),       //160px
+        17: ($spacer * 10.625)    //170px
+    ),
+    $spacers
+);
+
+/* -------end customization-------- */
+
+
+@import "./variable.scss";
+
+
 // Option A: Include all of Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -26,23 +73,160 @@ $container-max-widths: (
 // etc
 
 
-$primary: #1697D9;
-$secondary: #032853;
-
-// Include any default variable overrides here (though functions won't be available)
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
-
-@import "./variable.scss";
-
-
-// custom utilities
+//Custom utilities
 .link-blue {
     color: #1697d9;
 }
 
+.bg-blue {
+    background-color: $blue;
+}
 
-$body-bg: #fff;
-$body-color: #000;
+.bg-gray {
+    background-color: $light-gray;
+}
+
+
+body, html {
+    font-family: $body-font;
+    overflow-x: hidden;
+    background: white;
+}
+
+/* let's define variable according to the style guide */
+
+h1, h2, h3 {
+    font-family: $heading-font;
+}
+
+h1, .h1{
+    font-size: 35px;
+    line-height: 1.05;
+    font-weight: 300;
+    color: text-color("dark");
+}
+
+h2, .h2 {
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: 0.27px;
+    color: text-color("dark");  
+    font-weight: 200;
+}
+
+h3, .h3 {
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: bold;
+    color: text-color("dark"); 
+}
+
+.big-body {
+    font-size: 24px;
+    font-family: $body-font;
+    line-height: 1.2;
+}
+
+.body-bold{
+    font-weight: bold;
+    line-height: 1.17;
+    font-family: $body-font;
+}
+
+.small-body-bold {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.27;
+}
+
+.small-body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.27;
+}
+
+p {
+    font-size: 16px;
+    color: $gray;
+    line-height: 1.5;
+}
+
+.btn {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    padding: 20px;
+    font-family: $body-font;
+    font-weight: bold;
+}
+
+.btn-outline {
+    border: 1px solid $gray;
+    color: $black;
+
+    &:hover {
+        background-color: rgba($color: $gray, $alpha: 0.1);
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1536px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+}
+.text-light {
+    h1, h2, h3, p, ul, li {
+        color: text-color("light");
+    }
+}
+
+.read-more-btn {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    line-height: 1.125;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    svg {
+        position: relative;
+        top: -2px;
+    }
+
+    &:hover {
+        color: $black;
+        svg path{
+            fill:$black;
+        }
+    }
+}
+
+
+/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
+
+
+.media-notices {
+    .media-notice {
+        margin-bottom: 5rem;
+        // margin-top: 2rem;
+
+        >*:not(a:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 1.43;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
 
 
 // Default variable overrides
@@ -55,8 +239,8 @@ h1, .h1{
     }
 
     @include media-breakpoint-up (lg) {
-        font-size: 55px;
-        line-height: 1.17;
+        font-size: 44px;
+        line-height: 1.25;
     }
 
     @include media-breakpoint-up(xxl) {
@@ -137,12 +321,18 @@ h3, .h3 {
 }
 
 .small-body {
+
     @include media-breakpoint-up (sm) {
         font-size: 32px;
         line-height: 1.25;
     }
 
     @include media-breakpoint-up(lg) {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    @include media-breakpoint-up(xxl) {
         font-size: 22px;
         line-height: 1.27;  
     }
@@ -273,13 +463,9 @@ $btn-color: #fff;
     }
 
     @include media-breakpoint-up(lg) {
-
         width: 365px;
-
+        padding: 18.5px 0;
     }
-
-
-
 
     &:hover {
         background-color: $bg-hover;
@@ -339,10 +525,6 @@ $btn-color: #fff;
 
 // Then add additional custom code here
 
-html, body {
-    overflow-x: hidden;
-    background: white;
-}
 
 .modal-dialog {
 
@@ -450,7 +632,6 @@ html, body {
     }
 
 }
-
 
 
 //header
@@ -910,6 +1091,16 @@ section {
             padding-bottom: 139px;
         }
 
+        button {
+
+            @include media-breakpoint-up(lg) {
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+
         &:after {
             content: "";
             position: absolute;
@@ -948,6 +1139,7 @@ section {
             }
 
         }
+
 
 
     }
@@ -1331,8 +1523,6 @@ section {
         padding-top: 150px;
         padding-bottom: 150px;
     }
-    
-
 
     .latest-articles {
 
@@ -1350,7 +1540,7 @@ section {
     
     }
 
-    .article-slider {
+    .articles-style {
     
         @include media-breakpoint-down(lg) {
             margin: 0 30px;
@@ -1370,6 +1560,11 @@ section {
             }
 
             @include media-breakpoint-up(lg) {
+                margin-left: 20px;
+                margin-right: 35px;
+            }
+
+            @include media-breakpoint-up(xxl) {
                 margin-left: 42px;
                 margin-right: 85px;
             }
@@ -1405,7 +1600,88 @@ section {
 
     }
 
+    &.latest-media {
+        padding-top: 60px;
+        padding-bottom: 55px;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 120px;
+            padding-bottom: 114px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 50px;
+            padding-bottom: 55px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding-top: 60px;
+            padding-bottom: 75px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding-top: 100px;
+            padding-bottom: 150px;
+        }
+
+
+        &.latest-notices {
+            background: #F2F4F6;
+
+            .articles-style .slide-item {
+                background: #fff;
+                padding: 25px 20px;
+                margin: 0 10px;
+
+                @include media-breakpoint-up(sm) {
+                    padding: 52px 40px;
+                    margin: 0 20px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    padding: 20px 20px;
+                    margin: 0 10px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    padding: 30px 25px;
+                    margin: 0 15px;
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    padding: 40px 45px ;
+                    margin: 0 30px;
+                }
+
+            }
+            
+        }
+
+        .articles-style {
+            .slide-item {
+                padding-top: 20px;
+
+                h4 {
+                    margin-top: 29px;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-top: 40px;
+                    margin-bottom: 120px;                    
+                }
+            }
+        }
+
+
+    }
+    
 }
+
+
+
+//Latest Press Release
+
 
 //Hero Type 1 - Investors
 .hero-investors {
@@ -1448,51 +1724,168 @@ section {
     }
 }
 
+
+
+
 //Hero Type 2 - About
-.hero-about {
+.page-header {
 
-    background-image: url("../assets/about-banner@2x.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    .hero-about {
+        padding-top: 115px;
+        padding-bottom: 130px;
+        position: relative;
 
-    .content {
-
-        h2 {
-            color: #fff;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), transparent);
         }
 
-        ul li {
-            margin: 10px 0;
+        @include media-breakpoint-up(sm) {
+            padding-top: 231px;
+            padding-bottom: 260px;
         }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 65px;
+            padding-bottom: 75px;            
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding-top: 85px;
+            padding-bottom: 90px;           
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding-top: 158px;
+            padding-bottom: 163px;            
+        }
+    
+        .content {
+    
+            h1 {
+                color: #fff;
+
+                @include media-breakpoint-up(lg) {
+                    padding-bottom: 45px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    padding-bottom: 55px;
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    padding-bottom: 70px;
+                }
+            }
+
+            ul li {
+
+                font-size: 22px;
+                padding: 15px 0;
+                line-height: 28px;
+
+                margin: 20px 0;
+
+                @include media-breakpoint-up(xl) {
+                    margin: 25px 0;
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    margin: 40px 0;
+                }
+
+                a {
+                    border-bottom: 2px solid white;
+                    text-decoration: none;
+
+                    span {
+                        text-decoration: none;
+                    }
+                }
+
+            }
+    
+        }
+    
+        .container {
+            position: relative;
+            z-index: 9;
+        }
+
 
     }
 
-}
-
-//Hero Pages Type 3 
-.hero-pages {
 
 
-    .content {
+    
+    .mobile-banner-nav {
+        padding-top: 25px;
+        padding-bottom: 0;
+        padding-right: 0;
 
-        h2 {
-            color: #fff;
+        @include media-breakpoint-up(sm) {
+            padding-left: 0;
+            padding-top: 45px;
         }
 
+        ul {
+            padding-bottom: 10px;
+            overflow-y: auto;
 
+            li {
+                white-space: nowrap;
+
+                &:first-child a {
+                    margin-left: 0;
+                }
+
+                &.active a span {
+                    color: #000;
+                    border-color: #000;
+                }
+
+                a {
+                    text-decoration:none;
+                    margin-right: 30px;
+                    margin-bottom: 0;
+                    margin-left: 30px;
+
+                    span {
+                        border-bottom: 2px solid #B1B1B1;
+                        color: #B1B1B1;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+
+        }
     }
+    
 
 }
 
-//Hero Pages Type 3 - Management
-.hero-pages.management {
+//Hero banner Type 3 
+// .hero-bg-banner {
+    
 
-    background-image: url("../assets/management-banner@2x.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+//     .content {
+
+//         p {
+//             color: #fff;
+//         }
 
 
-}
+//     }
+
+// }
+
+
 
 //Client Logos
 .client-logos {
@@ -1501,6 +1894,7 @@ section {
 
 
     ul.slick-dots {
+
 
         li {
 
@@ -1571,6 +1965,10 @@ section {
             padding: 0 30px;
         }
 
+        @include media-breakpoint-up(lg) {
+            display: none !important;
+        }
+
     }
 
 
@@ -1578,7 +1976,6 @@ section {
         padding-top: 150px;
         padding-bottom: 150px;
     }
-
 
 
 }
@@ -1651,274 +2048,285 @@ section {
 
         margin: 0 -10px !important;
 
-        .slick-prev {
-            left: 52px;
-        }
+        &.slick-initialized {
 
-        .slick-next {
-            right: 52px;
-        }
-
-                
-        svg {
-
-            display: none !important; 
-
-            @include media-breakpoint-up(lg) {
-                display: block !important; 
-
-                path {
-                    fill: #fff;
-                }
-
+            .slick-prev {
+                left: 52px;
             }
 
-        }
-
-
-        .slick-prev, .slick-next {
-            z-index: 9;
-        }
-        
-
-        @include media-breakpoint-down(lg) {
-            // height: 100vh;
-        }
-
-        @include media-breakpoint-down(sm) {
-            height: 90vh;
-        }
-
-        .slide-item {
-
-            @include media-breakpoint-down (lg) {
-                .mobile-banner {
-                    position: relative;
+            .slick-next {
+                right: 52px;
+            }
 
                     
-                }
-            }
+            svg {
 
-
-            &:before {
+                display: none !important; 
 
                 @include media-breakpoint-up(lg) {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    display: block;
-                    background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
+                    display: block !important; 
+
+                    path {
+                        fill: #fff;
+                    }
 
                 }
 
             }
 
 
-            padding: 0 10px;
-
-            button {
-                background: transparent;
-                border: none;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: #fff;
-
-                i {
-                    font-size: 60px;
-
-                    @include media-breakpoint-up(lg) {
-                        font-size: 90px;
-                    }
-
-                }
-                
-
-                @include media-breakpoint-up(lg) {
-                    top: 50%;
-                    left: 50%;        
-                }
+            .slick-prev, .slick-next {
+                z-index: 9;
             }
-
-            &.slick-center {
-                h2 {
-                    -moz-transform: scale(1.1);
-                    -ms-transform: scale(1.1);
-                    -o-transform: scale(1.1);
-                    -webkit-transform: scale(1.1);
-                    color: #e67e22;
-                    opacity: 1;
-                    transform: scale(1.08);
-                }
-            }
-
-            .content-box{
-
-                h1, p {
-                    color: #032853;
-                }
-
-                @include media-breakpoint-down(lg) {
-                    padding-bottom: 70px !important;
-                }
-
-                @include media-breakpoint-up(lg) {
-                    position: absolute;
-                    width: 45%;
-                    top: 45%;
-                    transform: translateY(-50%);
-                    padding-left: 95px;
-                    
-                    @include media-breakpoint-up(xxl) {
-                        margin-left: 110px;
-                    }
-
-                    h1, p {
-                        color: #fff;
-                    }
-
-                    p {
-                        padding-top: 40px !important;
-                        padding-bottom: 46px !important;
-                    }
-
-                }
-
-                @include media-breakpoint-up(xxl) {
-                    width: 35%;
-                    top: 35%;
-                    padding-top: 30px !important;
-                }
-
-            }
-
-        }
-
-
-
-        ul.slick-dots {
-
-            li {
-
-                @include media-breakpoint-down(sm) {
-                    margin-right: 0 !important;
-                }
-
-
-                button {
-
-                    @include media-breakpoint-down(sm) {
-                        padding-left: 0 !important;
-
-                        &:before {
-                            width: 10px;
-                            height: 10px;
-                            border-radius: 3px !important;
-                        }
-
-                    }
-
-                    span {
-                        padding-top: 5px;
-                        display: block;
-                    }
-                }
-
-
-            }
-
-
-
+            
 
             @include media-breakpoint-down(lg) {
-                bottom: 50px;
-                left: 40px;
-                text-align: left;
-
-                li {
-                    margin-right: 10px;
-
-                    &.slick-active button:before {
-                        background-color: #032853;
-                        opacity: 1;
-                    }
-
-
-                    button:before {
-                        content: "";
-                        background-color: #707070;
-                        opacity: 50%;
-                        border-radius: 5px;
-
-                    }
-                }
-            }
-
-            @include media-breakpoint-down(lg) {
-                position: static;
-                text-align: left;
-                padding: 0 40px;
+                // height: 100vh;
             }
 
             @include media-breakpoint-down(sm) {
-                padding: 0 30px;
+                height: 90vh;
             }
 
-        }
+            .slide-item {
 
-        @include media-breakpoint-up(lg) {
+                padding: 0 10px;
 
 
-            .slick-dots {
-                list-style-type: none;
-                bottom: 0;
+                @include media-breakpoint-down (lg) {
+                    .mobile-banner {
+                        position: relative;
 
-                li {
-                    width: auto;
-                    height: auto;
-                    display: inline-block;
-                    padding: 0 5px;
+                        
+                    }
+                }
 
-                    button {
-                        width: auto;
-                        height: auto;
+
+                &:before {
+
+                    @include media-breakpoint-up(lg) {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
+
+                    }
+
+                }
+
+
+
+                button {
+                    background: transparent;
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #fff;
+
+                    i {
+                        font-size: 60px;
 
                         @include media-breakpoint-up(lg) {
-                            padding: 15px 40px 40px 0px !important
-                        }
-
-                        @include media-breakpoint-up(xl) {
-                            padding: 15px 140px 60px 0px !important;                    
+                            font-size: 75px;
                         }
 
                         @include media-breakpoint-up(xxl) {
-                            padding: 15px 260px 75px 0px !important
+                            font-size: 90px;
                         }
-                        
-                        background: transparent !important;
-                        font-size: 12px;
-                        color: rgba(255, 255, 255, 0.5);
-                        border-top: 2px solid rgba(255, 255, 255, 0.5);
-                        border-radius: 2px;
-                        font-weight: bold;
 
-                        &:before {
-                            content: none;
+                    }
+                    
+
+                    @include media-breakpoint-up(lg) {
+                        top: 50%;
+                        left: 50%;        
+                    }
+                }
+
+                &.slick-center {
+                    h2 {
+                        -moz-transform: scale(1.1);
+                        -ms-transform: scale(1.1);
+                        -o-transform: scale(1.1);
+                        -webkit-transform: scale(1.1);
+                        color: #e67e22;
+                        opacity: 1;
+                        transform: scale(1.08);
+                    }
+                }
+
+                .content-box{
+
+                    h1, p {
+                        color: #032853;
+                    }
+
+                    @include media-breakpoint-down(lg) {
+                        padding-bottom: 70px !important;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        position: absolute;
+                        top: 45%;
+                        width: 35%;
+                        transform: translateY(-50%);
+                        padding-left: 95px;
+                        
+                        @include media-breakpoint-up(xxl) {
+                            width: 45%;
+                            margin-left: 110px;
+                        }
+
+                        h1, p {
+                            color: #fff;
+                        }
+
+                        p {
+                            padding-top: 40px !important;
+                            padding-bottom: 46px !important;
+                        }
+
+                    }
+
+                    @include media-breakpoint-up(xxl) {
+                        width: 35%;
+                        top: 35%;
+                        padding-top: 30px !important;
+                    }
+
+                }
+
+            }
+
+
+
+            ul.slick-dots {
+
+                li {
+
+                    @include media-breakpoint-down(sm) {
+                        margin-right: 0 !important;
+                    }
+
+
+                    button {
+
+                        @include media-breakpoint-down(sm) {
+                            padding-left: 0 !important;
+
+                            &:before {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 3px !important;
+                            }
+
+                        }
+
+                        span {
+                            padding-top: 5px;
+                            display: block;
                         }
                     }
 
-                    &.slick-active {
-                        button {
-                            border-top: 5px solid rgba(255, 255, 255, 1);
-                            color: #fff;
-                            transition: linear 0.1s;
+
+                }
+
+
+
+
+                @include media-breakpoint-down(lg) {
+                    bottom: 50px;
+                    left: 40px;
+                    text-align: left;
+
+                    li {
+                        margin-right: 10px;
+
+                        &.slick-active button:before {
+                            background-color: #032853;
+                            opacity: 1;
+                        }
+
+
+                        button:before {
+                            content: "";
+                            background-color: #707070;
+                            opacity: 50%;
+                            border-radius: 5px;
+
                         }
                     }
                 }
+
+                @include media-breakpoint-down(lg) {
+                    position: static;
+                    text-align: left;
+                    padding: 0 40px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    padding: 0 30px;
+                }
+
+            }
+
+            @include media-breakpoint-up(lg) {
+
+
+                .slick-dots {
+                    list-style-type: none;
+                    bottom: 0;
+
+                    li {
+                        width: auto;
+                        height: auto;
+                        display: inline-block;
+                        padding: 0 5px;
+
+                        button {
+                            width: auto;
+                            height: auto;
+
+                            @include media-breakpoint-up(lg) {
+                                padding: 15px 40px 40px 0px !important
+                            }
+
+                            @include media-breakpoint-up(xl) {
+                                padding: 15px 140px 60px 0px !important;                    
+                            }
+
+                            @include media-breakpoint-up(xxl) {
+                                padding: 15px 260px 75px 0px !important
+                            }
+                            
+                            background: transparent !important;
+                            font-size: 12px;
+                            color: rgba(255, 255, 255, 0.5);
+                            border-top: 2px solid rgba(255, 255, 255, 0.5);
+                            border-radius: 2px;
+                            font-weight: bold;
+
+                            &:before {
+                                content: none;
+                            }
+                        }
+
+                        &.slick-active {
+                            button {
+                                border-top: 5px solid rgba(255, 255, 255, 1);
+                                color: #fff;
+                                transition: linear 0.1s;
+                            }
+                        }
+                    }
+                }
+
             }
 
         }
@@ -2005,33 +2413,6 @@ section {
 
 }
 
-//hero-about
-.about-netlink {
-
-    .hero-about {
-
-        position: relative;
-
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: block;
-            background-image: linear-gradient( to right, rgba(0,0,0, 0.75), transparent);
-        }
-
-        .container {
-            position: relative;
-            z-index: 9;
-        }
-
-    }
-
-
-}
 
 //page banner 
 .page-banner {
@@ -2113,6 +2494,203 @@ section {
             
 
 }
+
+
+//Latest Media
+.latest-media  {
+    // padding-top: 0;
+
+
+    .articles-style .slide-item {
+        border-color: #CBCBCB;
+    }
+
+}
+
+//Image Library
+.image-library {
+
+    .content {
+
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+//Cols 3 Image Text - Management
+.cols-3-image-text {
+
+    .text-with-image {
+
+        padding-top: 60px;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 120px
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 77px
+        }
+        
+        span {
+            display: block;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 10px;
+                margin-bottom: 10px;                
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-top: 20px;
+                margin-bottom: 10px;               
+            }
+
+            @include media-breakpoint-up(xxl) {
+                margin-top: 35px;
+                margin-bottom: 20px;
+            }
+
+        }
+
+        h4 {
+            margin: 0;
+        }
+                
+        article {
+            overflow: hidden;
+            margin-top: 15px;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 32px;
+                margin-bottom: 40px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 15px;
+                margin-bottom: 15px;           
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                margin-top: 35px;
+                margin-bottom: 40px;
+            }
+        }
+
+        > div {
+            margin-bottom: 60px;
+
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 127px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 40px;                
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-bottom: 80px;               
+            }
+
+            @include media-breakpoint-up(xxl) {
+                margin-bottom: 165px;
+            }
+
+        }
+
+
+
+    }
+    
+
+}
+
+//Cols 2 Image Text - HSSE 
+.cols-2-image-text {
+
+
+    .content-box {
+        background: #fff;
+    }
+
+
+    .text-with-image ul li span {
+
+    }
+
+    .text-with-image  {
+
+        ul li span {
+
+            font-size: 30px;
+            margin-right: 15px;
+
+            @include media-breakpoint-up(sm) {
+
+                font-size: 60px;
+                margin-right: 20px;
+
+            }  
+
+            @include media-breakpoint-up(lg) {
+                
+                font-size: 70px;
+                margin-right: 25px;
+
+            }  
+
+        }
+    }
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
