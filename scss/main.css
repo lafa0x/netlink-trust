@@ -15734,9 +15734,8 @@ h3, .h3, .h3 {
 }
 
 .small-body {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.27;
+  font-size: 13px;
+  line-height: 17px;
 }
 
 p {
@@ -17325,6 +17324,7 @@ section h2, section .h2 {
 
 .page-header .hero-about .content ul li a {
   border-bottom: 2px solid white;
+  text-decoration: none;
 }
 
 .page-header .hero-about .content ul li a span {
@@ -18068,6 +18068,29 @@ section h2, section .h2 {
 @media (min-width: 1920px) {
   .cols-3-image-text .text-with-image > div {
     margin-bottom: 165px;
+  }
+}
+
+.cols-2-image-text .content-box {
+  background: #fff;
+}
+
+.cols-2-image-text .text-with-image ul li span {
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .cols-2-image-text .text-with-image ul li span {
+    font-size: 60px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cols-2-image-text .text-with-image ul li span {
+    font-size: 70px;
+    margin-right: 25px;
   }
 }
 

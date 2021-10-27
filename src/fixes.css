@@ -1,9 +1,6 @@
-
-    
-
 .text-dark .small-body {
-    color: black;
-    margin-bottom: 1.5rem;
+    /* color: black;
+    margin-bottom: 1.5rem; */
 }
 
 .section-content-about h2 {
@@ -15,10 +12,10 @@
     padding-left: 20px;
 }
 .small-body {
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 .text-dark p {
-    color: black;
+    /* color: black; */
 }
 .text-dark .big-bold, .text-dark .big-body {
     color: black;
@@ -92,10 +89,6 @@ a {
         font-size: 18px;
         line-height: 22px;
         margin-bottom: 20px;
-    }
-    .small-body {
-        font-size: 13px;
-        line-height: 17px;
     }
     
     p.updated {

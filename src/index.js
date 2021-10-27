@@ -418,7 +418,8 @@ $(function () {
             
         }
     }
-    fixResponsiveClientSlider()
+    
+    fixResponsiveClientSlider();
     window.addEventListener('resize', fixResponsiveClientSlider);
     
     $('.client-logo-slider').slick({
