@@ -53,12 +53,10 @@ $spacers: map-merge(
         14: ($spacer * 7.5),      //120px
         15: ($spacer * 9.375),    //150px
         16: ($spacer * 10),       //160px
-        17: ($spacer * 10.625)    //170px
-        17: ($spacer * 11.25)    //180px        
-        17: ($spacer * 11.875)    //190px
-        17: ($spacer * 12.5)    //200px
-
-
+        17: ($spacer * 10.625),    //170px
+        18: ($spacer * 11.25),     //180px        
+        19: ($spacer * 11.875),    //190px
+        20: ($spacer * 12.5)      //200px
     ),
     $spacers
 );
@@ -145,9 +143,9 @@ h3, .h3 {
 }
 
 .small-body {
-    // font-weight: 300;
-    font-size: 13px;
-    line-height: 17px;
+    color: #000;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 p {
@@ -1949,11 +1947,11 @@ section {
 
                 button:before {
                     content: "";
-                    background-color: #707070;
+                    background-color: rgba(#707070, 0.5);
                     opacity: 50%;
                     border-radius: 5px;
-
                 }
+
             }
         }
 
@@ -2090,7 +2088,7 @@ section {
             }
 
             @include media-breakpoint-down(sm) {
-                height: 90vh;
+                height: 100vh;
             }
 
             .slide-item {
