@@ -1,6 +1,6 @@
 // Import all plugins
 import * as bootstrap from 'bootstrap';
-import * as jQuery from 'jquery';
+// import * as jQuery from 'jquery';
 
 //import mmenu
 // import * as mmenu from 'mmenu';
