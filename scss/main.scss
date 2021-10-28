@@ -8,9 +8,6 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
-
-
-
 /* -------begin customization-------- */
 
 $grid-breakpoints: (
@@ -77,36 +74,79 @@ $spacers: map-merge(
 
 
 //Custom utilities
+.text-blue {
+    color: #032853;
+}
+
 .link-blue {
     color: #1697d9;
 }
 
 .bg-blue {
-    background-color: $blue;
+    background-color: $secondary;
 }
 
 .bg-gray {
     background-color: $light-gray;
 }
 
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+    
+      opacity: 1;
+      max-height: 999em;
+
+      font-size: 16px;
+      line-height: 24px;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+}
 
 body, html {
     font-family: $body-font;
-    overflow-x: hidden;
     background: white;
 }
+
+main { overflow: hidden; }
+
+.mm-wrapper { overflow: unset; }
 
 /* let's define variable according to the style guide */
 
 h1, h2, h3 {
     font-family: $heading-font;
+    margin: 0;
 }
 
 h1, .h1{
     font-size: 35px;
     line-height: 1.05;
-    font-weight: 300;
+    font-weight: 800;
     color: text-color("dark");
+
+    @include media-breakpoint-up (sm) {
+        font-size: 70px;
+        line-height: 1.2;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 44px;
+        line-height: 1.25;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: 60px;
+        line-height: 1.17;        
+    }    
+
 }
 
 h2, .h2 {
@@ -114,44 +154,159 @@ h2, .h2 {
     line-height: 1.25;
     letter-spacing: 0.27px;
     color: text-color("dark");  
-    font-weight: 200;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 35px;
+        line-height: 1.17;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: 40px;
+        line-height: 1.17;        
+    }    
 }
 
 h3, .h3 {
     font-size: 22px;
     line-height: 1.1;
-    font-weight: bold;
+    font-weight: 700;
     color: text-color("dark"); 
-}
 
-.big-body {
-    font-size: 24px;
-    font-family: $body-font;
-    line-height: 1.2;
+    @include media-breakpoint-up (sm) {
+        font-size: 48px;
+        line-height: 1.1;  
+        font-weight: bold; 
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 32px;
+        line-height: 1.2;    
+    }
 }
 
 .body-bold{
     font-weight: bold;
-    line-height: 1.17;
+    font-size: 16px;
+    line-height: 20px;
     font-family: $body-font;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.big-body {
+    font-family: $body-font;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 24px;
+        line-height: 32px;
+    }
 }
 
 .small-body-bold {
     font-size: 16px;
     font-weight: bold;
     line-height: 1.27;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 22px;
+        line-height: 1.15;  
+    }
 }
 
 .small-body {
     color: #000;
     font-size: 16px;
     line-height: 22px;
-}
 
+    @include media-breakpoint-up (sm) {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: 22px;
+        line-height: 1.27;  
+    }
+}
+ 
 p {
     font-size: 16px;
-    color: $gray;
-    line-height: 1.5;
+    line-height: 24px;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.text-cta {
+    font-size: 15px;
+    line-height: 1.1;    
+    letter-spacing: 0.1em;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 16px;
+    }
+    
+}
+
+.text-tag {
+
+    font-size: 12px;
+    line-height: 1.1;    
+    letter-spacing: 0.1em;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    @include media-breakpoint-up (lg) {
+        font-size: 14px;
+    }
+
 }
 
 .btn {
@@ -162,6 +317,19 @@ p {
     padding: 20px;
     font-family: $body-font;
     font-weight: bold;
+    width: 100%;
+    border: 8px;
+
+    @include media-breakpoint-up (sm) {
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+        width: 366px;
+    }
+
 }
 
 .btn-outline {
@@ -181,10 +349,15 @@ p {
 
     }
 }
+
 .text-light {
     h1, h2, h3, p, ul, li {
         color: text-color("light");
     }
+}
+
+.text-light-gray {
+    color: rgba( $gray, 0.6);
 }
 
 .read-more-btn {
@@ -206,185 +379,6 @@ p {
             fill:$black;
         }
     }
-}
-
-
-/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
-
-
-.media-notices {
-    .media-notice {
-        margin-bottom: 5rem;
-        // margin-top: 2rem;
-
-        >*:not(a:last-child) {
-            margin-bottom: 1.5rem;
-        }
-
-        .date {
-            font-size: 14px;
-            text-transform: uppercase;
-            line-height: 1.43;
-            letter-spacing: 0.5px;
-        }
-    }
-}
-
-
-
-// Default variable overrides
-h1, .h1{
-    margin-bottom: 0;
-
-    @include media-breakpoint-up (sm) {
-        font-size: 70px;
-        line-height: 1.2;
-    }
-
-    @include media-breakpoint-up (lg) {
-        font-size: 44px;
-        line-height: 1.25;
-    }
-
-    @include media-breakpoint-up(xxl) {
-        font-size: 60px;
-        line-height: 1.17;        
-    }    
-
-}
-
-h2, .h2 {
-
-    @include media-breakpoint-up(sm) {
-        font-size: 48px;
-        line-height: 1.1;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 35px;
-        line-height: 1.17;
-    }
-
-    @include media-breakpoint-up(xxl) {
-        font-size: 40px;
-        line-height: 1.17;        
-    }    
-}
-
-h3, .h3 {
-
-    @include media-breakpoint-up (sm) {
-        font-size: 48px;
-        line-height: 1.1;  
-        font-weight: bold; 
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 32px;
-        line-height: 1.2;    
-    }
-
-}
-
-.big-body {
-    @include media-breakpoint-up (sm) {
-        font-size: 36px;
-        line-height: 0.9;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 24px;
-        line-height: 1.33;
-    }
-}
-
-.body-bold{
-    @include media-breakpoint-up (sm) {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 24px;
-        line-height: 1.2;
-    }
-
-}
-
-.small-body-bold {
-    @include media-breakpoint-up (sm) {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 22px;
-        line-height: 1.15;  
-    }
-}
-
-.small-body {
-
-    @include media-breakpoint-up (sm) {
-        font-size: 32px;
-        line-height: 1.25;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 18px;
-        line-height: 1.25;
-    }
-
-    @include media-breakpoint-up(xxl) {
-        font-size: 22px;
-        line-height: 1.27;  
-    }
-
-}
-
-p {
-    @include media-breakpoint-up (sm) {
-        font-size: 26px;
-        line-height: 1.25;
-    }
-
-    @include media-breakpoint-up (lg) {
-        font-size: 16px;
-    }
-
-}
-
-.text-tag {
-
-    font-size: 12px;
-    line-height: 1.1;    
-    letter-spacing: 0.1em;
-
-    @include media-breakpoint-up (sm) {
-        font-size: 24px;
-        line-height: 1.2;
-    }
-
-    @include media-breakpoint-up (lg) {
-        font-size: 14px;
-    }
-
-}
-
-.btn {
-
-    width: 100%;
-
-    @include media-breakpoint-up (sm) {
-        font-size: 30px;
-        padding: 20px;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: 16px;
-        width: 366px;
-    }
-    
 }
 
 .form-control {
@@ -430,20 +424,6 @@ p {
 }
 
 
-// Typography
-$font-size-base: 16px; // this changes the font-size throughout bootstrap
-$font-family-sans-serif: "Raleway",
-sans-serif;
-$line-height-base: 1.6;
-
-$theme-colors: ("primary": #1697D9,
-    "danger": #ff4136);
-
-$btn-bg: #1697D9;
-$btn-bg-hover: #032853;
-$btn-border: #56a1c5;
-$btn-color: #fff;
-
 @mixin button-variant($bg, $border, $color, $bg-hover) {
     background-color: $bg;
     color: $color;
@@ -467,7 +447,7 @@ $btn-color: #fff;
 
     @include media-breakpoint-up(lg) {
         width: 365px;
-        padding: 18.5px 0;
+        padding: 20px 0;
     }
 
     &:hover {
@@ -477,9 +457,7 @@ $btn-color: #fff;
 
 .btn-primary {
 
-
-    @include button-variant($btn-bg, $btn-border, $btn-color, $btn-bg-hover);
-
+    @include button-variant($primary, $btn-border, $btn-color, $secondary);
 
     i {
         font-size: 16px;
@@ -499,36 +477,13 @@ $btn-color: #fff;
         }   
 
     }
-    
-
 }
 
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-// @import "../node_modules/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here (though functions won't be available)
-// ...
-
-// 3. Include remainder of required Bootstrap stylesheets
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
-// @import "../node_modules/bootstrap/scss/root";
-
-// 4. Include any optional Bootstrap CSS as needed
-// @import "../node_modules/bootstrap/scss/utilities";
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
-// @import "../node_modules/bootstrap/scss/images";
-// @import "../node_modules/bootstrap/scss/containers";
-// @import "../node_modules/bootstrap/scss/grid";
-// @import "../node_modules/bootstrap/scss/helpers";
-
-// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-// @import "../node_modules/bootstrap/scss/utilities/api";
+.btn-secondary {
+    @include button-variant($secondary, $btn-border, $btn-color, $primary);
+}
 
 // Then add additional custom code here
-
-
 .modal-dialog {
 
     min-width: 300px;
@@ -1040,15 +995,6 @@ footer {
 
 }
 
-//section
-section {
-
-    h2 {
-        text-transform: uppercase;
-    }
-
-}
-
 //timeline type 1
 .timeline {
 
@@ -1271,9 +1217,9 @@ section {
         }
 
         p {
-            margin-bottom: 40px !important;
+            // margin-bottom: 40px !important;
 
-            @include media-breakpoint-up(sm) {
+            @include media-breakpoint-up(lg) {
                 margin-bottom: 80px !important;
             }
 
@@ -1577,7 +1523,7 @@ section {
         .slide-item {
             padding-top: 15px;
 
-            @include media-breakpoint-up(sm) {
+            @include media-breakpoint-up(lg) {
                 border-top: 2px solid #1697D9;
             }
 
@@ -1749,25 +1695,25 @@ section {
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), transparent);
         }
 
-        @include media-breakpoint-up(sm) {
-            padding-top: 231px;
-            padding-bottom: 260px;
-        }
+        // @include media-breakpoint-up(sm) {
+        //     padding-top: 231px;
+        //     padding-bottom: 260px;
+        // }
 
-        @include media-breakpoint-up(lg) {
-            padding-top: 65px;
-            padding-bottom: 75px;            
-        }
+        // @include media-breakpoint-up(lg) {
+        //     padding-top: 65px;
+        //     padding-bottom: 75px;            
+        // }
 
-        @include media-breakpoint-up(xl) {
-            padding-top: 85px;
-            padding-bottom: 90px;           
-        }
+        // @include media-breakpoint-up(xl) {
+        //     padding-top: 85px;
+        //     padding-bottom: 90px;           
+        // }
 
-        @include media-breakpoint-up(xxl) {
-            padding-top: 158px;
-            padding-bottom: 163px;            
-        }
+        // @include media-breakpoint-up(xxl) {
+        //     padding-top: 158px;
+        //     padding-bottom: 163px;            
+        // }
     
         .content {
     
@@ -2061,8 +2007,17 @@ section {
                 right: 52px;
             }
 
+                       
+            @include media-breakpoint-up(xl) {
+
+                .btn {
+                    width: 260px;
+                }          
+
+            }
+
                     
-            svg {
+            > svg {
 
                 display: none !important; 
 
@@ -2077,15 +2032,10 @@ section {
 
             }
 
-
             .slick-prev, .slick-next {
                 z-index: 9;
             }
-            
-
-            @include media-breakpoint-down(lg) {
-                // height: 100vh;
-            }
+ 
 
             @include media-breakpoint-down(sm) {
                 height: 100vh;
@@ -2180,11 +2130,7 @@ section {
                         width: 35%;
                         transform: translateY(-50%);
                         padding-left: 95px;
-                        
-                        @include media-breakpoint-up(xxl) {
-                            width: 45%;
-                            margin-left: 110px;
-                        }
+                    
 
                         h1, p {
                             color: #fff;
@@ -2197,6 +2143,12 @@ section {
 
                     }
 
+                        
+                    @include media-breakpoint-up(xl) {
+                        width: 45%;
+                        margin-left: 110px;
+                    }                    
+
                     @include media-breakpoint-up(xxl) {
                         width: 35%;
                         top: 35%;
@@ -2206,8 +2158,6 @@ section {
                 }
 
             }
-
-
 
             ul.slick-dots {
 
@@ -2420,9 +2370,12 @@ section {
 //page banner 
 .page-banner {
     position: relative;
-    height: 400px;
-    display: flex;
-    align-items: center;
+
+    @include media-breakpoint-down(lg) {
+        height: 400px;
+        display: flex;
+        align-items: center;
+    }
 
     &:before {
         content: "";
@@ -2657,6 +2610,24 @@ section {
 
 }
 
+/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
+.media-notices {
+    .media-notice {
+        margin-bottom: 5rem;
+        // margin-top: 2rem;
+
+        >*:not(a:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 1.43;
+            letter-spacing: 0.5px;
+        }
+    }
+}
 
 
 

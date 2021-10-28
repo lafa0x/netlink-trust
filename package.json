@@ -16,7 +16,7 @@
     "replace-in-file": "^6.3.1"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html",
+    "dev": "parcel ./src/*.html",
     "prebuild": "npx rimraf build",
     "build": "parcel build --public-url ./ ./src/index.html --out-dir public --no-cache && node postbuild.js"
   },

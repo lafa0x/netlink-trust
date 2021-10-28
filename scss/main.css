@@ -16597,6 +16597,10 @@ fieldset:disabled .btn {
   }
 }
 
+.text-blue {
+  color: #032853;
+}
+
 .link-blue {
   color: #1697d9;
 }
@@ -16609,140 +16613,51 @@ fieldset:disabled .btn {
   background-color: rgba(3, 40, 83, 0.05);
 }
 
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  max-height: 999em;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 576px) {
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+@media (min-width: 992px) {
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 body, html {
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
   background: white;
+}
+
+main {
+  overflow: hidden;
+}
+
+.mm-wrapper {
+  overflow: unset;
 }
 
 /* let's define variable according to the style guide */
 h1, .h1, h2, .h2, h3, .h3 {
   font-family: "Be Vietnam Pro", sans-serif;
+  margin: 0;
 }
 
 h1, .h1, .h1 {
   font-size: 35px;
   line-height: 1.05;
-  font-weight: 300;
+  font-weight: 800;
   color: #000000;
-}
-
-h2, .h2, .h2 {
-  font-size: 24px;
-  line-height: 1.25;
-  letter-spacing: 0.27px;
-  color: #000000;
-  font-weight: 200;
-}
-
-h3, .h3, .h3 {
-  font-size: 22px;
-  line-height: 1.1;
-  font-weight: bold;
-  color: #000000;
-}
-
-.big-body {
-  font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2;
-}
-
-.body-bold {
-  font-weight: bold;
-  line-height: 1.17;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.small-body-bold {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.27;
-}
-
-.small-body {
-  color: #000;
-  font-size: 16px;
-  line-height: 22px;
-}
-
-p {
-  font-size: 16px;
-  color: #707070;
-  line-height: 1.5;
-}
-
-.btn {
-  font-size: 16px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  line-height: 1.25;
-  padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
-
-.btn-outline {
-  border: 1px solid #707070;
-  color: #000000;
-}
-
-.btn-outline:hover {
-  background-color: rgba(112, 112, 112, 0.1);
-}
-
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1536px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-.text-light h1, .text-light .h1, .text-light h2, .text-light .h2, .text-light h3, .text-light .h3, .text-light p, .text-light ul, .text-light li {
-  color: #ffffff;
-}
-
-.read-more-btn {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  line-height: 1.125;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.read-more-btn svg {
-  position: relative;
-  top: -2px;
-}
-
-.read-more-btn:hover {
-  color: #000000;
-}
-
-.read-more-btn:hover svg path {
-  fill: #000000;
-}
-
-/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
-.media-notices .media-notice {
-  margin-bottom: 5rem;
-}
-
-.media-notices .media-notice > *:not(a:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-.media-notices .media-notice .date {
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 1.43;
-  letter-spacing: 0.5px;
-}
-
-h1, .h1, .h1 {
-  margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
@@ -16766,6 +16681,15 @@ h1, .h1, .h1 {
   }
 }
 
+h2, .h2, .h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: 0.27px;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 @media (min-width: 576px) {
   h2, .h2, .h2 {
     font-size: 48px;
@@ -16787,6 +16711,13 @@ h1, .h1, .h1 {
   }
 }
 
+h3, .h3, .h3 {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #000000;
+}
+
 @media (min-width: 576px) {
   h3, .h3, .h3 {
     font-size: 48px;
@@ -16802,32 +16733,51 @@ h1, .h1, .h1 {
   }
 }
 
-@media (min-width: 576px) {
-  .big-body {
-    font-size: 36px;
-    line-height: 0.9;
-  }
-}
-
-@media (min-width: 992px) {
-  .big-body {
-    font-size: 24px;
-    line-height: 1.33;
-  }
+.body-bold {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 576px) {
   .body-bold {
     font-size: 36px;
-    line-height: 1.2;
+    line-height: 44px;
   }
 }
 
 @media (min-width: 992px) {
   .body-bold {
     font-size: 24px;
-    line-height: 1.2;
+    line-height: 28px;
   }
+}
+
+.big-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media (min-width: 576px) {
+  .big-body {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (min-width: 992px) {
+  .big-body {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.small-body-bold {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.27;
 }
 
 @media (min-width: 576px) {
@@ -16842,6 +16792,12 @@ h1, .h1, .h1 {
     font-size: 22px;
     line-height: 1.15;
   }
+}
+
+.small-body {
+  color: #000;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 @media (min-width: 576px) {
@@ -16865,15 +16821,40 @@ h1, .h1, .h1 {
   }
 }
 
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 @media (min-width: 576px) {
   p {
     font-size: 26px;
-    line-height: 1.25;
+    line-height: 34px;
   }
 }
 
 @media (min-width: 992px) {
   p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.text-cta {
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 576px) {
+  .text-cta {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-cta {
     font-size: 16px;
   }
 }
@@ -16898,7 +16879,15 @@ h1, .h1, .h1 {
 }
 
 .btn {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.25;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   width: 100%;
+  border: 8px;
 }
 
 @media (min-width: 576px) {
@@ -16913,6 +16902,53 @@ h1, .h1, .h1 {
     font-size: 16px;
     width: 366px;
   }
+}
+
+.btn-outline {
+  border: 1px solid #707070;
+  color: #000000;
+}
+
+.btn-outline:hover {
+  background-color: rgba(112, 112, 112, 0.1);
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1536px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.text-light h1, .text-light .h1, .text-light h2, .text-light .h2, .text-light h3, .text-light .h3, .text-light p, .text-light ul, .text-light li {
+  color: #ffffff;
+}
+
+.text-light-gray {
+  color: rgba(112, 112, 112, 0.6);
+}
+
+.read-more-btn {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  line-height: 1.125;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.read-more-btn svg {
+  position: relative;
+  top: -2px;
+}
+
+.read-more-btn:hover {
+  color: #000000;
+}
+
+.read-more-btn:hover svg path {
+  fill: #000000;
 }
 
 .form-control {
@@ -16989,7 +17025,7 @@ h1, .h1, .h1 {
 @media (min-width: 992px) {
   .btn-primary {
     width: 365px;
-    padding: 18.5px 0;
+    padding: 20px 0;
   }
 }
 
@@ -17015,6 +17051,43 @@ h1, .h1, .h1 {
     font-size: 23px;
     margin-right: 11px;
   }
+}
+
+.btn-secondary {
+  background-color: #032853;
+  color: #fff;
+  border: none;
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .btn-secondary {
+    padding: 32.1px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-secondary {
+    width: 365px;
+    padding: 20px 0;
+  }
+}
+
+.btn-secondary:hover {
+  background-color: #1697D9;
 }
 
 .modal-dialog {
@@ -17482,10 +17555,6 @@ footer p {
   }
 }
 
-section h2, section .h2 {
-  text-transform: uppercase;
-}
-
 .timeline {
   background-color: rgba(3, 40, 83, 0.05);
   padding-top: 75px;
@@ -17705,11 +17774,7 @@ section h2, section .h2 {
   }
 }
 
-.timeline-vision-mission > img + .container-fluid p, .timeline-vision-mission > img + .container-sm p, .timeline-vision-mission > img + .container-md p, .timeline-vision-mission > img + .container-lg p, .timeline-vision-mission > img + .container-xl p, .timeline-vision-mission > img + .container-xxl p {
-  margin-bottom: 40px !important;
-}
-
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .timeline-vision-mission > img + .container-fluid p, .timeline-vision-mission > img + .container-sm p, .timeline-vision-mission > img + .container-md p, .timeline-vision-mission > img + .container-lg p, .timeline-vision-mission > img + .container-xl p, .timeline-vision-mission > img + .container-xxl p {
     margin-bottom: 80px !important;
   }
@@ -18005,7 +18070,7 @@ section h2, section .h2 {
   padding-top: 15px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .article-news-slider .articles-style .slide-item {
     border-top: 2px solid #1697D9;
   }
@@ -18179,34 +18244,6 @@ section h2, section .h2 {
   display: block;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), to(transparent));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), transparent);
-}
-
-@media (min-width: 576px) {
-  .page-header .hero-about {
-    padding-top: 231px;
-    padding-bottom: 260px;
-  }
-}
-
-@media (min-width: 992px) {
-  .page-header .hero-about {
-    padding-top: 65px;
-    padding-bottom: 75px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .page-header .hero-about {
-    padding-top: 85px;
-    padding-bottom: 90px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .page-header .hero-about {
-    padding-top: 158px;
-    padding-bottom: 163px;
-  }
 }
 
 .page-header .hero-about .content h1, .page-header .hero-about .content .h1 {
@@ -18462,15 +18499,21 @@ section h2, section .h2 {
   right: 52px;
 }
 
-.nlt-slider .full-slider.slick-initialized svg {
+@media (min-width: 1200px) {
+  .nlt-slider .full-slider.slick-initialized .btn {
+    width: 260px;
+  }
+}
+
+.nlt-slider .full-slider.slick-initialized > svg {
   display: none !important;
 }
 
 @media (min-width: 992px) {
-  .nlt-slider .full-slider.slick-initialized svg {
+  .nlt-slider .full-slider.slick-initialized > svg {
     display: block !important;
   }
-  .nlt-slider .full-slider.slick-initialized svg path {
+  .nlt-slider .full-slider.slick-initialized > svg path {
     fill: #fff;
   }
 }
@@ -18573,22 +18616,19 @@ section h2, section .h2 {
             transform: translateY(-50%);
     padding-left: 95px;
   }
-}
-
-@media (min-width: 992px) and (min-width: 1920px) {
-  .nlt-slider .full-slider.slick-initialized .slide-item .content-box {
-    width: 45%;
-    margin-left: 110px;
-  }
-}
-
-@media (min-width: 992px) {
   .nlt-slider .full-slider.slick-initialized .slide-item .content-box h1, .nlt-slider .full-slider.slick-initialized .slide-item .content-box .h1, .nlt-slider .full-slider.slick-initialized .slide-item .content-box p {
     color: #fff;
   }
   .nlt-slider .full-slider.slick-initialized .slide-item .content-box p {
     padding-top: 40px !important;
     padding-bottom: 46px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nlt-slider .full-slider.slick-initialized .slide-item .content-box {
+    width: 45%;
+    margin-left: 110px;
   }
 }
 
@@ -18791,13 +18831,18 @@ section h2, section .h2 {
 
 .page-banner {
   position: relative;
-  height: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .page-banner {
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .page-banner:before {
@@ -19020,6 +19065,22 @@ section h2, section .h2 {
     font-size: 70px;
     margin-right: 25px;
   }
+}
+
+/* media notices pages - Move this css to main.scss later or just create a new scss file and import it on main.scss */
+.media-notices .media-notice {
+  margin-bottom: 5rem;
+}
+
+.media-notices .media-notice > *:not(a:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.media-notices .media-notice .date {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.43;
+  letter-spacing: 0.5px;
 }
 
 .mm-wrapper_opened .mm-panels .mm-navbar > .mm-navbar__title {

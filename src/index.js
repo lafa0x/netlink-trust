@@ -102,12 +102,7 @@ import * as bootstrap from 'bootstrap';
 	};
 })(jQuery);
 
-
-
-
-
 // Then add additional custom code here
-
 $(function () {
 
     // Using '$' instead of 'jQuery' in WordPress
@@ -186,18 +181,10 @@ $(function () {
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
             }
-
         ]
     });
 
@@ -223,18 +210,10 @@ $(function () {
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 769,
-                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
             }
-
         ]
     });    
 
@@ -318,6 +297,7 @@ $(function () {
             dots: true,
             infinite: true,
             focusOnSelect: true,
+            autoplay: true, /* this is the new line */
             speed: 500,
             autoplaySpeed: 5000,
             fade: true,
