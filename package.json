@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "parcel ./src/*.html",
     "prebuild": "npx rimraf build",
-    "build": "parcel build --public-url ./ ./src/index.html --out-dir public --no-cache && node postbuild.js"
+    "build": "parcel build --public-url ./ ./src/index.html --no-minify --out-dir public --no-cache && node postbuild.js"
   },
   "author": "lafa0x",
   "license": "ISC",

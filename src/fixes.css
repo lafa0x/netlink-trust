@@ -2,6 +2,7 @@
     color: #707070;
 }
 
+
 .link-dark-blue {
     color: #032853;
 }
@@ -245,5 +246,20 @@ section.cols-2-image-text .content-box {
         margin-right: 40px;
         margin-left: 40px;
     }
+
+    .nlt-slider .full-slider.slick-initialized .slide-item .content-box {
+        padding-left: 165px;
+    }
+
 }
+
+/* TODO: :checked */
+@media (max-width: 991px) {
+    .nlt-slider .full-slider.slick-initialized ul.slick-dots li button:before {
+        
+        background-color: #707070;
+        opacity: 50%;
+       
+    }
+    }
 
