@@ -2,6 +2,19 @@
 import * as bootstrap from 'bootstrap';
 // import * as jQuery from 'jquery';
 
+// window.$ = require('jquery');
+// window.jQuery = require('jquery');
+
+// import * as jQuery from 'jquery';
+
+// // Import all plugins
+// import * as bootstrap from 'bootstrap';
+
+// import 'slick-carousel';
+// import * as mmenu from '../node_modules/mmenu-js/dist/mmenu';
+// import * as polyfill from '../node_modules/mmenu-js/dist/mmenu.polyfills';
+
+
 //import mmenu
 // import * as mmenu from 'mmenu';
 
@@ -13,94 +26,165 @@ import * as bootstrap from 'bootstrap';
 
 /* loadMoreResult */
 /**
-	*	Load More Results v1.0.0
-	* Author: Cenk Çalgan
-	* 
-	* Options:
-	* - tag (object):
-	*		- name (string)
-	*		- class (string)
-	* - displayedItems (int)
-	*	- showItems (int)
-	* - button (object):
-	*		- class (string)
-	*		- text (string)
+    *	Load More Results v1.0.0
+    * Author: Cenk Çalgan
+    * 
+    * Options:
+    * - tag (object):
+    *		- name (string)
+    *		- class (string)
+    * - displayedItems (int)
+    *	- showItems (int)
+    * - button (object):
+    *		- class (string)
+    *		- text (string)
 */
 
+
+//Mmenu Integration Code
+document.addEventListener(
+    "DOMContentLoaded", () => {
+
+        var w = $(this).width();
+
+
+        function initMmenu() {
+            new Mmenu("#navbarSupportedContent");
+        }
+
+        $(window).on('resize', function () {
+
+            w = $(this).width();
+
+            if (w < 769) {
+
+                initMmenu();
+            }
+
+        });
+
+        (w < 769) ? initMmenu() : 0;
+
+
+        // make it as accordion for smaller screens
+        if (window.innerWidth > 769) {
+
+            document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
+
+                everyitem.addEventListener('mouseover', function (e) {
+
+                    let el_link = this.querySelector('span[data-bs-toggle]');
+
+                    if (el_link != null) {
+                        let nextEl = el_link.nextElementSibling;
+                        el_link.classList.add('show');
+                        nextEl.classList.add('show');
+
+                        el_link.style = "color: #1697d9!important";
+
+
+                    }
+
+                });
+                everyitem.addEventListener('mouseleave', function (e) {
+                    let el_link = this.querySelector('span[data-bs-toggle]');
+
+                    if (el_link != null) {
+                        let nextEl = el_link.nextElementSibling;
+                        el_link.classList.remove('show');
+                        nextEl.classList.remove('show');
+
+                        el_link.style.color = "";
+
+                    }
+
+
+                })
+            });
+
+        }
+        // end if innerWidth
+
+    });
+
+
+// Load More Articels Posts
 (function ($) {
-	'use strict';
+    'use strict';
 
-	$.fn.loadMoreResults = function (options) {
+    $.fn.loadMoreResults = function (options) {
 
-		var defaults = {
-			tag: {
-				name: 'div',
-				'class': 'item'
-			},
-			displayedItems: 6,
-			showItems: 6,
-			button: {
-				'class': 'btn btn-outline',
-				text: 'Load More'
-			}
-		};
+        var defaults = {
+            tag: {
+                name: 'div',
+                'class': 'item'
+            },
+            displayedItems: 6,
+            showItems: 6,
+            button: {
+                'class': 'btn btn-outline',
+                text: 'Load More'
+            }
+        };
 
-		var opts = $.extend(true, {}, defaults, options);
+        var opts = $.extend(true, {}, defaults, options);
 
-		var alphaNumRE = /^[A-Za-z][-_A-Za-z0-9]+$/;
-		var numRE = /^[0-9]+$/;
+        var alphaNumRE = /^[A-Za-z][-_A-Za-z0-9]+$/;
+        var numRE = /^[0-9]+$/;
 
-		$.each(opts, function validateOptions(key, val) {
-			if (key === 'tag') {
-				formatCheck(key, val, 'name', 'string');
-				formatCheck(key, val, 'class', 'string');
-			}
-			if (key === 'displayedItems') {
-				formatCheck(key, val, null, 'number');
-			}
-			if (key === 'showItems') {
-				formatCheck(key, val, null, 'number');
-			}
-			if (key === 'button') {
-				formatCheck(key, val, 'class', 'string');
-			}
-		});
+        $.each(opts, function validateOptions(key, val) {
+            if (key === 'tag') {
+                formatCheck(key, val, 'name', 'string');
+                formatCheck(key, val, 'class', 'string');
+            }
+            if (key === 'displayedItems') {
+                formatCheck(key, val, null, 'number');
+            }
+            if (key === 'showItems') {
+                formatCheck(key, val, null, 'number');
+            }
+            if (key === 'button') {
+                formatCheck(key, val, 'class', 'string');
+            }
+        });
 
-		function formatCheck(key, val, prop, typ) {
-			if (prop !== null && typeof prop !== 'object') {
-				if (typeof val[prop] !== typ || String(val[prop]).match(typ == 'string' ? alphaNumRE : numRE) === null) {
-					opts[key][prop] = defaults[key][prop];
-				}
-			} else {
-				if (typeof val !== typ || String(val).match(typ == 'string' ? alphaNumRE : numRE) === null) {
-					opts[key] = defaults[key];
-				}
-			}
-		};
+        function formatCheck(key, val, prop, typ) {
+            if (prop !== null && typeof prop !== 'object') {
+                if (typeof val[prop] !== typ || String(val[prop]).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+                    opts[key][prop] = defaults[key][prop];
+                }
+            } else {
+                if (typeof val !== typ || String(val).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+                    opts[key] = defaults[key];
+                }
+            }
+        };
 
-		return this.each(function (index, element) {
-			var $list = $(element),
-					lc = $list.find(' > ' + opts.tag.name + '.' + opts.tag.class).length,
-					dc = parseInt(opts.displayedItems),
-					sc = parseInt(opts.showItems);
-			
-			$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').css("display", "inline-block");
-			$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':gt(' + (dc - 1) + ')').css("display", "none");
+        return this.each(function (index, element) {
+            var $list = $(element),
+                lc = $list.find(' > ' + opts.tag.name + '.' + opts.tag.class).length,
+                dc = parseInt(opts.displayedItems),
+                sc = parseInt(opts.showItems);
 
-			$list.parent().append('<div class="col-md-12 text-center"><button class="btn-view ' + opts.button.class + '">' + opts.button.text + '</button></div>');
-			$list.parent().on("click", ".btn-view", function (e) {
-				e.preventDefault();
-				dc = (dc + sc <= lc) ? dc + sc : lc;
-				
-				$list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').fadeIn();
-				if (dc == lc) {
-					$(this).hide();
-				}
-			});
-		});
+            $list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').css("display", "inline-block");
+            $list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':gt(' + (dc - 1) + ')').css("display", "none");
 
-	};
+            $list.parent().append('<div class="col-md-12 text-center"><button class="btn-view ' + opts.button.class + '">' + opts.button.text + '</button></div>');
+            $list.parent().on("click", ".btn-view", function (e) {
+                e.preventDefault();
+                dc = (dc + sc <= lc) ? dc + sc : lc;
+
+                $list.find(' > ' + opts.tag.name + '.' + opts.tag.class + ':lt(' + dc + ')').fadeIn();
+                if (dc == lc) {
+                    $(this).hide();
+                }
+            });
+        });
+
+    };
 })(jQuery);
+
+
 
 // Then add additional custom code here
 $(function () {
@@ -215,58 +299,43 @@ $(function () {
                 }
             }
         ]
-    });    
+    });
 
-    if ($(window).width() >= 590) { 
-        
-        dotCustomSlider(); 
-    
-    }else {
+    if ($(window).width() >= 590) {
 
-        console.log("slider initialized ");
+        dotCustomSlider();
 
-        /* Home Slider with Adaptive height */
-        $('.full-slider').slick({
-            dots: true,
-            infinite: true,
-            focusOnSelect: true,
-            speed: 500,
-            autoplaySpeed: 5000,
-            fade: true,
-            cssEase: 'linear',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-
-            nextArrow: '<svg class="slick-next" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><g id="arrow-right-circle-fill" transform="translate(-10.125 -10.124)"><path id="Path_2" data-name="Path 2" d="M21.359,32.072A1.788,1.788,0,1,0,23.888,34.6L34.6,23.888a1.785,1.785,0,0,0,0-2.528L23.888,10.648a1.788,1.788,0,1,0-2.528,2.528l7.665,7.662H11.91a1.785,1.785,0,0,0,0,3.571H29.025l-7.667,7.664Z" fill="#1697d9" fill-rule="evenodd"/></g></svg>',
-            prevArrow: '<svg class="slick-prev" xmlns="http://www.w3.org/2000/svg" width="24.998" height="25" viewBox="0 0 24.998 25"><g id="arrow-left-circle-fill" transform="translate(0 -10.124)"><path id="Path_1" data-name="Path 1" d="M23.888,32.072A1.788,1.788,0,0,1,21.36,34.6L10.648,23.888a1.785,1.785,0,0,1,0-2.528L21.36,10.648a1.788,1.788,0,1,1,2.528,2.528l-7.667,7.662H33.336a1.785,1.785,0,0,1,0,3.571H16.222l7.667,7.664Z" transform="translate(-10.123 0)" fill="#1697d9" fill-rule="evenodd"/></g></svg> '
-        });   
-         
     }
+
+    // else {
+
+    //     console.log("slider initialized ");
+
+    //     /* Home Slider with Adaptive height */
+    //     $('.full-slider').slick({
+    //         dots: true,
+    //         infinite: true,
+    //         focusOnSelect: true,
+    //         speed: 500,
+    //         autoplaySpeed: 5000,
+    //         fade: true,
+    //         cssEase: 'linear',
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+
+    //         nextArrow: '<svg class="slick-next" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><g id="arrow-right-circle-fill" transform="translate(-10.125 -10.124)"><path id="Path_2" data-name="Path 2" d="M21.359,32.072A1.788,1.788,0,1,0,23.888,34.6L34.6,23.888a1.785,1.785,0,0,0,0-2.528L23.888,10.648a1.788,1.788,0,1,0-2.528,2.528l7.665,7.662H11.91a1.785,1.785,0,0,0,0,3.571H29.025l-7.667,7.664Z" fill="#1697d9" fill-rule="evenodd"/></g></svg>',
+    //         prevArrow: '<svg class="slick-prev" xmlns="http://www.w3.org/2000/svg" width="24.998" height="25" viewBox="0 0 24.998 25"><g id="arrow-left-circle-fill" transform="translate(0 -10.124)"><path id="Path_1" data-name="Path 1" d="M23.888,32.072A1.788,1.788,0,0,1,21.36,34.6L10.648,23.888a1.785,1.785,0,0,1,0-2.528L21.36,10.648a1.788,1.788,0,1,1,2.528,2.528l-7.667,7.662H33.336a1.785,1.785,0,0,1,0,3.571H16.222l7.667,7.664Z" transform="translate(-10.123 0)" fill="#1697d9" fill-rule="evenodd"/></g></svg> '
+    //     });   
+
+    // }
 
     $(window).on('resize', function () {
 
         console.log("resized");
 
-        if ($(window).width() >= 590) { 
-            
-            dotCustomSlider(); 
-        }else {
-                    
-            /* Home Slider with Adaptive height */
-            $('.full-slider').slick({
-                dots: true,
-                infinite: true,
-                focusOnSelect: true,
-                speed: 500,
-                autoplaySpeed: 5000,
-                fade: true,
-                cssEase: 'linear',
-                slidesToShow: 1,
-                slidesToScroll: 1,
+        if ($(window).width() >= 769) {
 
-                nextArrow: '<svg class="slick-next" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><g id="arrow-right-circle-fill" transform="translate(-10.125 -10.124)"><path id="Path_2" data-name="Path 2" d="M21.359,32.072A1.788,1.788,0,1,0,23.888,34.6L34.6,23.888a1.785,1.785,0,0,0,0-2.528L23.888,10.648a1.788,1.788,0,1,0-2.528,2.528l7.665,7.662H11.91a1.785,1.785,0,0,0,0,3.571H29.025l-7.667,7.664Z" fill="#1697d9" fill-rule="evenodd"/></g></svg>',
-                prevArrow: '<svg class="slick-prev" xmlns="http://www.w3.org/2000/svg" width="24.998" height="25" viewBox="0 0 24.998 25"><g id="arrow-left-circle-fill" transform="translate(0 -10.124)"><path id="Path_1" data-name="Path 1" d="M23.888,32.072A1.788,1.788,0,0,1,21.36,34.6L10.648,23.888a1.785,1.785,0,0,1,0-2.528L21.36,10.648a1.788,1.788,0,1,1,2.528,2.528l-7.667,7.662H33.336a1.785,1.785,0,0,1,0,3.571H16.222l7.667,7.664Z" transform="translate(-10.123 0)" fill="#1697d9" fill-rule="evenodd"/></g></svg> '
-            });  
+            dotCustomSlider();
         }
 
     });
@@ -283,7 +352,7 @@ $(function () {
             var items = slick.$slides;
             items.each(function (k, v) {
                 var text = $(this).find('h1').text();
-                $('.heading' + k).html("<span>"+ text + "</span>");
+                $('.heading' + k).html("<span>" + text + "</span>");
             });
 
         });
@@ -291,24 +360,24 @@ $(function () {
 
     }
 
-            
-        /* Home Slider with Adaptive height */
-        $('.full-slider').slick({
-            dots: true,
-            infinite: true,
-            focusOnSelect: true,
-            autoplay: true, /* this is the new line */
-            speed: 500,
-            autoplaySpeed: 5000,
-            fade: true,
-            cssEase: 'linear',
-            slidesToShow: 1,
-            slidesToScroll: 1,
 
-            nextArrow: '<svg class="slick-next" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><g id="arrow-right-circle-fill" transform="translate(-10.125 -10.124)"><path id="Path_2" data-name="Path 2" d="M21.359,32.072A1.788,1.788,0,1,0,23.888,34.6L34.6,23.888a1.785,1.785,0,0,0,0-2.528L23.888,10.648a1.788,1.788,0,1,0-2.528,2.528l7.665,7.662H11.91a1.785,1.785,0,0,0,0,3.571H29.025l-7.667,7.664Z" fill="#1697d9" fill-rule="evenodd"/></g></svg>',
-            prevArrow: '<svg class="slick-prev" xmlns="http://www.w3.org/2000/svg" width="24.998" height="25" viewBox="0 0 24.998 25"><g id="arrow-left-circle-fill" transform="translate(0 -10.124)"><path id="Path_1" data-name="Path 1" d="M23.888,32.072A1.788,1.788,0,0,1,21.36,34.6L10.648,23.888a1.785,1.785,0,0,1,0-2.528L21.36,10.648a1.788,1.788,0,1,1,2.528,2.528l-7.667,7.662H33.336a1.785,1.785,0,0,1,0,3.571H16.222l7.667,7.664Z" transform="translate(-10.123 0)" fill="#1697d9" fill-rule="evenodd"/></g></svg> '
-        });   
-         
+    /* Home Slider with Adaptive height */
+    $('.full-slider').slick({
+        dots: true,
+        infinite: true,
+        focusOnSelect: true,
+        autoplay: true, /* this is the new line */
+        speed: 500,
+        autoplaySpeed: 5000,
+        fade: true,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+
+        nextArrow: '<svg class="slick-next" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><g id="arrow-right-circle-fill" transform="translate(-10.125 -10.124)"><path id="Path_2" data-name="Path 2" d="M21.359,32.072A1.788,1.788,0,1,0,23.888,34.6L34.6,23.888a1.785,1.785,0,0,0,0-2.528L23.888,10.648a1.788,1.788,0,1,0-2.528,2.528l7.665,7.662H11.91a1.785,1.785,0,0,0,0,3.571H29.025l-7.667,7.664Z" fill="#1697d9" fill-rule="evenodd"/></g></svg>',
+        prevArrow: '<svg class="slick-prev" xmlns="http://www.w3.org/2000/svg" width="24.998" height="25" viewBox="0 0 24.998 25"><g id="arrow-left-circle-fill" transform="translate(0 -10.124)"><path id="Path_1" data-name="Path 1" d="M23.888,32.072A1.788,1.788,0,0,1,21.36,34.6L10.648,23.888a1.785,1.785,0,0,1,0-2.528L21.36,10.648a1.788,1.788,0,1,1,2.528,2.528l-7.667,7.662H33.336a1.785,1.785,0,0,1,0,3.571H16.222l7.667,7.664Z" transform="translate(-10.123 0)" fill="#1697d9" fill-rule="evenodd"/></g></svg> '
+    });
+
 
 
     $('.media-lists').loadMoreResults({
@@ -318,75 +387,80 @@ $(function () {
             'class': 'col-md-4'
         },
         button: {
-            'class':'btn btn-outline',
-            'text':'Load More'
+            'class': 'btn btn-outline',
+            'text': 'Load More'
         }
-            
+
     });
 
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function () {
         // make it as accordion for smaller screens
         if (window.innerWidth > 992) {
-        
-            document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
-        
-                everyitem.addEventListener('mouseover', function(e){
-        
+
+            document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
+
+                everyitem.addEventListener('mouseover', function (e) {
+
                     let el_link = this.querySelector('a[data-bs-toggle]');
-        
-                    if(el_link != null){
+
+                    if (el_link != null) {
                         let nextEl = el_link.nextElementSibling;
                         el_link.classList.add('show');
                         nextEl.classList.add('show');
                     }
-        
+
                 });
-                everyitem.addEventListener('mouseleave', function(e){
+                everyitem.addEventListener('mouseleave', function (e) {
                     let el_link = this.querySelector('a[data-bs-toggle]');
-        
-                    if(el_link != null){
+
+                    if (el_link != null) {
                         let nextEl = el_link.nextElementSibling;
                         el_link.classList.remove('show');
                         nextEl.classList.remove('show');
                     }
-        
-        
+
+
                 })
             });
-        
+
         }
         // end if innerWidth
-        
-    }); 
+
+    });
     // DOMContentLoaded  end
 
-    $('.full-slider button').on( "click", function (event) {
+    $('.full-slider button').on("click", function (event) {
 
         console.log("opended");
 
-        setTimeout(function(){ 
+        setTimeout(function () {
             $(".ytp-large-play-button").click();
         }, 20000);
-        
+
     });
 
-    $('#exampleModalCenter .btn-close').on( "click",  function (event) {
+    $('#exampleModalCenter .btn-close').on("click", function (event) {
 
         console.log("closed");
         $(".ytp-large-play-button").click();
 
     });
 
-    $('#bs-example-navbar-collapse-1')
-    .on('shown.bs.collapse', function() {
-      $('#navbar-hamburger').addClass('hidden');
-      $('#navbar-close').removeClass('hidden');    
-    })
-    .on('hidden.bs.collapse', function() {
-      $('#navbar-hamburger').removeClass('hidden');
-      $('#navbar-close').addClass('hidden');        
-    });
+    // $('#bs-example-navbar-collapse-1')
+    // .on('shown.bs.collapse', function() {
+    //   $('#navbar-hamburger').addClass('hidden');
+    //   $('#navbar-close').removeClass('hidden');    
+    // })
+    // .on('hidden.bs.collapse', function() {
+    //   $('#navbar-hamburger').removeClass('hidden');
+    //   $('#navbar-close').addClass('hidden');        
+    // });
+
+
+
+
 
 
 
 });
+
