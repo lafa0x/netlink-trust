@@ -181,6 +181,7 @@ document.addEventListener(
                 closeAllSelect(this);
                 this.nextSibling.classList.toggle("select-hide");
                 this.classList.toggle("select-arrow-active");
+                this.parentElement.classList.add("added")
 
             });
 
@@ -206,7 +207,6 @@ document.addEventListener(
             for (i = 0; i < xl; i++) {
                 if (arrNo.indexOf(i)) {
                     x[i].classList.add("select-hide");
-                    x[i].parentElement.classList.add("added")
                 }
             }
 
