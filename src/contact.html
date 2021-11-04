@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLinkTrust - Contact Us </title>
+
+    <link rel="stylesheet" href="../scss/main.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <include src="src/components/head.html"></include>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <include src="src/components/header.html"></include>
+
+    <!-- Main Content -->
+    <main class="site-main">
+
+        <!-- Hero Type 2 - Page Banner -->
+        <div class="page-header">
+
+            <section class="page-banner hero-about pt-sm-11 pb-sm-11 pt-lg-15 pb-lg-20s"
+                style="background-image: url(../assets/media-banner@2x.jpg); background-size:cover; background-position: center center;">
+
+                <div class="container-xs container-lg">
+                    <div class="content">
+                        <h1 class="text-light">Contact Us</h1>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- TABS PRESENTATION -->
+        <!-- create tabs navs & tabs panels bootstrap latest-->
+        <section class="faqs py-7 py-lg-14">
+
+            <div class="container">
+                <div class="row position-relative">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills flex-column col-sm-4 sticky-top">
+                        <li class="nav-item" ><a class="nav-link active" href="#homeowners">Homeowners</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mcst" > Commerical Tenants / Building Management / MCST  </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#maintenance" >Maintenance</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#info" >Update of BM Information</a></li>
+                    </ul>
+
+                    <!-- Lorem dummy content -->
+                    
+
+                    <!-- Tab panes -->
+                    <div class="tab-content col-sm-8">
+
+                        <div class="tab-pane well fade in active show pt-3 pb-lg-11" id="homeowners">
+
+                            <h2> Homeowners </h2>
+
+                            
+                            <form>
+
+                                <div class="row gy-3 gx-5 align-items-center">
+                                    <div class="col form-group">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option selected>Select Subject *</option>
+                                            <option value="salutation">Salutation</option>
+                                            <option value="n">Non-Residential</option>
+                                        </select>
+                                    </div>
+                                    <div class="col form-group">
+                                        <input class="form-control" type="number"
+                                            placeholder="Enter Postal Code *" aria-label=".form-control-lg example">
+                                    </div>
+                                </div>
+    
+                                <div class="row gy-3 gx-5 align-items-center">
+                                    <div class="col form-group">
+                                        <input class="form-control" type="number"
+                                            placeholder="Enter House/Block No. *" aria-label=".form-control-lg example">
+                                    </div>
+                                    <div class="col form-group">
+                                        <input class="form-control" type="number"
+                                            placeholder="Enter Unit No. *" aria-label=".form-control-lg example">
+                                    </div>
+                                </div>
+    
+                            </form>
+                            
+
+                        </div>
+
+                        <div class="tab-pane well fade pt-3 pb-lg-11" id="mcst">
+
+                            <h2>  Commerical Tenants / Building Management / MCST   </h2>
+
+
+
+                        </div>
+
+                        <div class="tab-pane well fade pt-3 pb-lg-11" id="maintenance">
+  
+                            <h2> Maintenance</h2>
+
+
+                            
+                         </div>
+
+                         <div class="tab-pane well fade pt-3 pb-lg-11" id="info">
+  
+                            <h2> Update of BM Information </h2>
+
+
+                            
+                         </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer Section -->
+    <include src="src/components/footer.html"></include>
+
+    <link href="./fixes.css" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Slick JS library -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+    <!-- Mmenu JS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js"
+        integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js"
+        integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Masonry JS Library -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <script src="./index.js"></script>
+
+    <script>
+        $(function () {
+
+
+        });
+    </script>
+
+</body>
+
+</html>

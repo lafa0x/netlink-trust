@@ -389,3 +389,127 @@ section.cols-2-image-text .content-box {
 .article-news-slider.latest-notices .articles-style .slide-item {
     border-top: none;
 }
+
+
+@media only screen and (min-width: 1440px) and (max-width: 1490px) {
+
+    .container-xl,
+    footer > d .container-xliv {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+
+    
+}
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1279px) {
+
+    .container-xl,
+    footer >  .container-xl {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+    header .navbar .navbar-nav li .dropdown-menu a {
+        font-size: 14px;
+    }
+
+}
+
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+    position: relative;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    border-radius: 8px 8px 0px 0px;
+    background-color: #F2F4F6;
+    padding: 17px 32px; 
+    }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    visibility: none;
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top: 22px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    top: 22px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .select-selected { 
+      padding: 17px 32px; 
+      color: rgba(112, 112, 112, 0.7); 
+      text-align: left;
+    }
+  
+  
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color: #E5E9ED;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 0px 0px 8px 8px;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+  }
+
+  .select-items div {
+    padding: 17px 32px; 
+    cursor: pointer;
+    color: #000;
+    text-align: left;
+}
+
+  .select-selected:before {
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17.627' height='9.705' viewBox='0 0 17.627 9.705'%3E%3Cpath id='Path_2019' data-name='Path 2019' d='M10641.768-12589.294l7.808,7.291,3.4-3.541,3.6-3.75' transform='translate(-10640.354 12590.708)' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-size: contain;  
+}
+
+.custom-select.added .select-selected { color: #000; }
