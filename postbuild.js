@@ -6,9 +6,9 @@ const escapeRegExp = require('lodash.escaperegexp');
 // the directory in which you're outputting your build
 let baseDir = 'public'
 // the name for the directory where your static files will be moved to
-let staticDir = 'static'
+let staticDir = 'images'
 // the directory where your built files (css and JavaScript) will be moved  to
-let assetsDir = 'build'
+let assetsDir = 'assets'
 
 // if the staticDir directory isn't there, create it
 if (!fs.existsSync(path.join(__dirname, baseDir, staticDir))){

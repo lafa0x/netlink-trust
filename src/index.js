@@ -1,36 +1,21 @@
+// import jQuery
+// import * as jQuery from '../node_modules/jquery';
+
+// window.$ = require('jquery');
+// window.jQuery = require('jquery');
+
 // Import all plugins
-// window.$ = require('jquery');
-// window.jQuery = require('jquery');
+import * as bootstrap from 'bootstrap';
 
-import * as bootstrap from '../node_modules/bootstrap';
+// import only needed plugins or just one
+// import * as Button from '../node_modules/bootstrap/js/dist/button';
+// import * as Modal from '../node_modules/bootstrap/js/dist/modal';
+// import * as Dropdown from '../node_modules/bootstrap/js/dist/dropdown';
+// import * as Collapse from '../node_modules/bootstrap/js/dist/collapse';
+// import * as Tab from '../node_modules/bootstrap/js/dist/tab';
 
-// import '../node_modules/bootstrap-select';
-// import '../node_modules/bootstrap-select/dist/js/i18n/defaults-am_ET';
-// import '../node_modules/slick-carousel';
-
-
-
-// window.$ = require('jquery');
-// window.jQuery = require('jquery');
-
-// import * as jQuery from 'jquery';
-
-// // Import all plugins
-// import * as bootstrap from 'bootstrap';
-
-// import 'slick-carousel';
-// import * as mmenu from '../node_modules/mmenu-js/dist/mmenu';
-// import * as polyfill from '../node_modules/mmenu-js/dist/mmenu.polyfills';
-
-
-//import mmenu
-// import * as mmenu from 'mmenu';
-
-// Or import only needed plugins
-// import { Tooltip as Tooltip, Toast as Toast, Popover as Popover } from 'bootstrap';
-
-// Or import just one
-// import Alert as Alert from '../node_modules/bootstrap/js/dist/alert';
+// Custom Libraries and Modules
+// import '../assets/libs/';
 
 /* loadMoreResult */
 /**
@@ -49,30 +34,104 @@ import * as bootstrap from '../node_modules/bootstrap';
 */
 
 
-//Mmenu Integration Code
+
+// Fired this event when DOMContentLoaded
 document.addEventListener(
     "DOMContentLoaded", () => {
 
-        var w = $(this).width();
+        //Mmenu Integration Code
+        new Mmenu( "#myMenu", {
+            wrappers: ["bootstrap"],
+            "navbars": [
+                {
+                   "position": "bottom",
+                   "content": [
+                      '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-facebook-square"></i></a>',
+                      '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-linkedin"></i></a>'
+                   ]
+                }
+             ]
+        });
 
 
-        function initMmenu() {
-            new Mmenu("#navbarSupportedContent");
-        }
+        //dropDownMenus Append Wrappers UL > LI 
+        var dropDownMenus = $(".navbar-nav .dropdown-menu");
 
-        $(window).on('resize', function () {
+        $.each(dropDownMenus, function(key, value){
+            // here you can access all the properties just by typing either value.propertyName or value["propertyName"]
+            // example: value.ri_idx; value.ri_startDate; value.ri_endDate;
 
-            w = $(this).width();
+            var children = $(this).children();
 
-            if (w < 769) {
+            $.each(children, function(key, value){
 
-                initMmenu();
-            }
+                $(this).wrapAll("<li>");
+
+            });
+
+            $(this).children().wrapAll("<ul class='list-unstyled d-lg-flex justify-content-center col-md-10 col-lg-12 col-xxl-10 mx-auto'>");
 
         });
 
-        (w < 769) ? initMmenu() : 0;
+        // handle links with @href started with '#' only
+        $(document).on('click', 'a[href^="#"]', function(e) {
+            // target element id
+            var id = $(this).attr('href'),
+             stickyHeader = $("header").height();
+        
+        
+            // target element
+            var $id = $(id);
+            if ($id.length === 0) {
+                return;
+            }
+        
+            // prevent standard hash navigation (avoid blinking in IE)
+            e.preventDefault();
+        
+            
+            // top position relative to the document
+            var pos = $id.offset().top - stickyHeader ;
+        
+            // animated top scrolling
+            $('body, html').animate({ scrollTop: pos });
+        });
+        
+    
 
+        var w = $(this).width();
+
+        function init() {
+
+            var dropDownMenus = $(".navbar-nav .dropdown-menu");
+
+            $.each(dropDownMenus, function(key, value){
+                // here you can access all the properties just by typing either value.propertyName or value["propertyName"]
+                // example: value.ri_idx; value.ri_startDate; value.ri_endDate;
+
+                $(this).children().wrapAll("<div class='list-unstyled d-lg-flex justify-content-center col-md-10 col-lg-12 col-xxl-10 mx-auto'>");
+
+            });
+
+        }
+
+        // $(window).on('resize', function () {
+
+        //     w = $(this).width();
+
+        //     if (w > 769) {
+
+        //         init();
+        //     }
+
+        // });
+
+        (w > 769) ? init() : 0;
+
+
+        // var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        //     target: '#navbar-example'
+        //   })
 
         // make it as accordion for smaller screens
         if (window.innerWidth > 769) {
@@ -113,16 +172,7 @@ document.addEventListener(
         } // end if innerWidth
 
 
-        // BS tabs hover (instead - hover write - click) - Contact Page
-        $('.nav-pills a').hover(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-        })
-
         // To style all selects
-        // $('select').selectpicker();
-
-
         var x, i, j, l, ll, selElmnt, a, b, c;
 
         /*look for any elements with the class "custom-select":*/
@@ -216,11 +266,78 @@ document.addEventListener(
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
 
+
+        // file upload preview/remove image
+        function readURL() {
+            var $input = $(this);
+            var $newinput = $(this).parent().parent().parent().find('.portimg');
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    reset($newinput.next('.delbtn'), true);
+                    $newinput.attr('src', e.target.result).show();
+                    $newinput.after('<input type="button" class="delbtn removebtn" value="remove">');
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        }
+
+        $(".fileUpload").change(readURL);
+        $("form").on('click', '.delbtn', function (e) {
+            reset($(this));
+        });
+
+        function reset(elm, prserveFileName) {
+            if (elm && elm.length > 0) {
+                var $input = elm;
+                $input.prev('.portimg w-100').attr('src', '').hide();
+                if (!prserveFileName) {
+                    $($input).parent().parent().parent().find('input.fileUpload ').val("");
+                    //input.fileUpload and input#uploadre both need to empty values for particular div
+                }
+                elm.remove();
+            }
+        }
+
+        // BS tabs hover (instead - hover write - click) - Contact Page
+        $('.nav-pills a').hover(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            percentPosition: true
+        });
+
+
+
     });
 
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })();
 
 // Load More Articels Posts
-(function ($) {
+$(function () {
     'use strict';
 
     $.fn.loadMoreResults = function (options) {
@@ -233,7 +350,7 @@ document.addEventListener(
             displayedItems: 6,
             showItems: 6,
             button: {
-                'class': 'btn btn-outline',
+                'class': 'btn btn-secondary',
                 text: 'Load More'
             }
         };
@@ -293,9 +410,8 @@ document.addEventListener(
         });
 
     };
-})(jQuery);
 
-
+});
 
 // Then add additional custom code here
 $(function () {

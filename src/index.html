@@ -7,12 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLinkTrust - Home </title>
 
-    <link rel="stylesheet" href="../scss/main.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <include src="src/components/head.html"></include>
 
     <style>
@@ -170,7 +164,11 @@
         <section class="coverage-box">
 
             <div class="container-xs container-lg container-xl">
+                <form class="needs-validation" novalidate>
+
                 <div class="row gx-5">
+                    
+                
 
                     <div class="col-lg-4 col-xl-5 col-xxl-4">
 
@@ -179,19 +177,21 @@
                             connected
                             to the Next Generation Nationwide Broadband Network.</p>
 
-                        <a class="btn btn-primary" href="#" role="button">Check my coverage</a>
+                        <!-- <a class="btn btn-primary" href="#" role="button">Check my coverage</a> -->
+ 
+                        <!-- <a class="mt-1 mt-sm-2 mt-lg-0 btn btn-primary" href="#" role="button">Check my coverage</a> -->
+                        <button class="btn btn-primary" type="submit">Check my coverage</button>
 
                     </div>
 
                     <div class="col-lg-8 col-xl-7 col-xxl-8 d-none d-lg-block ">
 
-                        <form>
 
                             <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
                                     <div class="custom-select">
 
-                                        <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                        <select class="form-select form-control form-control-lg" aria-label="Default select example" required>
                                             <option selected>Select Premises Type *</option>
                                             <option value="r">Residential</option>
                                             <option value="n">Non-Residential</option>
@@ -201,26 +201,30 @@
                                 </div>
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="Enter Postal Code *" aria-label=".form-control-lg example">
+                                        placeholder="Enter Postal Code *" aria-label=".form-control-lg example" required>
                                 </div>
                             </div>
 
                             <div class="row gy-3 gx-5 align-items-center">
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="Enter House/Block No. *" aria-label=".form-control-lg example">
+                                        placeholder="Enter House/Block No. *" aria-label=".form-control-lg example" required>
                                 </div>
                                 <div class="col-6">
                                     <input class="form-control form-control-lg" type="number"
-                                        placeholder="Enter Unit No. *" aria-label=".form-control-lg example">
+                                        placeholder="Enter Unit No. *" aria-label=".form-control-lg example" required>
                                 </div>
                             </div>
 
-                        </form>
                         
                     </div>
 
+
+
                 </div>
+
+            </form>
+
             </div>
         </section>
 
@@ -388,64 +392,43 @@
     <!-- Footer Section -->
     <include src="src/components/footer.html"></include>
 
-            
-    <link href="./fixes.css" rel="stylesheet">
-
+    
+    <!-- <include src="src/components/foot.html"></include> -->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Slick JS library -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
+    <!-- Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <!-- Mmenu JS library -->
+    <!-- Mmenu Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js"
         integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js"
         integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Masonry JS Library -->
+    <!-- Masonry Library -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    
+
+        <!-- Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Mmenu Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js"
+        integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js"
+        integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Masonry Library -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+
     <script src="./index.js"></script>
-
-    <script>
-
-            document.addEventListener(
-                        "DOMContentLoaded", () => {
-
-                var w = $(this).width();
-
-
-                function initMmenu() {
-
-                    new Mmenu( "#navbarSupportedContent");
-
-                }
-                            
-                $(window).on('resize', function () {
-
-                    w = $(this).width();
-
-                    if ( w < 769) { 
-
-                        initMmenu();            
-                    }
-
-                });
-
-                (w < 769)  ? initMmenu(): 0 ;           
-
-
-            });      
-
-
-    </script>
-
 
 
 

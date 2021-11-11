@@ -116,6 +116,7 @@ div#collapseTwo.show {
 }
 
 .read-more-target {
+    display: none;
     opacity: 0;
     max-height: 0;
     font-size: 0;
@@ -395,8 +396,8 @@ section.cols-2-image-text .content-box {
 
     .container-xl,
     footer > d .container-xliv {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
     }
 
 

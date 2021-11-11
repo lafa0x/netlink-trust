@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLinkTrust - About </title>
 
-    <link rel="stylesheet" href="../scss/main.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <include src="src/components/head.html"></include>
 
 </head>
@@ -34,13 +28,13 @@
 
                         <ul class="list-unstyled d-none d-lg-block banner-menu">
                             <li>
-                                <a class="link-light" href="#"><span>Who we are</span></a>
+                                <a class="link-light" href="#whoWeAre"><span>Who we are</span></a>
                             </li>
                             <li>
-                                <a class="link-light" href="#"><span>Vision & Mission</span></a>
+                                <a class="link-light" href="#visionMission"><span>Vision & Mission</span></a>
                             </li>
                             <li>
-                                <a class="link-light" href="#"><span>Core Values</span></a>
+                                <a class="link-light" href="#coreValues"><span>Core Values</span></a>
                             </li>
                         </ul>
                     </div>
@@ -52,13 +46,13 @@
 
                 <ul class="list-unstyled d-flex jusitify-content-center">
                     <li class="active">
-                        <a class="small-body" href="#"><span>Who we are</span></a>
+                        <a class="small-body" href="#whoWeAre"><span>Who we are</span></a>
                     </li>
                     <li>
-                        <a class="small-body" href="#"><span>Vision & Mission</span></a>
+                        <a class="small-body" href="#visionMission"><span>Vision & Mission</span></a>
                     </li>
                     <li>
-                        <a class="small-body" href="#"><span>Core Values</span></a>
+                        <a class="small-body" href="#coreValues"><span>Core Values</span></a>
                     </li>
                 </ul>
 
@@ -67,7 +61,7 @@
         </div>
 
         <!-- Text Content With 3 Columns Type 2 -->
-        <section class="text-contents-3-cols text-center">
+        <section class="text-contents-3-cols text-center" id="whoWeAre">
 
             <div class="container-xs container-lg container-xl">
 
@@ -96,19 +90,19 @@
                         <div class="col-lg-4">
                             <img src="../assets/young-woman-is-engaged-fitness-home@2x.jpg" alt="timeline-img"
                                 class="img-fluid w-100 w-100 w-100 w-100 w-100">
-                            <h4 class="body-bold"> Residential </h4>
+                            <h4 class="big-body"> Residential </h4>
                         </div>
 
                         <div class="col-lg-4">
                             <img src="../assets/happy-smiling-asian-business-team-discussing-brainstorming-together-office@2x.jpg"
                                 alt="timeline-img" class="img-fluid w-100 w-100 w-100 w-100 w-100">
-                            <h4 class="body-bold"> Non-residential </h4>
+                            <h4 class="big-body"> Non-residential </h4>
                         </div>
 
                         <div class="col-lg-4">
                             <img src="../assets/attractive-asian-girl-holding-smartphone-reading-text-message-park@2x.jpg"
                                 alt="timeline-img" class="img-fluid w-100 w-100 w-100 w-100 w-100">
-                            <h4 class="body-bold"> Non-Building Address Point (NBAP) </h4>
+                            <h4 class="big-body"> Non-Building Address Point (NBAP) </h4>
                         </div>
 
                     </div>
@@ -139,7 +133,7 @@
         </section>
 
         <!-- Timeline Type 2 - Vision & Mission -->
-        <section class="timeline-vision-mission text-center">
+        <section class="timeline-vision-mission text-center" id="visionMission">
             
            
             <h2 class="mt-2 mb-5">Vision & Mission</h2>
@@ -223,7 +217,7 @@
         </section>
 
         <!-- Icon with Content  -->
-        <section class="icon-with-content">
+        <section class="icon-with-content" id="coreValues">
 
             <div class="container-xs container-lg container-xl">
 
@@ -248,7 +242,7 @@
                        
 
                         <h4 class="body-bold">Excellence</h4>
-                        <p class="big-body">WWe relentlessly pursue quality and excellence</p>                
+                        <p class="big-body">We relentlessly pursue quality and excellence</p>                
                     </div>
 
                     <div class="col-6 col-lg-4">
@@ -292,37 +286,29 @@
     
 
     <!-- Footer Section -->
+    
     <include src="src/components/footer.html"></include>
 
-    <link href="./fixes.css" rel="stylesheet">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Slick Library -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <!-- Slick JS library -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<!-- Mmenu Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js"
+    integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js"
+    integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!-- Masonry Library -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-    <!-- Mmenu JS library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js" integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js" integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
     <script src="./index.js"></script>
-    
-    <script>
-        
-        // $(function () {
 
-        //     new Mmenu("#navbarSupportedContent", {
-                
-        //         wrappers: ['bootstrap']
-        //     }, {});
-
-        // });
-
-    </script>
 
 </body>
-
 </html>

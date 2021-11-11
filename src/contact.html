@@ -7,12 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLinkTrust - Contact Us </title>
 
-    <link rel="stylesheet" href="../scss/main.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <include src="src/components/head.html"></include>
 
 </head>
@@ -68,38 +62,118 @@
 
                         <div class="tab-pane well fade in active show pt-3 pb-lg-11" id="homeowners">
 
-                            <h2> Homeowners </h2>
+                            <h3 class="mb-6"> Homeowners </h3>
 
-                            
                             <form>
 
-                                <div class="row gy-3 gx-5 align-items-center">
-                                    <div class="col form-group">
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                            <option selected>Select Subject *</option>
-                                            <option value="salutation">Salutation</option>
-                                            <option value="n">Non-Residential</option>
-                                        </select>
-                                    </div>
-                                    <div class="col form-group">
-                                        <input class="form-control" type="number"
-                                            placeholder="Enter Postal Code *" aria-label=".form-control-lg example">
-                                    </div>
-                                </div>
+                                <div class="custom-select mb-11 col-4">
     
-                                <div class="row gy-3 gx-5 align-items-center">
-                                    <div class="col form-group">
-                                        <input class="form-control" type="number"
-                                            placeholder="Enter House/Block No. *" aria-label=".form-control-lg example">
+                                    <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                        <option selected="">Select Subject</option>
+                                        <option value="n">Contractor</option>
+                                        <option value="n">Installation</option>
+                                        <option value="n">Other enquiries/feedback</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="row gy-3 gx-5 align-items-center mb-5">
+                                    <div class="col-6">
+                                        <div class="custom-select">
+                                            <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                                <option selected="Salutation">Salutation</option>
+                                                <option value="r">Mr</option>
+                                                <option value="n">Mrs</option>
+                                                <option value="n">Ms</option>
+                                                <option value="n">Dr</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col form-group">
-                                        <input class="form-control" type="number"
-                                            placeholder="Enter Unit No. *" aria-label=".form-control-lg example">
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="number" placeholder="House/Block No. " aria-label=".form-control-lg example">
                                     </div>
                                 </div>
+
+                                <div class="row gy-3 gx-5 align-items-center mb-5">
+
+                                    <div class="col-6"> 
+                                        <input class="form-control form-control-lg" type="text" placeholder="First name" aria-label=".form-control-lg example">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="number" placeholder="Unit No." aria-label=".form-control-lg example">
+                                    </div>
+
+                                </div>
+
+                                <div class="row gy-3 gx-5 align-items-center mb-5">
+
+                                    <div class="col-6"> 
+                                        <input class="form-control form-control-lg" type="text" placeholder="Last name" aria-label=".form-control-lg example">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="number" placeholder="Postal Code " aria-label=".form-control-lg example">
+                                    </div>
+
+                                </div>
+
+                                <div class="row gy-3 gx-5 align-items-center mb-5">
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="email" placeholder="Email address" aria-label=".form-control-lg example">
+                                    </div>
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="text" placeholder="Building name" aria-label=".form-control-lg example">
+                                    </div>
+                                </div>                                
+
+                                <div class="row gy-3 gx-5 align-items-center mb-5">
+                                    <div class="col-6">
+                                        <input class="form-control form-control-lg" type="tel" placeholder="Contact no." aria-label=".form-control-lg example">
+
+                                    </div>
+                                    <div class="col-6">
+
+                                        <div class="custom-select">
+                                            <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                                <option selected="">Building Type</option>
+                                                <option value="r">Mr</option>
+                                                <option value="n">Mrs</option>
+                                                <option value="n">Ms</option>
+                                                <option value="n">Dr</option>
+                                            </select>
+                                        </div>                                    
+                                    </div>
+                                </div>
+
+                                <textarea name="textbox" class="w-100 mb-5"></textarea>
+
+                                <div class="form-check col-8 mb-5">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+
+                                <div class="upload-demo">
+                                    <div class="upload-demo-wrap"><img alt="your image" class="portimg" src="#"></div>
+                                </div>
+
+                                <div class="form-group hirehide is-empty is-fileinput mb-5">
+                                    <div class="socialmediaside2">
+                                        <!-- <input class="" accept="image/jpeg, image/jpg" name="profilepic[]" type="file" value="Choose a file"> -->
+                                        <div class="input-group">
+                                            <input class="form-control fileUpload d-none" id="uploadre" accept="image/jpeg, image/jpg" name="profilepic[]" type="file" value="Choose a file">
+                                            <span class="input-group-btn input-group-sm">
+                                                <button class="btn btn-fab btn-fab-mini"type="button">
+                                                    Upload another image
+                                                    <i class="material-icons">attach_file</i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" type="submit"> Submit Form</button>
     
                             </form>
-                            
 
                         </div>
 
@@ -141,35 +215,9 @@
     <!-- Footer Section -->
     <include src="src/components/footer.html"></include>
 
-    <link href="./fixes.css" rel="stylesheet">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Slick JS library -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-
-    <!-- Mmenu JS library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.min.js"
-        integrity="sha512-cYB9HYeGzWUCQn/6ySuqjC5VwIHecuFIYdv8aQJ+CR6oXj7LJsvqMiInf4ZDq2e/1snDX6Q9k+9BbHae6KJtAQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.24/mmenu.polyfills.min.js"
-        integrity="sha512-HCHhe9pWNhtnaM9AgFRNZbGLP98dxUD7544vQp4x8Xb9c/hTigzZjK/3sYzdUm6Dq3eGuAlXrz8vJj79LPd9UA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Masonry JS Library -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <include src="src/components/foot.html"></include>
 
     <script src="./index.js"></script>
-
-    <script>
-        $(function () {
-
-
-        });
-    </script>
 
 </body>
 
