@@ -21,7 +21,6 @@
   "author": "lafa0x",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
     "bootstrap": "^5.1.3",
     "jquery": "^3.6.0",
     "masonry-layout": "^4.2.2",

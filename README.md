@@ -3,3 +3,9 @@
 Demo link is inside the branch called gh-pages.
 
 Thank You All!
+
+To Install = npm install
+To Run Parcel Project = npm run dev
+
+Each time must run  npm run dev
+npm uninstall @parcel/transformer-sass --save-dev
