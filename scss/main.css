@@ -5302,7 +5302,7 @@ fieldset:disabled .btn {
 .nav-pills .nav-link {
   background: none;
   border: 0;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 
 .nav-pills .nav-link.active,
@@ -22223,6 +22223,48 @@ textarea {
   fill: #000000;
 }
 
+.nav-pills .nav-link {
+  color: rgba(3, 40, 83, 0.4);
+}
+
+.nav-pills .nav-link .icon {
+  background-color: transparent;
+  padding: 12px 10px;
+  border-color: rgba(3, 40, 83, 0.4);
+  border-radius: 5px;
+  border: 2px solid;
+}
+
+.nav-pills .nav-link .icon svg path,
+.nav-pills .nav-link .icon svg g,
+.nav-pills .nav-link .icon svg rect {
+  opacity: 1;
+  fill: rgba(3, 40, 83, 0.5);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-pills .show > .nav-link {
+  background-color: transparent;
+  border-color: #032853;
+  border-top: 2px solid;
+  color: #032853;
+}
+
+.nav-pills .nav-link.active .icon,
+.nav-pills .nav-pills .show > .nav-link .icon {
+  background-color: #032853;
+}
+
+.nav-pills .nav-link.active .icon svg path,
+.nav-pills .nav-link.active .icon svg g,
+.nav-pills .nav-link.active .icon svg rect,
+.nav-pills .nav-pills .show > .nav-link .icon svg path,
+.nav-pills .nav-pills .show > .nav-link .icon svg g,
+.nav-pills .nav-pills .show > .nav-link .icon svg rect {
+  opacity: 1;
+  fill: #fff;
+}
+
 .form-control {
   font-size: 16px;
   line-height: 24px;
@@ -22233,6 +22275,16 @@ textarea {
   .form-control {
     padding: 17px 32px;
   }
+}
+
+.custom-select.added .form-control.bg-blue,
+.form-control.bg-blue {
+  color: #fff;
+}
+
+.form-control.bg-blue:before {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 
 .modal-content {

@@ -9,6 +9,11 @@
         <img src="../assets/site-logo.svg" alt="Logo">
       </a>
 
+      <span class="input-group-text dropdown-toggle d-md-none" href="#" id="navbarSearchDropdown" role="button"
+      data-bs-toggle="search" aria-expanded="false">
+        <i data-feather="search"></i>
+      </span>
+      
       <!-- Navbar - Bento Menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myMenu"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,11 +72,11 @@
             <!-- dropdown menu -->
             <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
                   <a class="nav-link dropdown-item" href="fibre-broadband-home.html">For Home</a>
-                  <a class="nav-link dropdown-item" href="#">For Enterprise</a>
-                  <a class="nav-link dropdown-item" href="#">For Telcos</a>
-                  <a class="nav-link dropdown-item" href="#">For Earthworks Contractors</a>
-                  <a class="nav-link dropdown-item" href="#">For Building Developers</a>
-                  <a class="nav-link dropdown-item" href="#">For Building Management</a>
+                  <a class="nav-link dropdown-item" href="fibre-for-enterprise.html">For Enterprise</a>
+                  <a class="nav-link dropdown-item" href="fibre-for-telcos.html">For Telcos</a>
+                  <a class="nav-link dropdown-item" href="fibre-earthworks-contractors.html">For Earthworks Contractors</a>
+                  <a class="nav-link dropdown-item" href="fibre-building-dev.html">For Building Developers</a>
+                  <a class="nav-link dropdown-item" href="fibre-building-management.html">For Building Management</a>
             </div>
 
           </li>
@@ -95,20 +100,20 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span>Procurement</span></a>
+            <a class="nav-link" href="procurement.html"><span>Procurement</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span>Faq</span></a>
+            <a class="nav-link" href="faqs.html"><span>Faq</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span>Contact Us</span></a>
+            <a class="nav-link" href="contact.html"><span>Contact Us</span></a>
           </li>
         </ul>
 
         <!-- Search Icon/Bar -->
         <div id="mdb-5-search-container" class="d-none d-lg-block">
 
-          <div class="nav-item dropdown">
+          <div class="dropdown">
             <span class="input-group-text dropdown-toggle" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               <i data-feather="search"></i>
@@ -116,9 +121,16 @@
 
             <!-- dropdown menu  -->
             <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-              <form class=" col-8 d-md-flex mx-auto">
+              <form class="col-8 col-lg-6 d-md-flex mx-auto">
                 <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded"
-                  placeholder="Search (ctrl + &quot;/&quot; to focus)">
+                  placeholder="Search">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                    <g id="arrow-right-circle-fill" transform="translate(0 0)">
+                      <path id="Path_2" data-name="Path 2" d="M17.765,25.049a1.216,1.216,0,0,0,1.719,1.719l7.285-7.285a1.214,1.214,0,0,0,0-1.719L19.484,10.48A1.216,1.216,0,1,0,17.765,12.2l5.213,5.21H11.339a1.214,1.214,0,0,0,0,2.428H22.977l-5.214,5.211Z" transform="translate(-10.125 -10.124)" fill="#fff" fill-rule="evenodd"/>
+                    </g>
+                  </svg>
+                  
               </form>
             </div>
 
@@ -131,10 +143,20 @@
 
     </div>
 
-    </div>
-
   </nav>
 
-
-
 </header>
+
+<div id="mdb-5-search-container" class="d-md-none" aria-labelledby="navbarSearchDropdown">
+  <form>
+    <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded"
+      placeholder="Search">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+        <g id="arrow-right-circle-fill" transform="translate(0 0)">
+          <path id="Path_2" data-name="Path 2" d="M17.765,25.049a1.216,1.216,0,0,0,1.719,1.719l7.285-7.285a1.214,1.214,0,0,0,0-1.719L19.484,10.48A1.216,1.216,0,1,0,17.765,12.2l5.213,5.21H11.339a1.214,1.214,0,0,0,0,2.428H22.977l-5.214,5.211Z" transform="translate(-10.125 -10.124)" fill="#fff" fill-rule="evenodd"/>
+        </g>
+      </svg>
+      
+  </form>
+</div>

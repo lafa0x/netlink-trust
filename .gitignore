@@ -6,3 +6,4 @@ dist
 _package.json
 assets/old
 public
+package-lock.json

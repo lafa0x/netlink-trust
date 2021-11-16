@@ -184,7 +184,13 @@ document.addEventListener(
 
             /*for each element, create a new DIV that will act as the selected item:*/
             a = document.createElement("DIV");
-            a.setAttribute("class", "select-selected form-control");
+
+            if (selElmnt.classList.contains('bg-blue')) {
+                a.setAttribute("class", "select-selected form-control bg-blue");
+            }else {
+                a.setAttribute("class", "select-selected form-control");
+            }
+
             a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
             x[i].appendChild(a);
 
@@ -266,7 +272,6 @@ document.addEventListener(
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
 
-
         // file upload preview/remove image
         function readURL() {
             var $input = $(this);
@@ -281,6 +286,8 @@ document.addEventListener(
                 reader.readAsDataURL(this.files[0]);
             }
         }
+
+        $(".upload-demo img").hide();
 
         $(".fileUpload").change(readURL);
         $("form").on('click', '.delbtn', function (e) {
@@ -672,18 +679,6 @@ $(function () {
         $(".ytp-large-play-button").click();
 
     });
-
-    // $('#bs-example-navbar-collapse-1')
-    // .on('shown.bs.collapse', function() {
-    //   $('#navbar-hamburger').addClass('hidden');
-    //   $('#navbar-close').removeClass('hidden');    
-    // })
-    // .on('hidden.bs.collapse', function() {
-    //   $('#navbar-hamburger').removeClass('hidden');
-    //   $('#navbar-close').addClass('hidden');        
-    // });
-
-
 
 });
 
