@@ -40,30 +40,29 @@ document.addEventListener(
     "DOMContentLoaded", () => {
 
         //Mmenu Integration Code
-        new Mmenu( "#myMenu", {
+        new Mmenu("#myMenu", {
             wrappers: ["bootstrap"],
             "navbars": [
                 {
-                   "position": "bottom",
-                   "content": [
-                      '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-facebook-square"></i></a>',
-                      '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-linkedin"></i></a>'
-                   ]
+                    "position": "bottom",
+                    "content": [
+                        '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-facebook-square"></i></a>',
+                        '<a class="link-blue mm-listitem__text" href="#"><i class="fab fa-linkedin"></i></a>'
+                    ]
                 }
-             ]
+            ]
         });
-
 
         //dropDownMenus Append Wrappers UL > LI 
         var dropDownMenus = $(".navbar-nav .dropdown-menu");
 
-        $.each(dropDownMenus, function(key, value){
+        $.each(dropDownMenus, function (key, value) {
             // here you can access all the properties just by typing either value.propertyName or value["propertyName"]
             // example: value.ri_idx; value.ri_startDate; value.ri_endDate;
 
             var children = $(this).children();
 
-            $.each(children, function(key, value){
+            $.each(children, function (key, value) {
 
                 $(this).wrapAll("<li>");
 
@@ -74,38 +73,70 @@ document.addEventListener(
         });
 
         // handle links with @href started with '#' only
-        $(document).on('click', 'a[href^="#"]', function(e) {
+        $(document).on('click', 'a[href^="#"]', function (e) {
             // target element id
             var id = $(this).attr('href'),
-             stickyHeader = $("header").height();
-        
-        
+                stickyHeader = $("header").height();
+
+
             // target element
             var $id = $(id);
             if ($id.length === 0) {
                 return;
             }
-        
+
             // prevent standard hash navigation (avoid blinking in IE)
             e.preventDefault();
-        
-            
+
+
             // top position relative to the document
-            var pos = $id.offset().top - stickyHeader ;
-        
+            var pos = $id.offset().top - stickyHeader;
+
             // animated top scrolling
             $('body, html').animate({ scrollTop: pos });
         });
-        
-    
+
 
         var w = $(this).width();
+
+        if (w < 769) {
+
+            //init();
+
+            $(".mm-page #mdb-5-search-container").hide();
+
+            $("#navbarSearchDropdown").on("click", function() {
+                $(".mm-page #mdb-5-search-container").show();
+            });
+
+
+        }
+
+        function wCheck(w) {
+
+
+            if (w < 769) {
+
+                //init();
+
+                $(".mm-page #mdb-5-search-container").hide();
+
+                $("#navbarSearchDropdown").on("click", function() {
+                    $(".mm-page #mdb-5-search-container").show();
+                });
+
+
+            }
+
+        }
+
+        wCheck(w);
 
         function init() {
 
             var dropDownMenus = $(".navbar-nav .dropdown-menu");
 
-            $.each(dropDownMenus, function(key, value){
+            $.each(dropDownMenus, function (key, value) {
                 // here you can access all the properties just by typing either value.propertyName or value["propertyName"]
                 // example: value.ri_idx; value.ri_startDate; value.ri_endDate;
 
@@ -115,16 +146,12 @@ document.addEventListener(
 
         }
 
-        // $(window).on('resize', function () {
+        $(window).on('resize', function () {
 
-        //     w = $(this).width();
+            w = $(this).width();
+            wCheck(w);
 
-        //     if (w > 769) {
-
-        //         init();
-        //     }
-
-        // });
+        });
 
         (w > 769) ? init() : 0;
 
@@ -187,7 +214,7 @@ document.addEventListener(
 
             if (selElmnt.classList.contains('bg-blue')) {
                 a.setAttribute("class", "select-selected form-control bg-blue");
-            }else {
+            } else {
                 a.setAttribute("class", "select-selected form-control");
             }
 
@@ -322,26 +349,26 @@ document.addEventListener(
 
     });
 
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
+// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })();
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+})();
 
 // Load More Articels Posts
 $(function () {

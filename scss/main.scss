@@ -1,9 +1,6 @@
 // Main.scss
 // Option A: Include all of Bootstrap
-
-
-
-// Include any default variable overrides here (though functions won't be available)
+// Include any default variable overrides here(though functions won't be available)
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
 
 
@@ -423,9 +420,9 @@ textarea {
             padding: 12px 10px;
             border-color: rgba($secondary, 0.4);
             border-radius: 5px;
-            border: 2px solid;    
-            
-            svg path, 
+            border: 2px solid;
+
+            svg path,
             svg g,
             svg rect {
                 opacity: 1;
@@ -435,8 +432,8 @@ textarea {
 
     }
 
-    .nav-link.active, 
-    .nav-pills .show > .nav-link {
+    .nav-link.active,
+    .nav-pills .show>.nav-link {
         background-color: transparent;
         border-color: $secondary;
         border-top: 2px solid;
@@ -444,8 +441,8 @@ textarea {
 
         .icon {
             background-color: $secondary;
-                        
-            svg path, 
+
+            svg path,
             svg g,
             svg rect {
                 opacity: 1;
@@ -459,13 +456,16 @@ textarea {
 
 }
 
+.tab-content .form-control {
+    background-color: rgba($color: #707070, $alpha: 0.7);
+    background-color: rgba($color: #032853, $alpha: 0.05);
+}
+
 .form-control {
     font-size: 16px;
     line-height: 24px;
-    background-color: rgba($color: #707070, $alpha: 0.7);    
-    background-color: rgba($color: #032853, $alpha: 0.05);
     border: none;
-    
+
     &:focus {
         box-shadow: none;
     }
@@ -777,7 +777,7 @@ textarea {
 
         padding-top: 20px;
 
-        @include media-breakpoint-up(sm){
+        @include media-breakpoint-up(sm) {
             padding-top: 40px;
         }
 
@@ -869,74 +869,77 @@ textarea {
 
 
 
-            .navbar > div > .input-group-text {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-                cursor: pointer;
-                margin-left: 40px;
-                padding-right: 0;
-            }
+.navbar>div>.input-group-text {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    cursor: pointer;
+    margin-left: 40px;
+    padding-right: 0;
+}
 
-            .navbar > div > .input-group-text:after { display: none; }
-
-
-
-
-            
-       .mm-page  #mdb-5-search-container {
-           
-           background: #032853;
-           padding: 1px 15px;
-
-            form {
-                position: relative ;
-            }
-           
-            
-            #mdb-5-search-input:focus {
-                background-color: transparent;
-            }
-
-            form svg {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                right: 0;
-                -webkit-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-            }
-
-            #mdb-5-search-input {
-                padding: 10px 0;
-                margin: 20px 0;
-                border-bottom: 1px solid #fff;
-                color: #fff;
-            }
-
-            #mdb-5-search-input::placeholder {
-                color: rgb($color: #ffff, $alpha: 0.7);
-            }
-
-            .dropdown-toggle::after {
-                display: none;
-            }
-
-            .dropdown-menu {
-                background-color: #032853;
-                margin: 0;
-                border: none;
-            }
-
-            .dropdown-menu.show {
-                top: 100%;
-                left: 0;
-                right: 0;
-            }
+.navbar>div>.input-group-text:after {
+    display: none;
+}
 
 
-        }
+
+
+.site-main #mdb-5-search-container,
+.mm-page #mdb-5-search-container {
+
+    background: #032853;
+    padding: 1px 15px;
+
+    form {
+        position: relative;
+    }
+
+
+    #mdb-5-search-input:focus {
+        background-color: transparent;
+    }
+
+    form svg {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    #mdb-5-search-input {
+        padding: 10px 0;
+        margin: 20px 0;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        background-color: transparent;
+    }
+
+    #mdb-5-search-input::placeholder {
+        color: rgb($color: #ffff, $alpha: 0.7);
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-menu {
+        background-color: #032853;
+        margin: 0;
+        border: none;
+    }
+
+    .dropdown-menu.show {
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+
+}
 
 
 //header
@@ -1250,7 +1253,7 @@ header {
                                 background: transparent;
                             }
                         }
-                        
+
                         @include media-breakpoint-up(xl) {
                             margin-left: 5px;
                             margin-right: 5px;
@@ -1287,7 +1290,7 @@ header {
         #mdb-5-search-container {
 
             form {
-                position: relative ;
+                position: relative;
             }
 
             form svg {
@@ -1303,12 +1306,13 @@ header {
             #mdb-5-search-input:focus {
                 background-color: transparent;
             }
-            
+
             #mdb-5-search-input {
                 padding: 10px 0;
                 margin: 20px 0;
                 border-bottom: 1px solid #fff;
                 color: #fff;
+                background-color: transparent;
             }
 
             #mdb-5-search-input::placeholder {
@@ -1889,10 +1893,7 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include media-breakpoint-up(xs) {
-
-
-    }
+    @include media-breakpoint-up(xs) {}
 
     @include media-breakpoint-up(md) {
 
@@ -3409,7 +3410,9 @@ footer h5 a i {
     border: none;
 }
 
-.accordion-body tr a {display: block;}
+.accordion-body tr a {
+    display: block;
+}
 
 .accordion-body {
     padding: 0;
@@ -3526,7 +3529,7 @@ table th {
 
 
 .custom-charge-table table tr th {
-    
+
 
     @include media-breakpoint-down(xs) {
         font-size: 18px;
@@ -3570,7 +3573,7 @@ table th {
     .custom-charge-table table tr td:last-child {
         text-align: left !important;
     }
-    
+
 }
 
 
@@ -4019,6 +4022,76 @@ section.cols-2-image-text .content-box {
     color: #000;
 }
 
-.m-auto{
+.pagination {
+
+    .page-item a {
+        font-weight: bold;
+        padding-left: 36px;
+        border: none;
+        font-size: 24px;
+        color: rgb($color: #032853, $alpha: 0.3);
+
+        &:focus,
+        &:hover,
+        &:active {
+            background: transparent;
+        }
+    }
+
+    .page-item:first-child a {
+
+        svg {
+            transform: rotate(180deg);
+        }
+
+    }
+
+    .page-item.active .page-link {
+        background: transparent;
+        color: #032853;
+        border-bottom: 2px solid;
+        padding-left: 12px;
+    }
+
+}
+
+.search-result .media-notice {
+    border: none;
+}
+
+
+.coverage-area {
+
+    >.row {
+        background-color: #032853;
+    }
+
+    #map {
+        width: 100%;
+        height: 100vh;
+
+        .gm-style-iw-d {
+            overflow: unset !important;
+        }
+
+        .gm-style .gm-style-iw-c {
+            background: #707070;
+            padding: 45px 40px !important;
+            max-width: 650px !important;
+            max-height: 1150px !important;
+        }
+
+        .gm-style .gm-style-iw-c ul li p {
+            color: #fff;
+        }
+
+    }
+
+
+
+
+}
+
+.m-auto {
     margin: auto;
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLinkTrust - Search Result </title>
+    <link rel="stylesheet" href="../scss/main.scss">
+
+    <include src="src/components/head.html"></include>
+
+
+
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <include src="src/components/header.html"></include>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        
+        <!-- 
+        <div id="mdb-5-search-container" aria-labelledby="navbarSearchDropdown">
+            <form class="col-12 col-lg-6 d-md-flex mx-auto">
+                <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded"
+                placeholder="Search">
+          
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                  <g id="arrow-right-circle-fill" transform="translate(0 0)">
+                    <path id="Path_2" data-name="Path 2" d="M17.765,25.049a1.216,1.216,0,0,0,1.719,1.719l7.285-7.285a1.214,1.214,0,0,0,0-1.719L19.484,10.48A1.216,1.216,0,1,0,17.765,12.2l5.213,5.21H11.339a1.214,1.214,0,0,0,0,2.428H22.977l-5.214,5.211Z" transform="translate(-10.125 -10.124)" fill="#fff" fill-rule="evenodd"/>
+                  </g>
+                </svg>
+                
+            </form>
+        </div>
+           -->
+        <div class="coverage-area">
+
+
+                <div class="row gx-6 align-items-center">
+
+                    <div class="col-12 col-lg-7 px-0">
+
+                        <div id="map"></div>
+
+                        <a href="#collapseExample" class="btn btn-secondary w-100 d-lg-none" data-toggle="collapse" data-target="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <span>check another address</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25.067" height="25.066" viewBox="0 0 25.067 25.066">
+                                <g id="arrow-right-circle-fill" transform="translate(35.191 -0.125) rotate(90)">
+                                  <path id="Path_2" data-name="Path 2" d="M21.389,32.131a1.792,1.792,0,0,0,2.535,2.535L34.665,23.925a1.79,1.79,0,0,0,0-2.535L23.924,10.649a1.792,1.792,0,0,0-2.535,2.535l7.686,7.683H11.915a1.79,1.79,0,0,0,0,3.58h17.16l-7.687,7.684Z" transform="translate(-10 0)" fill="#fff" fill-rule="evenodd"/>
+                                </g>
+                              </svg>                              
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-lg-5 pt-6 pt-sm-9 pt-lg-7 pt-xxxl-11 pb-sm-9 pb-lg-7 pb-xxxl-12 ps-9" id="collapseExample">
+
+                        <div class="px-4 px-lg-9 ps-0">
+                        <h3 class="text-light mt-3">Check another address</h3>
+
+                        <form>
+
+                            <div class="row gy-4 gx-4 align-items-center pt-6 pt-sm-9 pt-lg-7 pt-xxxl-11 pb-6 pb-sm-9 pb-lg-7 pb-xxxl-12">
+                                <div class="col-12">
+                                    <div class="custom-select">
+
+                                        <select class="form-select form-control form-control-lg" aria-label="Default select example" required>
+                                            <option selected>Select Premises Type *</option>
+                                            <option value="r">Residential</option>
+                                            <option value="n">Non-Residential</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form-control form-control-lg" type="number"
+                                        placeholder="Enter Postal Code *" aria-label=".form-control-lg example" required>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form-control form-control-lg" type="number"
+                                        placeholder="Enter House/Block No. *" aria-label=".form-control-lg example" required>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form-control form-control-lg" type="number"
+                                        placeholder="Enter Unit No. *" aria-label=".form-control-lg example" required>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary w-100" type="submit">Check my coverage</button>
+
+                            
+                        </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer Section -->
+    <include src="src/components/footer.html"></include>
+
+    <include src="src/components/foot.html"></include>
+
+    <script src="./index.js"></script>
+
+
+    <script async defer type="text/javascript">
+
+
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+
+        // $(function () {
+
+            let map;
+
+            function initMap() {
+
+
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: -34.397, lng: 150.644 },
+                    zoom: 8,
+                });
+
+            }
+
+            initMap();
+        
+
+        // });
+    
+
+    </script>
+
+</body>
+</html>

@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build --public-url ./ ./src/index.html --no-minify --no-source-maps --out-dir public --no-cache && node postbuild.js"
+    "build": "parcel build --public-url ./ ./src/*.html --no-minify --no-source-maps --out-dir public --no-cache && node postbuild.js"
   },
   "author": "lafa0x",
   "license": "ISC",
