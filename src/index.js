@@ -31,7 +31,7 @@ import * as bootstrap from 'bootstrap';
     * - button (object):
     *		- class (string)
     *		- text (string)
-*/
+*/  
 
 
 
@@ -96,6 +96,15 @@ document.addEventListener(
             $('body, html').animate({ scrollTop: pos });
         });
 
+        $(".mm-page #mdb-5-search-container").hide();
+
+
+
+        $("#navbarSearchDropdown1").on("click", function() {
+        
+            $(".mm-page #mdb-5-search-container").toggle();
+
+        });
 
         var w = $(this).width();
 
