@@ -49,13 +49,6 @@
 
 
 
-
-
-
-
-
-
-
 body,
 html {
     font-family: $body-font;
@@ -1402,15 +1395,6 @@ footer {
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3053,63 +3037,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .section-content.section-content-about {
     margin-bottom: 21px;
 }
@@ -3855,4 +3782,59 @@ section.cols-2-image-text .content-box {
 
 .m-auto{
     margin: auto;
+}
+.bg-darkgray {
+    background-color: #707070;
+}
+
+.bg-lightgray {
+    background-color: #F8F8F8;
+}
+.border-right{
+    border-right:1px solid #f7f7f7
+}
+.border-left{
+    border-left: 1px solid #f7f7f7;
+}
+.customize-form input,
+.customize-form textarea {
+    background-color: #E6EAEE;
+    border:1px solid #e6eafe;
+}
+.customize-form textarea{
+    min-height:260px;
+}
+.telcos-table tr th {
+    width: 33.333%;
+}
+.telcos-table tr th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.telcos-table tr td {
+    text-align: center;
+}
+.transparent-accordion {
+    background-color: transparent;
+}
+.dev-table tr th {
+    background-color: #D9DFE5;
+    color: #032853 !important;
+}
+
+.dev-table tr td,.dev-table tr th {
+    font-size: 14px;
+    padding: 20px 5px !important;
+}
+.number-fix li {
+    font-size: 60px;
+    line-height: 0;
+    color: #000;
+}
+
+.number-fix li span {
+    font-size: 22px;
+    line-height: 28px;
+    color: #707070;
 }
